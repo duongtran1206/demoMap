@@ -10,6 +10,8 @@ from rest_framework.decorators import action, permission_classes
 from rest_framework.response import Response
 from .models import GeoJSONFile, MapLayer, FeatureVisibility
 from .serializers import GeoJSONFileSerializer, MapLayerSerializer
+from django.core.management import execute_from_command_line
+from django.contrib.auth.models import User
 
 
 class GeoJSONFileViewSet(viewsets.ModelViewSet):
@@ -131,101 +133,112 @@ def map_embed_view(request):
 
 def map_data_api(request):
     """API returns map data for frontend - public access for embed"""
-    layers = MapLayer.objects.filter(
-        geojson_file__is_active=True
-    ).select_related('geojson_file').prefetch_related('feature_visibilities')
-    
-    data = []
-    for layer in layers:
-        geojson_data = layer.geojson_file.geojson_data
-        if geojson_data and 'features' in geojson_data:
-            # Filter visible features
-            visible_features = []
-            feature_visibilities = {fv.feature_index: fv.is_visible for fv in layer.feature_visibilities.all()}
-            
-            for index, feature in enumerate(geojson_data['features']):
-                # Default visible if no specific visibility setting
-                is_visible = feature_visibilities.get(index, True)
-                if layer.is_visible and is_visible:
-                    visible_features.append(feature)
-            
-            # Always include layer for layer control, but filter features for map display
-            filtered_geojson = {
-                'type': 'FeatureCollection',
-                'features': visible_features
-            }
-            
-            # Get feature details for layer control (all features, not just visible)
-            features_detail = []
-            for index, feature in enumerate(geojson_data['features']):
-                # Extract feature name and address
-                props = feature.get('properties', {})
-                name_fields = ['name', 'Name', 'NAME', 'ten', 'tên', 'title', 'Title']
-                address_fields = ['address', 'Address', 'ADDRESS', 'dia_chi', 'địa chỉ', 'location', 'Location']
+    try:
+        layers = MapLayer.objects.filter(
+            geojson_file__is_active=True
+        ).select_related('geojson_file').prefetch_related('feature_visibilities')
+        
+        data = []
+        for layer in layers:
+            geojson_data = layer.geojson_file.geojson_data
+            if geojson_data and 'features' in geojson_data:
+                # Filter visible features
+                visible_features = []
+                feature_visibilities = {fv.feature_index: fv.is_visible for fv in layer.feature_visibilities.all()}
                 
-                name = None
-                address = None
+                for index, feature in enumerate(geojson_data['features']):
+                    # Default visible if no specific visibility setting
+                    is_visible = feature_visibilities.get(index, True)
+                    if layer.is_visible and is_visible:
+                        visible_features.append(feature)
                 
-                for field in name_fields:
-                    if props.get(field):
-                        name = props[field]
-                        break
+                # Always include layer for layer control, but filter features for map display
+                filtered_geojson = {
+                    'type': 'FeatureCollection',
+                    'features': visible_features
+                }
                 
-                for field in address_fields:
-                    if props.get(field):
-                        raw_address = props[field]
-                        # Handle address object vs string
-                        if isinstance(raw_address, dict):
-                            # If it's an object, format it properly
-                            if raw_address.get('full_address'):
-                                address = raw_address['full_address']
+                # Get feature details for layer control (all features, not just visible)
+                features_detail = []
+                for index, feature in enumerate(geojson_data['features']):
+                    # Extract feature name and address
+                    props = feature.get('properties', {})
+                    name_fields = ['name', 'Name', 'NAME', 'ten', 'tên', 'title', 'Title']
+                    address_fields = ['address', 'Address', 'ADDRESS', 'dia_chi', 'địa chỉ', 'location', 'Location']
+                    
+                    name = None
+                    address = None
+                    
+                    for field in name_fields:
+                        if props.get(field):
+                            name = props[field]
+                            break
+                    
+                    for field in address_fields:
+                        if props.get(field):
+                            raw_address = props[field]
+                            # Handle address object vs string
+                            if isinstance(raw_address, dict):
+                                # If it's an object, format it properly
+                                if raw_address.get('full_address'):
+                                    address = raw_address['full_address']
+                                else:
+                                    # Build address from components
+                                    parts = []
+                                    if raw_address.get('street'):
+                                        parts.append(raw_address['street'])
+                                    if raw_address.get('postal_code') or raw_address.get('city'):
+                                        city_part = []
+                                        if raw_address.get('postal_code'):
+                                            city_part.append(raw_address['postal_code'])
+                                        if raw_address.get('city'):
+                                            city_part.append(raw_address['city'])
+                                        parts.append(' '.join(city_part))
+                                    if raw_address.get('country'):
+                                        parts.append(raw_address['country'])
+                                    address = ', '.join(parts)
                             else:
-                                # Build address from components
-                                parts = []
-                                if raw_address.get('street'):
-                                    parts.append(raw_address['street'])
-                                if raw_address.get('postal_code') or raw_address.get('city'):
-                                    city_part = []
-                                    if raw_address.get('postal_code'):
-                                        city_part.append(raw_address['postal_code'])
-                                    if raw_address.get('city'):
-                                        city_part.append(raw_address['city'])
-                                    parts.append(' '.join(city_part))
-                                if raw_address.get('country'):
-                                    parts.append(raw_address['country'])
-                                address = ', '.join(parts)
-                        else:
-                            # If it's a string, use it directly
-                            address = str(raw_address)
-                        break
+                                # If it's a string, use it directly
+                                address = str(raw_address)
+                            break
+                    
+                    features_detail.append({
+                        'index': index,
+                        'name': name or f'Location #{index + 1}',
+                        'address': address or '',
+                        'is_visible': feature_visibilities.get(index, True)
+                    })
                 
-                features_detail.append({
-                    'index': index,
-                    'name': name or f'Location #{index + 1}',
-                    'address': address or '',
-                    'is_visible': feature_visibilities.get(index, True)
-                })
-            
-            data.append({
-                    'id': layer.id,
-                    'name': layer.geojson_file.name,
-                    'color': layer.geojson_file.color,
-                    'is_visible': layer.is_visible,
-                    'feature_count': layer.geojson_file.feature_count,
-                    'features': features_detail,
-                    'geojson': filtered_geojson
-                })
-    
-    # Get the most recent update time from GeoJSON files
-    from django.db.models import Max
-    last_updated = GeoJSONFile.objects.aggregate(
-        last_updated=Max('updated_at')
-    )['last_updated']
-    
-    return JsonResponse({
-        'layers': data,
-        'last_updated': last_updated.isoformat() if last_updated else None
-    })
+                data.append({
+                        'id': layer.id,
+                        'name': layer.geojson_file.name,
+                        'color': layer.geojson_file.color,
+                        'is_visible': layer.is_visible,
+                        'feature_count': layer.geojson_file.feature_count,
+                        'features': features_detail,
+                        'geojson': filtered_geojson
+                    })
+        
+        # Get the most recent update time from GeoJSON files
+        from django.db.models import Max
+        last_updated = GeoJSONFile.objects.aggregate(
+            last_updated=Max('updated_at')
+        )['last_updated']
+        
+        return JsonResponse({
+            'layers': data,
+            'last_updated': last_updated.isoformat() if last_updated else None
+        })
+        
+    except Exception as e:
+        # Return empty data with error info for debugging
+        import traceback
+        return JsonResponse({
+            'layers': [],
+            'last_updated': None,
+            'error': str(e),
+            'debug_info': traceback.format_exc() if request.GET.get('debug') else None
+        }, status=200)  # Use 200 instead of 500 to avoid breaking the frontend
 
 
 def is_admin_user(user):
@@ -313,3 +326,40 @@ def admin_logout_view(request):
     logout(request)
     messages.success(request, 'Successfully logged out.')
     return redirect('admin_login')
+
+
+def init_db_api(request):
+    """Initialize database for Vercel deployment"""
+    try:
+        # Run migrations
+        from django.core.management import execute_from_command_line
+        import sys
+        
+        # Save original argv
+        original_argv = sys.argv
+        
+        try:
+            # Run migrate command
+            sys.argv = ['manage.py', 'migrate', '--run-syncdb']
+            execute_from_command_line(sys.argv)
+            
+            # Create superuser if it doesn't exist
+            if not User.objects.filter(is_superuser=True).exists():
+                User.objects.create_superuser('admin', 'admin@example.com', 'admin123')
+                
+            return JsonResponse({
+                'status': 'success',
+                'message': 'Database initialized successfully'
+            })
+            
+        finally:
+            # Restore original argv
+            sys.argv = original_argv
+            
+    except Exception as e:
+        import traceback
+        return JsonResponse({
+            'status': 'error',
+            'message': str(e),
+            'traceback': traceback.format_exc()
+        }, status=500)
