@@ -133,7 +133,25 @@ def map_embed_view(request):
 
 def map_data_api(request):
     """API returns map data for frontend - public access for embed"""
+    import os
+    is_vercel = os.environ.get('VERCEL', False)
+    
     try:
+        # Initialize database if needed on Vercel
+        if is_vercel:
+            try:
+                # Quick database test
+                User.objects.count()
+            except:
+                # Auto-initialize if database not accessible
+                try:
+                    from django.core.management import call_command
+                    call_command('migrate', '--run-syncdb', verbosity=0)
+                    if not User.objects.filter(is_superuser=True).exists():
+                        User.objects.create_superuser('admin', 'admin@example.com', 'admin123')
+                except:
+                    pass
+        
         layers = MapLayer.objects.filter(
             geojson_file__is_active=True
         ).select_related('geojson_file').prefetch_related('feature_visibilities')
@@ -371,11 +389,13 @@ def admin_logout_view(request):
 
 def init_db_api(request):
     """Initialize database for Vercel deployment"""
+    import os
+    is_vercel = os.environ.get('VERCEL', False)
+    
     try:
         from django.core.management import call_command
         from django.http import HttpResponse
         import io
-        import sys
         
         # Capture output
         out = io.StringIO()
@@ -385,14 +405,22 @@ def init_db_api(request):
         
         # Create superuser if it doesn't exist
         admin_created = False
-        if not User.objects.filter(is_superuser=True).exists():
-            User.objects.create_superuser('admin', 'admin@example.com', 'admin123')
-            admin_created = True
+        existing_users = 0
+        try:
+            existing_users = User.objects.count()
+            if not User.objects.filter(is_superuser=True).exists():
+                User.objects.create_superuser('admin', 'admin@example.com', 'admin123')
+                admin_created = True
+        except Exception as user_error:
+            pass
         
         migration_output = out.getvalue()
         
         # Check database status
-        user_count = User.objects.count()
+        try:
+            user_count = User.objects.count()
+        except:
+            user_count = 0
         
         html_response = f"""
         <html>
@@ -401,27 +429,46 @@ def init_db_api(request):
             <style>
                 body {{ font-family: Arial, sans-serif; margin: 40px; }}
                 .success {{ color: green; }}
+                .warning {{ color: orange; }}
                 .info {{ color: blue; }}
                 pre {{ background: #f5f5f5; padding: 10px; border-radius: 5px; }}
+                .btn {{ display: inline-block; padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; margin: 5px; }}
             </style>
         </head>
         <body>
-            <h1>Database Initialization Complete</h1>
-            <div class="success">✅ Database initialized successfully</div>
+            <h1>Database Initialization {'Complete' if user_count > 0 else 'Attempted'}</h1>
+            <div class="{'success' if user_count > 0 else 'warning'}">
+                {'✅ Database initialized successfully' if user_count > 0 else '⚠️ Database initialization had issues'}
+            </div>
+            
+            {'<div class="warning">⚠️ Note: Running on Vercel with in-memory database. Data will reset on serverless function restart.</div>' if is_vercel else ''}
             
             <h2>Status:</h2>
             <ul>
-                <li>Admin user {'created' if admin_created else 'already exists'}</li>
+                <li>Environment: {'🌐 Vercel (Serverless)' if is_vercel else '💻 Local Development'}</li>
+                <li>Admin user: {'✅ Created' if admin_created else '✅ Already exists' if user_count > 0 else '❌ Failed to create'}</li>
                 <li>Total users in database: {user_count}</li>
-                <li>Login credentials: admin / admin123</li>
+                <li>Database type: {'In-memory SQLite' if is_vercel else 'File-based SQLite'}</li>
             </ul>
             
-            <h2>Actions:</h2>
-            <p><a href="/login/">Go to Login Page</a></p>
-            <p><a href="/embed/">View Embed Map</a></p>
+            <h2>Login Credentials:</h2>
+            <div style="background: #e7f3ff; padding: 15px; border-radius: 5px;">
+                <strong>Username:</strong> admin<br>
+                <strong>Password:</strong> admin123
+            </div>
             
-            <h2>Migration Output:</h2>
-            <pre>{migration_output}</pre>
+            <h2>Available Actions:</h2>
+            <div>
+                <a href="/" class="btn">🏠 Home</a>
+                <a href="/login/" class="btn">🔐 Admin Login</a>
+                <a href="/embed/" class="btn">🗺️ View Map</a>
+                <a href="/api/health/" class="btn">💚 Health Check</a>
+            </div>
+            
+            <details>
+                <summary>Migration Output (Click to expand)</summary>
+                <pre>{migration_output}</pre>
+            </details>
         </body>
         </html>
         """
@@ -472,9 +519,34 @@ def health_check(request):
 def welcome_view(request):
     """Welcome page with deployment status"""
     from django.http import HttpResponse
+    import os
+    
+    # Check if running on Vercel
+    is_vercel = os.environ.get('VERCEL', False)
+    
     try:
-        user_count = User.objects.count()
-        has_admin = User.objects.filter(is_superuser=True).exists()
+        # Try database operations with fallback
+        user_count = 0
+        has_admin = False
+        db_status = "Unknown"
+        
+        try:
+            user_count = User.objects.count()
+            has_admin = User.objects.filter(is_superuser=True).exists()
+            db_status = "Connected"
+        except Exception as db_e:
+            db_status = f"Error: {str(db_e)}"
+            # On Vercel, try to initialize database automatically
+            if is_vercel:
+                try:
+                    from django.core.management import call_command
+                    call_command('migrate', '--run-syncdb', verbosity=0)
+                    User.objects.create_superuser('admin', 'admin@example.com', 'admin123')
+                    user_count = User.objects.count()
+                    has_admin = True
+                    db_status = "Auto-initialized"
+                except:
+                    db_status = "Initialization failed"
         
         html = f"""
         <!DOCTYPE html>
@@ -487,6 +559,7 @@ def welcome_view(request):
                 .status {{ padding: 15px; margin: 10px 0; border-radius: 5px; }}
                 .success {{ background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }}
                 .warning {{ background: #fff3cd; color: #856404; border: 1px solid #ffeaa7; }}
+                .error {{ background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }}
                 .btn {{ display: inline-block; padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; margin: 5px; }}
                 .btn:hover {{ background: #0056b3; }}
             </style>
@@ -495,18 +568,22 @@ def welcome_view(request):
             <div class="container">
                 <h1>🗺️ GeoMap Application</h1>
                 
-                <div class="status success">
-                    ✅ Application is running successfully on Vercel
+                <div class="status {'success' if db_status == 'Connected' or db_status == 'Auto-initialized' else 'warning'}">
+                    {'✅ Application running on Vercel (Serverless)' if is_vercel else '✅ Application running locally'}
                 </div>
                 
-                <h2>Database Status:</h2>
+                {'<div class="status warning">⚠️ Note: Running on Vercel with in-memory database. Data will reset on each request.</div>' if is_vercel else ''}
+                
+                <h2>System Status:</h2>
                 <ul>
+                    <li>Environment: {'🌐 Vercel (Serverless)' if is_vercel else '💻 Local Development'}</li>
+                    <li>Database: {db_status}</li>
                     <li>Total users: {user_count}</li>
                     <li>Admin user: {'✅ Available' if has_admin else '❌ Not created'}</li>
-                    <li>Database: {'✅ Connected' if user_count >= 0 else '❌ Error'}</li>
                 </ul>
                 
                 {'<div class="status warning">⚠️ Admin user not found. Click "Initialize Database" to create one.</div>' if not has_admin else ''}
+                {'<div class="status error">❌ Database connection failed. This may be due to Vercel filesystem limitations.</div>' if "Error" in db_status else ''}
                 
                 <h2>Available Actions:</h2>
                 <div>
@@ -522,8 +599,10 @@ def welcome_view(request):
                     <strong>Password:</strong> admin123
                 </div>
                 
+                {'<h2>⚠️ Vercel Limitations:</h2><div class="status warning">Since this is a serverless deployment, the database is in-memory and will reset with each cold start. For production use, consider using PostgreSQL or another persistent database.</div>' if is_vercel else ''}
+                
                 <hr>
-                <p><small>Deployed on Vercel • Django GeoJSON Management System</small></p>
+                <p><small>{'Deployed on Vercel • Serverless Django' if is_vercel else 'Local Development • Django'} • GeoJSON Management System</small></p>
             </div>
         </body>
         </html>
