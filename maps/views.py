@@ -248,8 +248,28 @@ def is_admin_user(user):
 @login_required(login_url='/login/')
 @user_passes_test(is_admin_user, login_url='/login/')
 def admin_dashboard_view(request):
-    """View để hiển thị admin dashboard - chỉ admin mới truy cập được"""
-    return render(request, 'maps/dashboard.html')
+    """View for admin dashboard - admin access only"""
+    try:
+        return render(request, 'maps/dashboard.html')
+    except Exception as e:
+        # Return error page if template or database issues
+        from django.http import HttpResponse
+        import traceback
+        error_html = f"""
+        <html>
+        <head><title>Dashboard Error</title></head>
+        <body>
+            <h1>Dashboard Initialization Error</h1>
+            <p>Error: {str(e)}</p>
+            <p><a href="/api/init-db/">Initialize Database</a> | <a href="/logout/">Logout</a></p>
+            <details>
+                <summary>Debug Info (click to expand)</summary>
+                <pre>{traceback.format_exc()}</pre>
+            </details>
+        </body>
+        </html>
+        """
+        return HttpResponse(error_html, status=200)
 
 
 @csrf_exempt
@@ -303,22 +323,43 @@ def deselect_all_layers_api(request):
 
 
 def admin_login_view(request):
-    """View cho admin login"""
-    if request.user.is_authenticated and (request.user.is_superuser or request.user.is_staff):
-        return redirect('admin_dashboard')
-        
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        
-        user = authenticate(request, username=username, password=password)
-        if user is not None and (user.is_superuser or user.is_staff):
-            login(request, user)
+    """View for admin login with error handling"""
+    try:
+        if request.user.is_authenticated and (request.user.is_superuser or request.user.is_staff):
             return redirect('admin_dashboard')
-        else:
-            messages.error(request, 'Invalid credentials or insufficient permissions. Admin access required.')
-    
-    return render(request, 'maps/login.html')
+            
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+            
+            user = authenticate(request, username=username, password=password)
+            if user is not None and (user.is_superuser or user.is_staff):
+                login(request, user)
+                return redirect('admin_dashboard')
+            else:
+                messages.error(request, 'Invalid credentials or insufficient permissions. Admin access required.')
+        
+        return render(request, 'maps/login.html')
+    except Exception as e:
+        # Return a simple error page instead of 500
+        from django.http import HttpResponse
+        import traceback
+        error_html = f"""
+        <html>
+        <head><title>Login Error</title></head>
+        <body>
+            <h1>Database Initialization Required</h1>
+            <p>The database needs to be initialized. Please visit:</p>
+            <p><a href="/api/init-db/">/api/init-db/</a> to initialize the database</p>
+            <p>Error: {str(e)}</p>
+            <details>
+                <summary>Debug Info (click to expand)</summary>
+                <pre>{traceback.format_exc()}</pre>
+            </details>
+        </body>
+        </html>
+        """
+        return HttpResponse(error_html, status=200)
 
 
 def admin_logout_view(request):
@@ -331,35 +372,180 @@ def admin_logout_view(request):
 def init_db_api(request):
     """Initialize database for Vercel deployment"""
     try:
-        # Run migrations
-        from django.core.management import execute_from_command_line
+        from django.core.management import call_command
+        from django.http import HttpResponse
+        import io
         import sys
         
-        # Save original argv
-        original_argv = sys.argv
+        # Capture output
+        out = io.StringIO()
         
-        try:
-            # Run migrate command
-            sys.argv = ['manage.py', 'migrate', '--run-syncdb']
-            execute_from_command_line(sys.argv)
+        # Run migrations
+        call_command('migrate', '--run-syncdb', stdout=out, stderr=out)
+        
+        # Create superuser if it doesn't exist
+        admin_created = False
+        if not User.objects.filter(is_superuser=True).exists():
+            User.objects.create_superuser('admin', 'admin@example.com', 'admin123')
+            admin_created = True
+        
+        migration_output = out.getvalue()
+        
+        # Check database status
+        user_count = User.objects.count()
+        
+        html_response = f"""
+        <html>
+        <head>
+            <title>Database Initialization</title>
+            <style>
+                body {{ font-family: Arial, sans-serif; margin: 40px; }}
+                .success {{ color: green; }}
+                .info {{ color: blue; }}
+                pre {{ background: #f5f5f5; padding: 10px; border-radius: 5px; }}
+            </style>
+        </head>
+        <body>
+            <h1>Database Initialization Complete</h1>
+            <div class="success">✅ Database initialized successfully</div>
             
-            # Create superuser if it doesn't exist
-            if not User.objects.filter(is_superuser=True).exists():
-                User.objects.create_superuser('admin', 'admin@example.com', 'admin123')
-                
-            return JsonResponse({
-                'status': 'success',
-                'message': 'Database initialized successfully'
-            })
+            <h2>Status:</h2>
+            <ul>
+                <li>Admin user {'created' if admin_created else 'already exists'}</li>
+                <li>Total users in database: {user_count}</li>
+                <li>Login credentials: admin / admin123</li>
+            </ul>
             
-        finally:
-            # Restore original argv
-            sys.argv = original_argv
+            <h2>Actions:</h2>
+            <p><a href="/login/">Go to Login Page</a></p>
+            <p><a href="/embed/">View Embed Map</a></p>
             
+            <h2>Migration Output:</h2>
+            <pre>{migration_output}</pre>
+        </body>
+        </html>
+        """
+        
+        return HttpResponse(html_response)
+        
+    except Exception as e:
+        import traceback
+        error_html = f"""
+        <html>
+        <head><title>Database Init Error</title></head>
+        <body>
+            <h1>Database Initialization Failed</h1>
+            <p>Error: {str(e)}</p>
+            <pre>{traceback.format_exc()}</pre>
+        </body>
+        </html>
+        """
+        return HttpResponse(error_html, status=500)
+
+
+def health_check(request):
+    """Health check endpoint for deployment verification"""
+    try:
+        # Test database connection
+        user_count = User.objects.count()
+        
+        # Test basic functionality
+        status = {
+            'status': 'healthy',
+            'database': 'connected',
+            'user_count': user_count,
+            'has_admin': User.objects.filter(is_superuser=True).exists(),
+            'debug': request.GET.get('debug') == 'true'
+        }
+        
+        return JsonResponse(status)
+        
     except Exception as e:
         import traceback
         return JsonResponse({
             'status': 'error',
-            'message': str(e),
-            'traceback': traceback.format_exc()
+            'error': str(e),
+            'traceback': traceback.format_exc() if request.GET.get('debug') else None
         }, status=500)
+
+
+def welcome_view(request):
+    """Welcome page with deployment status"""
+    from django.http import HttpResponse
+    try:
+        user_count = User.objects.count()
+        has_admin = User.objects.filter(is_superuser=True).exists()
+        
+        html = f"""
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>GeoMap - Deployment Status</title>
+            <style>
+                body {{ font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }}
+                .container {{ max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }}
+                .status {{ padding: 15px; margin: 10px 0; border-radius: 5px; }}
+                .success {{ background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }}
+                .warning {{ background: #fff3cd; color: #856404; border: 1px solid #ffeaa7; }}
+                .btn {{ display: inline-block; padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; margin: 5px; }}
+                .btn:hover {{ background: #0056b3; }}
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>🗺️ GeoMap Application</h1>
+                
+                <div class="status success">
+                    ✅ Application is running successfully on Vercel
+                </div>
+                
+                <h2>Database Status:</h2>
+                <ul>
+                    <li>Total users: {user_count}</li>
+                    <li>Admin user: {'✅ Available' if has_admin else '❌ Not created'}</li>
+                    <li>Database: {'✅ Connected' if user_count >= 0 else '❌ Error'}</li>
+                </ul>
+                
+                {'<div class="status warning">⚠️ Admin user not found. Click "Initialize Database" to create one.</div>' if not has_admin else ''}
+                
+                <h2>Available Actions:</h2>
+                <div>
+                    <a href="/login/" class="btn">🔐 Admin Login</a>
+                    <a href="/embed/" class="btn">🗺️ View Map</a>
+                    <a href="/api/init-db/" class="btn">🔧 Initialize Database</a>
+                    <a href="/api/health/" class="btn">💚 Health Check</a>
+                </div>
+                
+                <h2>Login Credentials:</h2>
+                <div class="status">
+                    <strong>Username:</strong> admin<br>
+                    <strong>Password:</strong> admin123
+                </div>
+                
+                <hr>
+                <p><small>Deployed on Vercel • Django GeoJSON Management System</small></p>
+            </div>
+        </body>
+        </html>
+        """
+        
+        return HttpResponse(html)
+        
+    except Exception as e:
+        import traceback
+        error_html = f"""
+        <!DOCTYPE html>
+        <html>
+        <head><title>Application Error</title></head>
+        <body>
+            <h1>❌ Application Error</h1>
+            <p>Error: {str(e)}</p>
+            <p><a href="/api/init-db/">Try Database Initialization</a></p>
+            <details>
+                <summary>Error Details</summary>
+                <pre>{traceback.format_exc()}</pre>
+            </details>
+        </body>
+        </html>
+        """
+        return HttpResponse(error_html)

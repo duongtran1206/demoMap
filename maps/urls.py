@@ -8,7 +8,8 @@ router.register(r'geojson-files', views.GeoJSONFileViewSet)
 router.register(r'map-layers', views.MapLayerViewSet)
 
 urlpatterns = [
-    path('', views.admin_dashboard_view, name='admin_dashboard'),
+    path('', views.welcome_view, name='welcome'),
+    path('admin-dashboard/', views.admin_dashboard_view, name='admin_dashboard'),
     path('login/', views.admin_login_view, name='admin_login'),
     path('logout/', views.admin_logout_view, name='admin_logout'),
     path('api/', include(router.urls)),
@@ -17,5 +18,6 @@ urlpatterns = [
     path('api/select-all-layers/', views.select_all_layers_api, name='select_all_layers'),
     path('api/deselect-all-layers/', views.deselect_all_layers_api, name='deselect_all_layers'),
     path('api/init-db/', csrf_exempt(views.init_db_api), name='init_db'),
+    path('api/health/', views.health_check, name='health_check'),
     path('dashboard/', views.admin_dashboard_view, name='dashboard'),
 ]
