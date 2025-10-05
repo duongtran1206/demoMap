@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoMap Admin Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <meta name="csrf-token" content="{% csrf_token %}">
+</head>
+<body>
+    {% csrf_token %}
+    <div class="dashboard-container">
+        <!-- Header -->
+        <div class="dashboard-header">
+            <div class="header-content">
+                <div>
+                    <h1 class="dashboard-title">
+                        <i class="fas fa-map-marked-alt"></i>
+                        GeoMap Dashboard
+                    </h1>
+                    <p class="dashboard-subtitle">Manage GeoJSON Files and Map Layers</p>
+                </div>
+                <div class="header-actions">
+                    <span class="user-info">
+                        <i class="fas fa-user"></i>
+                        Welcome, {{ user.username }}
+                    </span>
+                    <a href="{% url 'admin_logout' %}" class="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Logout
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-number" id="total-files">0</span>
+                <span class="stat-label">Total Files</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="active-files">0</span>
+                <span class="stat-label">Active Files</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="total-points">0</span>
+                <span class="stat-label">Total Points</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">
+                    <a href="/embed/" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Map
+                    </a>
+                </span>
+                <span class="stat-label">Embedded Map</span>
+            </div>
+        </div>
+
+        <!-- Upload Section -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <i class="fas fa-cloud-upload-alt"></i>
+                Upload GeoJSON Files
+            </h2>
+            
+            <div class="upload-section">
+                <div class="upload-icon">
+                    <i class="fas fa-file-upload"></i>
+                </div>
+                <div class="upload-text">Drag & drop files or click to select GeoJSON files</div>
+                <input type="file" id="file-upload" class="file-input" 
+                       accept=".geojson,.json,application/json,application/geo+json" multiple>
+                <button class="btn btn-primary btn-lg" onclick="document.getElementById('file-upload').click()">
+                    <i class="fas fa-plus"></i>
+                    Select Files
+                </button>
+                <p style="margin-top: 15px; color: #666; font-size: 0.9rem;">
+                    Supported: .geojson, .json | Max: 50MB per file
+                </p>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- GeoJSON Files Management -->
+            <div class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-layer-group"></i>
+                        GeoJSON Files Management
+                    </h2>
+                    <div class="section-actions">
+                        <button class="btn btn-success" onclick="refreshFileList()">
+                            <i class="fas fa-sync-alt"></i>
+                            Refresh
+                        </button>
+                        <button class="btn btn-info" onclick="showCreateModal()">
+                            <i class="fas fa-plus-circle"></i>
+                            Add New
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="files-table-container">
+                    <table class="files-table" id="geojson-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>File</th>
+                                <th>Features</th>
+                                <th>Color</th>
+                                <th>Active</th>
+                                <th>Created</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="geojson-list">
+                            <tr>
+                                <td colspan="7" class="loading-container">
+                                    <div class="loading"></div>
+                                    <p>Loading data...</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="margin-top: 20px; text-align: center;">
+                    <a href="/admin/maps/geojsonfile/" class="btn btn-secondary" target="_blank">
+                        <i class="fas fa-cog"></i>
+                        Django Admin
+                    </a>
+                </div>
+            </div>
+
+            <!-- Layer Control -->
+            <div class="content-section">
+                <h2 class="section-title">
+                    <i class="fas fa-eye"></i>
+                    Map Layer Control
+                </h2>
+                
+                <div class="layer-control-panel">
+                    <div class="control-buttons">
+                        <button class="btn btn-success" onclick="selectAllLayers()">
+                            <i class="fas fa-check-double"></i>
+                            Select All
+                        </button>
+                        <button class="btn btn-warning" onclick="deselectAllLayers()">
+                            <i class="fas fa-times"></i>
+                            Deselect All
+                        </button>
+                    </div>
+                    
+                    <div id="layer-control-list">
+                        <div class="loading-container" style="text-align: center; padding: 40px;">
+                            <div class="loading"></div>
+                            <p>Loading layer controls...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 20px;">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Instructions:</strong><br>
+                        • Use checkboxes to toggle layer visibility on the map<br>
+                        • Changes are synchronized in real-time with the map<br>
+                        • Disabled layers will not be displayed on the embedded map
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="content-section" style="margin-top: 30px;">
+            <h2 class="section-title">
+                <i class="fas fa-bolt"></i>
+                Quick Actions
+            </h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <a href="/admin/" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-user-shield"></i>
+                    Django Admin
+                </a>
+                <a href="/embed/" class="btn btn-success" target="_blank">
+                    <i class="fas fa-map"></i>
+                    View Map
+                </a>
+                <a href="/api/" class="btn btn-info" target="_blank">
+                    <i class="fas fa-code"></i>
+                    API Docs
+                </a>
+                <button class="btn btn-secondary" onclick="location.reload()">
+                    <i class="fas fa-sync-alt"></i>
+                    Refresh
+                </button>
+            </div>
+        </div>
+
+        <!-- Embed Code Section -->
+        <div class="content-section" style="margin-top: 30px;">
+            <h2 class="section-title">
+                <i class="fas fa-code"></i>
+                Embed Map Code
+            </h2>
+            
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #007bff;">
+                <p><strong>To embed this map in another website, use this code:</strong></p>
+                <pre style="background: #2d3748; color: #e2e8f0; padding: 15px; border-radius: 6px; overflow-x: auto; font-size: 0.9rem;"><code>&lt;iframe 
+    src="http://127.0.0.1:8000/embed/" 
+    width="100%" 
+    height="600px" 
+    frameborder="0"
+    style="border: none; border-radius: 8px;"&gt;
+&lt;/iframe&gt;</code></pre>
+                <button class="btn btn-primary" onclick="navigator.clipboard.writeText(document.querySelector('pre code').textContent)">
+                    <i class="fas fa-copy"></i>
+                    Copy Code
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CRUD Modal -->
+    <div id="crudModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Add New GeoJSON File</h3>
+                <span class="close" onclick="closeCrudModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="crud-form" enctype="multipart/form-data">
+                    <input type="hidden" id="file-id">
+                    
+                    <div class="form-group">
+                        <label for="file-name">Name:</label>
+                        <input type="text" id="file-name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="file-description">Description:</label>
+                        <textarea id="file-description" name="description" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="file-color">Display Color:</label>
+                        <input type="color" id="file-color" name="color" value="#FF0000">
+                    </div>
+                    
+                    <div class="form-group" id="file-upload-group">
+                        <label for="geojson-file">GeoJSON File:</label>
+                        <input type="file" id="geojson-file" name="file" accept=".geojson,.json">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="file-active" name="is_active" checked>
+                            Active
+                        </label>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="closeCrudModal()">Cancel</button>
+                        <button type="submit" class="btn btn-primary" id="submit-btn">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/admin_dashboard.js' %}"></script>
+    
+    <!-- Drag & Drop File Upload -->
+    <script>
+        // Drag and drop functionality
+        const uploadSection = document.querySelector('.upload-section');
+        
+        uploadSection.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadSection.style.borderColor = '#764ba2';
+            uploadSection.style.backgroundColor = 'rgba(118, 75, 162, 0.2)';
+        });
+        
+        uploadSection.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            uploadSection.style.borderColor = '#667eea';
+            uploadSection.style.backgroundColor = 'rgba(102, 126, 234, 0.1)';
+        });
+        
+        uploadSection.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadSection.style.borderColor = '#667eea';
+            uploadSection.style.backgroundColor = 'rgba(102, 126, 234, 0.1)';
+            
+            const files = Array.from(e.dataTransfer.files);
+            const fileInput = document.getElementById('file-upload');
+            
+            // Simulate file input selection
+            Object.defineProperty(fileInput, 'files', {
+                value: e.dataTransfer.files,
+                writable: false
+            });
+            
+            // Trigger file upload
+            window.geoManager.handleFileUpload();
+        });
+    </script>
+</body>
+</html>

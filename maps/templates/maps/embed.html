@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional GeoMap - Embeddable</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4N                html += '<div class="layer-control-header">Layer Control</div>';
+                html += '<div class="layer-control-buttons">';
+                html += '<button class="control-btn select-all-btn" onclick="selectAllLayers()">Select All</button>';
+                html += '<button class="control-btn deselect-all-btn" onclick="deselectAllLayers()">Deselect All</button>';
+                html += '</div>';hIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin=""/>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+        }
+        
+        #map {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+        }
+        
+        .leaflet-control-layers {
+            max-height: 400px;
+            overflow-y: auto;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            padding: 10px;
+            min-width: 250px;
+        }
+        
+        .layer-control-header {
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #007cff;
+            text-align: center;
+        }
+        
+        .layer-control-buttons {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .control-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .select-all-btn {
+            background: #28a745;
+            color: white;
+        }
+        
+        .select-all-btn:hover {
+            background: #218838;
+            transform: translateY(-1px);
+        }
+        
+        .deselect-all-btn {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .deselect-all-btn:hover {
+            background: #c82333;
+            transform: translateY(-1px);
+        }
+        
+        .layer-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 8px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .layer-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .layer-checkbox {
+            margin-right: 10px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+        
+        .layer-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .layer-info {
+            flex: 1;
+        }
+        
+        .layer-name {
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+        
+        .layer-count {
+            font-size: 12px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .layer-item.active {
+            border-left-color: #007cff;
+        }
+        
+        .loading-spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #007cff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .info-popup {
+            font-size: 14px;
+            line-height: 1.6;
+            max-width: 300px;
+        }
+        
+        .popup-title {
+            font-weight: bold;
+            color: #007cff;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        .popup-address {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .popup-address::before {
+            content: "📍";
+            position: absolute;
+            left: 0;
+        }
+        
+        .popup-property {
+            margin-bottom: 5px;
+            padding: 3px 0;
+        }
+        
+        .popup-property strong {
+            color: #333;
+            min-width: 80px;
+            display: inline-block;
+        }
+        
+        /* Custom tooltip styles */
+        .custom-tooltip {
+            background: rgba(0, 123, 255, 0.9) !important;
+            color: white !important;
+            border-radius: 6px !important;
+            padding: 6px 10px !important;
+            font-size: 13px !important;
+            font-weight: 500 !important;
+            border: none !important;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3) !important;
+        }
+        
+        .custom-tooltip:before {
+            border-top-color: rgba(0, 123, 255, 0.9) !important;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .leaflet-control-layers {
+                min-width: 200px;
+                max-height: 300px;
+            }
+            
+            .layer-control-header {
+                font-size: 14px;
+            }
+            
+            .layer-name {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <div id="loading" class="loading-spinner">
+        <div class="spinner"></div>
+        <div style="text-align: center; color: #666;">Đang tải dữ liệu bản đồ...</div>
+    </div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
+            crossorigin=""></script>
+    
+    <script>
+        // Khởi tạo bản đồ
+        const map = L.map('map', {
+            zoomControl: true,
+            attributionControl: true
+        }).setView([21.0285, 105.8542], 6);
+
+        // Base maps
+        const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        });
+
+        const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri'
+        });
+
+        const cartoDB = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+        });
+
+        // Đặt OSM làm base layer mặc định
+        osmLayer.addTo(map);
+
+        // Base maps control
+        const baseMaps = {
+            "OpenStreetMap": osmLayer,
+            "Satellite": satelliteLayer,
+            "CartoDB Light": cartoDB
+        };
+
+        // Biến lưu trữ layers và controls
+        let mapLayers = {};
+        let layerControl;
+        let customLayerControl;
+
+        // Hàm tạo popup content
+        function createPopupContent(feature) {
+            let content = '<div class="info-popup">';
+            
+            if (feature.properties) {
+                const nameFields = ['name', 'Name', 'NAME', 'ten', 'tên', 'title', 'Title'];
+                const addressFields = ['address', 'Address', 'ADDRESS', 'dia_chi', 'địa chỉ', 'location', 'Location'];
+                
+                let name = null;
+                let address = null;
+                
+                // Tìm tên
+                for (let field of nameFields) {
+                    if (feature.properties[field]) {
+                        name = feature.properties[field];
+                        break;
+                    }
+                }
+                
+                // Tìm địa chỉ
+                for (let field of addressFields) {
+                    if (feature.properties[field]) {
+                        address = feature.properties[field];
+                        break;
+                    }
+                }
+                
+                if (name) {
+                    content += `<div class="popup-title">${name}</div>`;
+                }
+                
+                if (address) {
+                    content += `<div class="popup-address">${address}</div>`;
+                }
+                
+                // Hiển thị các thuộc tính khác
+                const excludeFields = [...nameFields, ...addressFields];
+                const otherProperties = Object.keys(feature.properties).filter(key => 
+                    !excludeFields.includes(key) && 
+                    feature.properties[key] !== null && 
+                    feature.properties[key] !== ''
+                );
+                
+                if (otherProperties.length > 0) {
+                    content += '<hr style="margin: 10px 0; border: 1px solid #eee;">';
+                    otherProperties.forEach(key => {
+                        content += `<div class="popup-property"><strong>${key}:</strong> ${feature.properties[key]}</div>`;
+                    });
+                }
+            }
+            
+            content += '</div>';
+            return content;
+        }
+
+        // Hàm tạo custom layer control
+        function createCustomLayerControl(layers) {
+            const control = L.control({position: 'topright'});
+            
+            control.onAdd = function(map) {
+                const div = L.DomUtil.create('div', 'leaflet-control-layers');
+                
+                let html = '<div class="layer-control-header">Layer Control</div>';
+                html += '<div class="layer-control-buttons">';
+                html += '<button class="control-btn select-all-btn" onclick="selectAllLayers()">Chọn tất cả</button>';
+                html += '<button class="control-btn deselect-all-btn" onclick="deselectAllLayers()">Bỏ chọn tất cả</button>';
+                html += '</div>';
+                
+                layers.forEach(layer => {
+                    const checked = layer.is_visible ? 'checked' : '';
+                    const activeClass = layer.is_visible ? 'active' : '';
+                    
+                    html += `
+                        <div class="layer-item ${activeClass}" data-layer-id="${layer.id}">
+                            <input type="checkbox" class="layer-checkbox" ${checked} 
+                                   onchange="toggleLayer(${layer.id}, this.checked)">
+                            <div class="layer-color" style="background-color: ${layer.color}"></div>
+                            <div class="layer-info">
+                                <div class="layer-name">${layer.name}</div>
+                                <div class="layer-count">${layer.feature_count} điểm</div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                div.innerHTML = html;
+                
+                // Ngăn chặn event propagation
+                L.DomEvent.disableClickPropagation(div);
+                L.DomEvent.disableScrollPropagation(div);
+                
+                return div;
+            };
+            
+            return control;
+        }
+
+        // Hàm toggle layer visibility
+        function toggleLayer(layerId, isVisible) {
+            const layer = mapLayers[layerId];
+            if (layer) {
+                if (isVisible) {
+                    map.addLayer(layer);
+                } else {
+                    map.removeLayer(layer);
+                }
+                
+                // Cập nhật UI
+                const layerItem = document.querySelector(`[data-layer-id="${layerId}"]`);
+                if (layerItem) {
+                    layerItem.classList.toggle('active', isVisible);
+                }
+            }
+            
+            // Gửi request cập nhật backend
+            updateLayerVisibility(layerId, isVisible);
+        }
+
+        // Hàm chọn tất cả layers
+        function selectAllLayers() {
+            Object.values(mapLayers).forEach(layer => {
+                if (!map.hasLayer(layer)) {
+                    map.addLayer(layer);
+                }
+            });
+            
+            // Cập nhật UI
+            document.querySelectorAll('.layer-checkbox').forEach(checkbox => {
+                checkbox.checked = true;
+            });
+            document.querySelectorAll('.layer-item').forEach(item => {
+                item.classList.add('active');
+            });
+            
+            // Gửi request backend
+            fetch('/api/map-layers/select_all/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCsrfToken()
+                }
+            });
+        }
+
+        // Hàm bỏ chọn tất cả layers
+        function deselectAllLayers() {
+            Object.values(mapLayers).forEach(layer => {
+                if (map.hasLayer(layer)) {
+                    map.removeLayer(layer);
+                }
+            });
+            
+            // Cập nhật UI
+            document.querySelectorAll('.layer-checkbox').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            document.querySelectorAll('.layer-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Gửi request backend
+            fetch('/api/map-layers/deselect_all/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCsrfToken()
+                }
+            });
+        }
+
+        // Hàm cập nhật visibility của layer
+        function updateLayerVisibility(layerId, isVisible) {
+            fetch(`/api/map-layers/${layerId}/`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCsrfToken()
+                },
+                body: JSON.stringify({is_visible: isVisible})
+            });
+        }
+
+        // Hàm lấy CSRF token
+        function getCsrfToken() {
+            return document.querySelector('[name=csrfmiddlewaretoken]')?.value || '';
+        }
+
+        // Hàm tải dữ liệu bản đồ
+        async function loadMapData() {
+            try {
+                const response = await fetch('/api/map-data/');
+                const data = await response.json();
+                
+                // Xóa loading spinner
+                document.getElementById('loading').style.display = 'none';
+                
+                if (data.layers && data.layers.length > 0) {
+                    // Tạo layers
+                    data.layers.forEach(layerData => {
+                        const geoJsonLayer = L.geoJSON(layerData.geojson, {
+                            style: {
+                                color: layerData.color,
+                                weight: 3,
+                                opacity: 0.8,
+                                fillColor: layerData.color,
+                                fillOpacity: 0.4
+                            },
+                            onEachFeature: function(feature, layer) {
+                                // Popup
+                                const popupContent = createPopupContent(feature);
+                                layer.bindPopup(popupContent);
+                                
+                                // Tooltip
+                                if (feature.properties) {
+                                    const nameFields = ['name', 'Name', 'NAME', 'ten', 'tên', 'title', 'Title'];
+                                    let name = null;
+                                    for (let field of nameFields) {
+                                        if (feature.properties[field]) {
+                                            name = feature.properties[field];
+                                            break;
+                                        }
+                                    }
+                                    if (name) {
+                                        layer.bindTooltip(name, {
+                                            permanent: false,
+                                            direction: 'center',
+                                            className: 'custom-tooltip'
+                                        });
+                                    }
+                                }
+                            },
+                            pointToLayer: function(feature, latlng) {
+                                return L.circleMarker(latlng, {
+                                    radius: 8,
+                                    fillColor: layerData.color,
+                                    color: layerData.color,
+                                    weight: 2,
+                                    opacity: 1,
+                                    fillOpacity: 0.8
+                                });
+                            }
+                        });
+                        
+                        mapLayers[layerData.id] = geoJsonLayer;
+                        
+                        // Thêm layer nếu visible
+                        if (layerData.is_visible) {
+                            geoJsonLayer.addTo(map);
+                        }
+                    });
+                    
+                    // Tạo custom layer control
+                    customLayerControl = createCustomLayerControl(data.layers);
+                    customLayerControl.addTo(map);
+                    
+                    // Tạo base map control
+                    layerControl = L.control.layers(baseMaps, {}, {
+                        position: 'topleft'
+                    }).addTo(map);
+                    
+                    // Fit bounds to all layers
+                    const group = new L.featureGroup(Object.values(mapLayers));
+                    if (group.getBounds().isValid()) {
+                        map.fitBounds(group.getBounds(), {padding: [20, 20]});
+                    }
+                } else {
+                    // Không có dữ liệu
+                    console.log('Không có dữ liệu layer nào');
+                }
+                
+            } catch (error) {
+                console.error('Lỗi khi tải dữ liệu bản đồ:', error);
+                document.getElementById('loading').innerHTML = 
+                    '<div style="text-align: center; color: #dc3545;">Lỗi khi tải dữ liệu bản đồ</div>';
+            }
+        }
+
+        // Khởi tạo khi DOM loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            loadMapData();
+        });
+        
+        // Export functions to global scope
+        window.toggleLayer = toggleLayer;
+        window.selectAllLayers = selectAllLayers;
+        window.deselectAllLayers = deselectAllLayers;
+    </script>
+</body>
+</html>

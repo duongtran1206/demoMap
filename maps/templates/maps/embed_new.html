@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional GeoMap - Embeddable</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin=""/>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+        }
+        
+        #map {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+        }
+        
+        .leaflet-control-layers {
+            max-height: 80vh;
+            overflow-y: auto;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            padding: 15px;
+            min-width: 300px;
+            max-width: 400px;
+        }
+        
+        .layer-control-header {
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #007cff;
+            text-align: center;
+        }
+        
+        .layer-control-buttons {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .control-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .select-all-btn {
+            background: #28a745;
+            color: white;
+        }
+        
+        .select-all-btn:hover {
+            background: #218838;
+            transform: translateY(-1px);
+        }
+        
+        .deselect-all-btn {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .deselect-all-btn:hover {
+            background: #c82333;
+            transform: translateY(-1px);
+        }
+        
+        .layer-item {
+            margin-bottom: 12px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .layer-header {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            cursor: pointer;
+            background: #f8f9fa;
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .layer-header:hover {
+            background: #e9ecef;
+        }
+        
+        .layer-header.active {
+            background: rgba(40, 167, 69, 0.1);
+            border-left-color: #28a745;
+        }
+        
+        .layer-checkbox {
+            margin-right: 12px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+        
+        .layer-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 12px;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .layer-info {
+            flex: 1;
+        }
+        
+        .layer-name {
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+        
+        .layer-count {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .expand-btn {
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: #666;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            padding: 4px;
+        }
+        
+        .expand-btn.expanded {
+            transform: rotate(90deg);
+        }
+        
+        .features-list {
+            display: none;
+            padding: 0 12px 12px 12px;
+            background: white;
+        }
+        
+        .features-list.expanded {
+            display: block;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            background: #e9ecef;
+        }
+        
+        .feature-item.visible {
+            border-left-color: #007bff;
+            background: rgba(0, 123, 255, 0.05);
+        }
+        
+        .feature-checkbox {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        
+        .feature-info {
+            flex: 1;
+        }
+        
+        .feature-name {
+            font-weight: 500;
+            color: #333;
+            font-size: 13px;
+            margin-bottom: 2px;
+        }
+        
+        .feature-address {
+            font-size: 11px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .loading-spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #007cff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .info-popup {
+            font-size: 14px;
+            line-height: 1.6;
+            max-width: 300px;
+        }
+        
+        .popup-title {
+            font-weight: bold;
+            color: #007cff;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        .popup-address {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .popup-address::before {
+            content: "📍";
+            position: absolute;
+            left: 0;
+        }
+        
+        .popup-property {
+            margin-bottom: 5px;
+            padding: 3px 0;
+        }
+        
+        .popup-property strong {
+            color: #333;
+            min-width: 80px;
+            display: inline-block;
+        }
+        
+        .custom-tooltip {
+            background: rgba(0, 123, 255, 0.9) !important;
+            color: white !important;
+            border-radius: 6px !important;
+            padding: 6px 10px !important;
+            font-size: 13px !important;
+            font-weight: 500 !important;
+            border: none !important;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3) !important;
+        }
+        
+        .custom-tooltip:before {
+            border-top-color: rgba(0, 123, 255, 0.9) !important;
+        }
+        
+        /* Auto-refresh animations */
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideOutRight {
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+        }
+
+        .update-notification {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .leaflet-control-layers {
+                min-width: 280px;
+                max-height: 60vh;
+            }
+            
+            .layer-control-header {
+                font-size: 14px;
+            }
+            
+            .layer-name {
+                font-size: 13px;
+            }
+
+            .update-notification {
+                top: 10px;
+                right: 10px;
+                font-size: 14px;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <div id="loading" class="loading-spinner">
+        <div class="spinner"></div>
+        <div style="text-align: center; color: #666;">Loading map data...</div>
+    </div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
+            crossorigin=""></script>
+    
+    <script>
+        // Initialize map
+        const map = L.map('map', {
+            zoomControl: true,
+            attributionControl: true
+        }).setView([21.0285, 105.8542], 6);
+
+        // Base maps
+        const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        });
+
+        const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri'
+        });
+
+        const cartoDB = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+        });
+
+        osmLayer.addTo(map);
+
+        const baseMaps = {
+            "OpenStreetMap": osmLayer,
+            "Satellite": satelliteLayer,
+            "CartoDB Light": cartoDB
+        };
+
+        // Variables
+        let mapLayers = {};
+        let layerControl;
+        let customLayerControl;
+        let layersData = [];
+        let lastUpdateTime = null;
+        let autoRefreshInterval = null;
+
+        // Create popup content
+        function createPopupContent(feature) {
+            let content = '<div class="info-popup">';
+            
+            if (feature.properties) {
+                const nameFields = ['name', 'Name', 'NAME', 'ten', 'tên', 'title', 'Title'];
+                const addressFields = ['address', 'Address', 'ADDRESS', 'dia_chi', 'địa chỉ', 'location', 'Location'];
+                
+                let name = null;
+                let address = null;
+                
+                for (let field of nameFields) {
+                    if (feature.properties[field]) {
+                        name = feature.properties[field];
+                        break;
+                    }
+                }
+                
+                for (let field of addressFields) {
+                    if (feature.properties[field]) {
+                        address = feature.properties[field];
+                        break;
+                    }
+                }
+                
+                if (name) {
+                    content += `<div class="popup-title">${name}</div>`;
+                }
+                
+                if (address) {
+                    // Check if address is an object or string
+                    let addressText = '';
+                    if (typeof address === 'object' && address !== null) {
+                        // Handle address object (like in your GeoJSON)
+                        if (address.full_address) {
+                            addressText = address.full_address;
+                        } else {
+                            // Build address from components
+                            const parts = [];
+                            if (address.street) parts.push(address.street);
+                            if (address.postal_code || address.city) {
+                                const cityPart = [];
+                                if (address.postal_code) cityPart.push(address.postal_code);
+                                if (address.city) cityPart.push(address.city);
+                                parts.push(cityPart.join(' '));
+                            }
+                            if (address.country) parts.push(address.country);
+                            addressText = parts.join(', ');
+                        }
+                    } else {
+                        // Handle string address
+                        addressText = String(address);
+                    }
+                    
+                    if (addressText) {
+                        content += `<div class="popup-address">${addressText}</div>`;
+                    }
+                }
+                
+                const excludeFields = [...nameFields, ...addressFields];
+                const otherProperties = Object.keys(feature.properties).filter(key => 
+                    !excludeFields.includes(key) && 
+                    feature.properties[key] !== null && 
+                    feature.properties[key] !== ''
+                );
+                
+                if (otherProperties.length > 0) {
+                    content += '<hr style="margin: 10px 0; border: 1px solid #eee;">';
+                    otherProperties.forEach(key => {
+                        content += `<div class="popup-property"><strong>${key}:</strong> ${feature.properties[key]}</div>`;
+                    });
+                }
+            }
+            
+            content += '</div>';
+            return content;
+        }
+
+        // Create custom layer control
+        function createCustomLayerControl(layers) {
+            console.log('createCustomLayerControl called with layers:', layers);
+            const control = L.control({position: 'bottomright'});
+            
+            control.onAdd = function(map) {
+                console.log('Creating layer control DOM element');
+                const div = L.DomUtil.create('div', 'leaflet-control-layers');
+                
+                let html = '<div class="layer-control-header">Layer Control</div>';
+                html += '<div class="layer-control-buttons">';
+                html += '<button class="control-btn select-all-btn" onclick="selectAllLayers()">Select All</button>';
+                html += '<button class="control-btn deselect-all-btn" onclick="deselectAllLayers()">Deselect All</button>';
+                html += '</div>';
+                
+                if (layers && layers.length > 0) {
+                    layers.forEach(layer => {
+                    const checked = layer.is_visible ? 'checked' : '';
+                    const activeClass = layer.is_visible ? 'active' : '';
+                    
+                    html += `
+                        <div class="layer-item" data-layer-id="${layer.id}">
+                            <div class="layer-header ${activeClass}">
+                                <input type="checkbox" class="layer-checkbox" ${checked} 
+                                       onchange="toggleLayer(${layer.id}, this.checked)">
+                                <div class="layer-color" style="background-color: ${layer.color}"></div>
+                                <div class="layer-info">
+                                    <div class="layer-name">${layer.name}</div>
+                                    <div class="layer-count">${layer.feature_count} locations</div>
+                                </div>
+                                <button class="expand-btn" onclick="toggleFeaturesList(${layer.id}, this)">▶</button>
+                            </div>
+                            <div class="features-list" id="features-${layer.id}">
+                    `;
+                    
+                    if (layer.features && layer.features.length > 0) {
+                        layer.features.forEach(feature => {
+                            const featureChecked = feature.is_visible ? 'checked' : '';
+                            const featureActiveClass = feature.is_visible ? 'visible' : '';
+                            
+                            html += `
+                                <div class="feature-item ${featureActiveClass}" data-feature-index="${feature.index}">
+                                    <input type="checkbox" class="feature-checkbox" ${featureChecked}
+                                           onchange="toggleFeature(${layer.id}, ${feature.index}, this.checked)">
+                                    <div class="feature-info">
+                                        <div class="feature-name">${feature.name}</div>
+                                        <div class="feature-address">${feature.address}</div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                    }
+                    
+                        html += '</div></div>';
+                    });
+                } else {
+                    html += '<div style="padding: 20px; text-align: center; color: #666;">No layers available</div>';
+                }
+                
+                div.innerHTML = html;
+                console.log('Layer control HTML:', html);
+                
+                L.DomEvent.disableClickPropagation(div);
+                L.DomEvent.disableScrollPropagation(div);
+                
+                return div;
+            };
+            
+            return control;
+        }
+
+        // Toggle layer visibility
+        function toggleLayer(layerId, isVisible) {
+            const layer = mapLayers[layerId];
+            if (layer) {
+                if (isVisible) {
+                    map.addLayer(layer);
+                } else {
+                    map.removeLayer(layer);
+                }
+                
+                const layerItem = document.querySelector(`[data-layer-id="${layerId}"] .layer-header`);
+                if (layerItem) {
+                    layerItem.classList.toggle('active', isVisible);
+                }
+            }
+            
+            updateLayerVisibility(layerId, isVisible);
+        }
+
+        // Toggle feature visibility
+        async function toggleFeature(layerId, featureIndex, isVisible) {
+            try {
+                const response = await fetch(`/api/map-layers/${layerId}/toggle_feature/`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        feature_index: featureIndex,
+                        is_visible: isVisible
+                    })
+                });
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    console.log('Toggle feature result:', result);
+                    
+                    // Update UI
+                    const featureItem = document.querySelector(`[data-layer-id="${layerId}"] [data-feature-index="${featureIndex}"]`);
+                    if (featureItem) {
+                        featureItem.classList.toggle('visible', isVisible);
+                    }
+                    
+                    // Reload map data to reflect changes
+                    setTimeout(loadMapData, 100);
+                } else {
+                    console.error('Failed to toggle feature:', response.status);
+                }
+            } catch (error) {
+                console.error('Error toggling feature visibility:', error);
+            }
+        }
+
+        // Toggle features list expansion
+        function toggleFeaturesList(layerId, button) {
+            const featuresList = document.getElementById(`features-${layerId}`);
+            const isExpanded = featuresList.classList.contains('expanded');
+            
+            if (isExpanded) {
+                featuresList.classList.remove('expanded');
+                button.classList.remove('expanded');
+            } else {
+                featuresList.classList.add('expanded');
+                button.classList.add('expanded');
+            }
+        }
+
+        // Select all layers
+        async function selectAllLayers() {
+            try {
+                console.log('Selecting all layers...');
+                const response = await fetch('/api/select-all-layers/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                console.log('Response status:', response.status);
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    console.log('Select all result:', result);
+                    
+                    // Update UI
+                    document.querySelectorAll('.layer-checkbox').forEach(cb => {
+                        cb.checked = true;
+                        console.log('Checkbox checked:', cb);
+                    });
+                    document.querySelectorAll('.layer-header').forEach(item => {
+                        item.classList.add('active');
+                        console.log('Header activated:', item);
+                    });
+                    
+                    // Add all layers to map
+                    Object.values(mapLayers).forEach(layer => {
+                        if (!map.hasLayer(layer)) {
+                            map.addLayer(layer);
+                            console.log('Layer added to map:', layer);
+                        }
+                    });
+                    
+                    console.log('All layers selected successfully');
+                } else {
+                    const errorText = await response.text();
+                    console.error('Failed to select all layers:', response.status, errorText);
+                }
+            } catch (error) {
+                console.error('Error selecting all layers:', error);
+            }
+        }
+
+        // Deselect all layers
+        async function deselectAllLayers() {
+            try {
+                console.log('Deselecting all layers...');
+                const response = await fetch('/api/deselect-all-layers/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                console.log('Response status:', response.status);
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    console.log('Deselect all result:', result);
+                    
+                    // Update UI
+                    document.querySelectorAll('.layer-checkbox').forEach(cb => {
+                        cb.checked = false;
+                        console.log('Checkbox unchecked:', cb);
+                    });
+                    document.querySelectorAll('.layer-header').forEach(item => {
+                        item.classList.remove('active');
+                        console.log('Header deactivated:', item);
+                    });
+                    
+                    // Remove all layers from map
+                    Object.values(mapLayers).forEach(layer => {
+                        if (map.hasLayer(layer)) {
+                            map.removeLayer(layer);
+                            console.log('Layer removed from map:', layer);
+                        }
+                    });
+                    
+                    console.log('All layers deselected successfully');
+                } else {
+                    const errorText = await response.text();
+                    console.error('Failed to deselect all layers:', response.status, errorText);
+                }
+            } catch (error) {
+                console.error('Error deselecting all layers:', error);
+            }
+        }
+
+        // Update layer visibility
+        async function updateLayerVisibility(layerId, isVisible) {
+            try {
+                const response = await fetch(`/api/map-layers/${layerId}/`, {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({is_visible: isVisible})
+                });
+                
+                if (response.ok) {
+                    console.log(`Layer ${layerId} visibility updated to ${isVisible}`);
+                } else {
+                    console.error('Failed to update layer visibility:', response.status);
+                }
+            } catch (error) {
+                console.error('Error updating layer visibility:', error);
+            }
+        }
+
+        // Get CSRF token (optional now)
+        function getCsrfToken() {
+            return document.querySelector('[name=csrfmiddlewaretoken]')?.value || '';
+        }
+
+        // Test function for debugging
+        function testSelectAll() {
+            console.log('Testing Select All button...');
+            fetch('/api/map-layers/select_all/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(response => {
+                console.log('Response status:', response.status);
+                return response.json();
+            }).then(data => {
+                console.log('Response data:', data);
+            }).catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        // Add test button functionality (remove in production)
+        window.testSelectAll = testSelectAll;
+
+        // Load map data
+        async function loadMapData() {
+            try {
+                const response = await fetch('/api/map-data/');
+                const data = await response.json();
+                
+                console.log('Map data response:', data);
+                console.log('Number of layers:', data.layers ? data.layers.length : 0);
+                
+                document.getElementById('loading').style.display = 'none';
+                
+                if (data.layers && data.layers.length > 0) {
+                    layersData = data.layers;
+                    console.log('Processing layers data:', layersData);
+                    
+                    // Clear existing layers
+                    Object.values(mapLayers).forEach(layer => map.removeLayer(layer));
+                    mapLayers = {};
+                    
+                    // Create layers
+                    data.layers.forEach(layerData => {
+                        const geoJsonLayer = L.geoJSON(layerData.geojson, {
+                            style: {
+                                color: layerData.color,
+                                weight: 3,
+                                opacity: 0.8,
+                                fillColor: layerData.color,
+                                fillOpacity: 0.4
+                            },
+                            onEachFeature: function(feature, layer) {
+                                const popupContent = createPopupContent(feature);
+                                layer.bindPopup(popupContent);
+                                
+                                if (feature.properties) {
+                                    const nameFields = ['name', 'Name', 'NAME', 'ten', 'tên', 'title', 'Title'];
+                                    let name = null;
+                                    for (let field of nameFields) {
+                                        if (feature.properties[field]) {
+                                            name = feature.properties[field];
+                                            break;
+                                        }
+                                    }
+                                    if (name) {
+                                        layer.bindTooltip(name, {
+                                            permanent: false,
+                                            direction: 'center',
+                                            className: 'custom-tooltip'
+                                        });
+                                    }
+                                }
+                            },
+                            pointToLayer: function(feature, latlng) {
+                                return L.circleMarker(latlng, {
+                                    radius: 8,
+                                    fillColor: layerData.color,
+                                    color: layerData.color,
+                                    weight: 2,
+                                    opacity: 1,
+                                    fillOpacity: 0.8
+                                });
+                            }
+                        });
+                        
+                        mapLayers[layerData.id] = geoJsonLayer;
+                        
+                        if (layerData.is_visible) {
+                            geoJsonLayer.addTo(map);
+                        }
+                    });
+                    
+                    // Create custom layer control
+                    if (customLayerControl) {
+                        customLayerControl.remove();
+                    }
+                    console.log('Creating custom layer control with', data.layers.length, 'layers');
+                    customLayerControl = createCustomLayerControl(data.layers);
+                    customLayerControl.addTo(map);
+                    console.log('Custom layer control added to map');
+                    
+                    // Create base map control
+                    if (layerControl) {
+                        layerControl.remove();
+                    }
+                    layerControl = L.control.layers(baseMaps, {}, {
+                        position: 'topleft'
+                    }).addTo(map);
+                    
+                    // Fit bounds to all layers
+                    const group = new L.featureGroup(Object.values(mapLayers));
+                    if (group.getBounds().isValid()) {
+                        map.fitBounds(group.getBounds(), {padding: [20, 20]});
+                    }
+                } else {
+                    console.log('No layer data available');
+                    // Create empty layer control for testing
+                    if (customLayerControl) {
+                        customLayerControl.remove();
+                    }
+                    customLayerControl = createCustomLayerControl([]);
+                    customLayerControl.addTo(map);
+                }
+                
+            } catch (error) {
+                console.error('Error loading map data:', error);
+                document.getElementById('loading').innerHTML = 
+                    '<div style="text-align: center; color: #dc3545;">Error loading map data</div>';
+            }
+        }
+
+        // Check for updates
+        async function checkForUpdates() {
+            try {
+                const response = await fetch('/api/map-data/');
+                const data = await response.json();
+                
+                if (data.last_updated && lastUpdateTime) {
+                    const newUpdateTime = new Date(data.last_updated).getTime();
+                    const currentUpdateTime = new Date(lastUpdateTime).getTime();
+                    
+                    if (newUpdateTime > currentUpdateTime) {
+                        console.log('New data detected, refreshing map...');
+                        await loadMapData();
+                        
+                        // Show notification
+                        showUpdateNotification('Map updated with new data!');
+                    }
+                } else if (data.last_updated) {
+                    lastUpdateTime = data.last_updated;
+                }
+            } catch (error) {
+                console.error('Error checking for updates:', error);
+            }
+        }
+
+        // Show update notification
+        function showUpdateNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'update-notification';
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #28a745;
+                color: white;
+                padding: 12px 20px;
+                border-radius: 8px;
+                z-index: 1000;
+                font-weight: 500;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                animation: slideInRight 0.3s ease;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOutRight 0.3s ease forwards';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
+
+        // Enhanced loadMapData to track update time
+        async function loadMapDataWithTracking() {
+            await loadMapData();
+            
+            // Get and store the latest update time
+            try {
+                const response = await fetch('/api/map-data/');
+                const data = await response.json();
+                if (data.last_updated) {
+                    lastUpdateTime = data.last_updated;
+                }
+            } catch (error) {
+                console.error('Error tracking update time:', error);
+            }
+        }
+
+        // Start auto-refresh
+        function startAutoRefresh() {
+            // Check for updates every 5 seconds
+            autoRefreshInterval = setInterval(checkForUpdates, 5000);
+        }
+
+        // Stop auto-refresh
+        function stopAutoRefresh() {
+            if (autoRefreshInterval) {
+                clearInterval(autoRefreshInterval);
+                autoRefreshInterval = null;
+            }
+        }
+
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            loadMapDataWithTracking();
+            startAutoRefresh();
+        });
+
+        // Stop refresh when page is hidden (performance optimization)
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                stopAutoRefresh();
+            } else {
+                startAutoRefresh();
+            }
+        });
+
+        // Listen for admin dashboard updates via localStorage
+        window.addEventListener('storage', function(e) {
+            if (e.key === 'map_update_event' && e.newValue) {
+                try {
+                    const updateEvent = JSON.parse(e.newValue);
+                    if (updateEvent.type === 'map_data_updated' && updateEvent.source === 'admin_dashboard') {
+                        console.log('Received update notification from admin dashboard');
+                        loadMapDataWithTracking();
+                        showUpdateNotification('Map updated from admin dashboard!');
+                    }
+                } catch (error) {
+                    console.error('Error processing update event:', error);
+                }
+            }
+        });
+        
+        // Export functions to global scope
+        window.toggleLayer = toggleLayer;
+        window.toggleFeature = toggleFeature;
+        window.toggleFeaturesList = toggleFeaturesList;
+        window.selectAllLayers = selectAllLayers;
+        window.deselectAllLayers = deselectAllLayers;
+    </script>
+</body>
+</html>
