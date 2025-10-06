@@ -13,6 +13,8 @@ from .serializers import GeoJSONFileSerializer, MapLayerSerializer
 from django.core.management import execute_from_command_line
 from django.contrib.auth.models import User
 
+# Updated views.py with latest improvements
+
 
 class GeoJSONFileViewSet(viewsets.ModelViewSet):
     queryset = GeoJSONFile.objects.filter(is_active=True)
