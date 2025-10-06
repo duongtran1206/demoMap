@@ -185,9 +185,15 @@ class GeoJSONManager {
         document.getElementById('file-id').value = '';
         document.getElementById('file-name').value = '';
         document.getElementById('file-description').value = '';
-        document.getElementById('file-color').value = '#FF0000';
+        document.getElementById('file-color').value = '#007cff';
+        document.getElementById('file-symbol').value = 'marker';
         document.getElementById('geojson-file').value = '';
         document.getElementById('file-active').checked = true;
+        
+        // Reset symbol picker if available
+        if (window.symbolPicker) {
+            window.symbolPicker.setSymbol('marker');
+        }
         document.getElementById('file-upload-group').style.display = 'block';
         document.getElementById('submit-btn').textContent = 'Create';
         document.getElementById('crudModal').style.display = 'block';
@@ -208,8 +214,14 @@ class GeoJSONManager {
             document.getElementById('file-id').value = file.id;
             document.getElementById('file-name').value = file.name || '';
             document.getElementById('file-description').value = file.description || '';
-            document.getElementById('file-color').value = file.color || '#FF0000';
+            document.getElementById('file-color').value = file.color || '#007cff';
+            document.getElementById('file-symbol').value = file.symbol || 'marker';
             document.getElementById('file-active').checked = file.is_active;
+            
+            // Update symbol picker if available
+            if (window.symbolPicker) {
+                window.symbolPicker.setSymbol(file.symbol || 'marker');
+            }
             document.getElementById('file-upload-group').style.display = 'none';
             document.getElementById('submit-btn').textContent = 'Update';
             document.getElementById('crudModal').style.display = 'block';
@@ -283,6 +295,7 @@ Updated: ${new Date(file.updated_at).toLocaleString()}`;
         formData.append('name', document.getElementById('file-name').value);
         formData.append('description', document.getElementById('file-description').value);
         formData.append('color', document.getElementById('file-color').value);
+        formData.append('symbol', document.getElementById('file-symbol').value);
         formData.append('is_active', document.getElementById('file-active').checked);
 
         const fileInput = document.getElementById('geojson-file');

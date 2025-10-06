@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSM Symbol Picker Demo</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/symbol-picker.css' %}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            padding: 20px;
+        }
+        .demo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .demo-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .demo-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #007cff;
+            margin-bottom: 15px;
+        }
+        .selected-info {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 4px solid #007cff;
+        }
+        .selected-info pre {
+            margin: 0;
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1 class="demo-title">🗺️ OpenStreetMap Symbol Picker Demo</h1>
+        
+        <div class="demo-section">
+            <h2 class="section-title">Symbol Picker for Map Layers</h2>
+            <p>Choose a symbol for your map markers instead of just colors:</p>
+            
+            <div id="symbol-picker-container"></div>
+            
+            <div class="selected-info">
+                <strong>Selected Symbol:</strong>
+                <pre id="symbol-info">No symbol selected</pre>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h2 class="section-title">Available Symbol Categories</h2>
+            <ul>
+                <li><strong>Food & Drink:</strong> Restaurant, Cafe, Bar, Fast Food</li>
+                <li><strong>Shopping:</strong> Shop, Supermarket, Clothing Store, Car Dealership</li>
+                <li><strong>Transportation:</strong> Bus Stop, Railway, Parking, Airport</li>
+                <li><strong>Healthcare:</strong> Hospital, Pharmacy, Dentist, Veterinary</li>
+                <li><strong>Education:</strong> School, University, Library</li>
+                <li><strong>Finance:</strong> Bank, ATM</li>
+                <li><strong>Tourism:</strong> Hotel, Museum, Tourist Attraction, Campsite</li>
+                <li><strong>Services:</strong> Post Office, Police, Fire Station, Town Hall</li>
+                <li><strong>Sports:</strong> Soccer Field, Tennis Court, Swimming, Golf Course</li>
+                <li><strong>Business:</strong> Commercial, Industry</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{% static 'js/osm-symbols.js' %}"></script>
+    <script src="{% static 'js/symbol-picker.js' %}"></script>
+    
+    <script>
+        // Initialize symbol picker
+        document.addEventListener('DOMContentLoaded', function() {
+            const symbolPicker = new OSMSymbolPicker('symbol-picker-container', {
+                defaultSymbol: 'restaurant',
+                onSymbolChange: function(symbolKey, symbolData) {
+                    console.log('Symbol changed:', symbolKey, symbolData);
+                    
+                    // Update info display
+                    document.getElementById('symbol-info').textContent = JSON.stringify({
+                        key: symbolKey,
+                        name: symbolData.name,
+                        category: symbolData.category,
+                        color: symbolData.color,
+                        icon: symbolData.icon
+                    }, null, 2);
+                }
+            });
+            
+            // Show initial selection
+            const initialSymbol = symbolPicker.getSelectedSymbol();
+            document.getElementById('symbol-info').textContent = JSON.stringify(initialSymbol, null, 2);
+        });
+    </script>
+</body>
+</html>

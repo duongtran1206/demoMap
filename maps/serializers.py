@@ -8,7 +8,7 @@ class GeoJSONFileSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = GeoJSONFile
-        fields = ['id', 'name', 'description', 'color', 'is_active', 
+        fields = ['id', 'name', 'description', 'color', 'symbol', 'is_active', 
                  'feature_count', 'geojson_data', 'created_at']
 
 

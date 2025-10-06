@@ -222,6 +222,23 @@
             border-top-color: rgba(0, 123, 255, 0.9) !important;
         }
         
+        /* Custom marker icon styling */
+        .custom-marker-icon {
+            border-radius: 50% !important;
+            border: 3px solid #007cff !important;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3) !important;
+            object-fit: cover !important; /* Giữ tỷ lệ ảnh */
+            background: white !important;
+            padding: 2px !important;
+        }
+        
+        .custom-marker-icon img {
+            border-radius: 50% !important;
+            object-fit: cover !important; /* Quan trọng: giữ tỷ lệ ảnh */
+            width: 100% !important;
+            height: 100% !important;
+        }
+        
         /* Responsive design */
         @media (max-width: 768px) {
             .leaflet-control-layers {
@@ -235,6 +252,12 @@
             
             .layer-name {
                 font-size: 13px;
+            }
+            
+            /* Responsive marker size */
+            .custom-marker-icon {
+                width: 35px !important;
+                height: 35px !important;
             }
         }
     </style>
@@ -251,6 +274,10 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
             integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
             crossorigin=""></script>
+    
+    <!-- OSM Symbols and Symbol Picker -->
+    <script src="{% load static %}{% static 'js/osm-symbols.js' %}"></script>
+    <script src="{% load static %}{% static 'js/symbol-picker.js' %}"></script>
     
     <script>
         // Khởi tạo bản đồ
@@ -557,12 +584,13 @@
 
         // Add custom marker
         function addCustomMarker() {
-            // Create custom icon
+            // Create custom icon with flexible sizing
             const customIcon = L.icon({
                 iconUrl: '/static/images/login.jpg',
-                iconSize: [32, 32],
-                iconAnchor: [16, 32],
-                popupAnchor: [0, -32]
+                iconSize: [40, 40], // Tăng kích thước
+                iconAnchor: [20, 40], // Điều chỉnh anchor point
+                popupAnchor: [0, -40],
+                className: 'custom-marker-icon' // Thêm CSS class
             });
             
             // Create marker at specified coordinates
@@ -572,8 +600,9 @@
             const popupContent = `
                 <div class="info-popup">
                     <div class="popup-title">VDP Personalvermittlung</div>
-                    <div class="popup-address">Rheiner Str. 405, 49078 Osnabrück, Germany</div>
-                    <div class="popup-property"><strong>description:</strong> Professional recruitment and staffing services</div>
+                    <div class="popup-address">📍 Amselweg 41, 48565 Steinfurt</div>
+                    <div class="popup-property"><strong>Telefon:</strong> 0173 422 6990</div>
+                    <div class="popup-property"><strong>Website:</strong> <a href="https://www.vdp-Personal.de" target="_blank" style="color: #007cff;">www.vdp-Personal.de</a></div>
                 </div>
             `;
             

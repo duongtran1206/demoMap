@@ -14,6 +14,7 @@ urlpatterns = [
     path('logout/', views.admin_logout_view, name='admin_logout'),
     path('api/', include(router.urls)),
     path('embed/', views.map_embed_view, name='map_embed'),
+    path('symbol-demo/', views.symbol_demo_view, name='symbol_demo'),
     path('api/map-data/', csrf_exempt(views.map_data_api), name='map_data_api'),
     path('api/select-all-layers/', views.select_all_layers_api, name='select_all_layers'),
     path('api/deselect-all-layers/', views.deselect_all_layers_api, name='deselect_all_layers'),

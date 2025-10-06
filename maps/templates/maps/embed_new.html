@@ -10,6 +10,9 @@
           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
           crossorigin=""/>
     
+    <!-- Symbol Picker CSS -->
+    <link rel="stylesheet" href="{% load static %}{% static 'css/symbol-picker.css' %}">
+    
     <style>
         * {
             margin: 0;
@@ -318,6 +321,66 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
+        /* OSM Symbol marker styling */
+        .osm-symbol-marker {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+        
+        /* Custom marker with symbol overlay */
+        .custom-symbol-marker {
+            background: transparent !important;
+            border: none !important;
+        }
+
+        .custom-marker-wrapper {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #007cff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .custom-marker-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .custom-marker-symbol {
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            background: white;
+            border-radius: 50%;
+            padding: 2px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+            border: 2px solid #007cff;
+        }
+        
+        /* Legacy custom marker icon styling (fallback) */
+        .custom-marker-icon {
+            border-radius: 50% !important;
+            border: 3px solid #007cff !important;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3) !important;
+            object-fit: cover !important;
+            background: white !important;
+            padding: 2px !important;
+        }
+        
+        .custom-marker-icon img {
+            border-radius: 50% !important;
+            object-fit: cover !important;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .leaflet-control-layers {
@@ -339,6 +402,12 @@
                 font-size: 14px;
                 padding: 10px 15px;
             }
+            
+            /* Responsive marker size */
+            .custom-marker-icon {
+                width: 35px !important;
+                height: 35px !important;
+            }
         }
     </style>
 </head>
@@ -354,6 +423,10 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
             integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
             crossorigin=""></script>
+    
+    <!-- OSM Symbols and Symbol Picker -->
+    <script src="{% load static %}{% static 'js/osm-symbols.js' %}"></script>
+    <script src="{% load static %}{% static 'js/symbol-picker.js' %}"></script>
     
     <script>
         // Initialize map
@@ -390,6 +463,21 @@
         let layersData = [];
         let lastUpdateTime = null;
         let autoRefreshInterval = null;
+
+        // Create symbol-based markers
+        function createSymbolMarker(feature, latlng, symbolKey) {
+            const symbol = OSM_SYMBOLS[symbolKey] || OSM_SYMBOLS['marker'];
+            
+            const icon = L.divIcon({
+                html: createSymbolIcon(symbolKey, 20),
+                className: 'osm-symbol-marker',
+                iconSize: [24, 24],
+                iconAnchor: [12, 12],
+                popupAnchor: [0, -12]
+            });
+            
+            return L.marker(latlng, {icon: icon});
+        }
 
         // Create popup content
         function createPopupContent(feature) {
@@ -754,14 +842,17 @@
                     Object.values(mapLayers).forEach(layer => map.removeLayer(layer));
                     mapLayers = {};
                     
-                    // Create layers
+                    // Create layers with symbols
                     data.layers.forEach(layerData => {
+                        const symbolKey = layerData.symbol_key || layerData.symbol || 'marker';
+                        const symbol = OSM_SYMBOLS[symbolKey] || OSM_SYMBOLS['marker'];
+                        
                         const geoJsonLayer = L.geoJSON(layerData.geojson, {
                             style: {
-                                color: layerData.color,
+                                color: symbol.color,
                                 weight: 3,
                                 opacity: 0.8,
-                                fillColor: layerData.color,
+                                fillColor: symbol.color,
                                 fillOpacity: 0.4
                             },
                             onEachFeature: function(feature, layer) {
@@ -787,14 +878,7 @@
                                 }
                             },
                             pointToLayer: function(feature, latlng) {
-                                return L.circleMarker(latlng, {
-                                    radius: 8,
-                                    fillColor: layerData.color,
-                                    color: layerData.color,
-                                    weight: 2,
-                                    opacity: 1,
-                                    fillOpacity: 0.8
-                                });
+                                return createSymbolMarker(feature, latlng, symbolKey);
                             }
                         });
                         
@@ -930,14 +1014,21 @@
             }
         }
 
-        // Add custom marker
+        // Add custom marker with symbol overlay
         function addCustomMarker() {
-            // Create custom icon
-            const customIcon = L.icon({
-                iconUrl: '/static/images/login.jpg',
-                iconSize: [32, 32],
-                iconAnchor: [16, 32],
-                popupAnchor: [0, -32]
+            const customSymbol = OSM_SYMBOLS['commercial']; // Business symbol for VDP
+            
+            const customIcon = L.divIcon({
+                html: `<div class="custom-marker-wrapper">
+                        <img src="/static/images/login.jpg" class="custom-marker-bg">
+                        <div class="custom-marker-symbol">
+                            ${createSymbolIcon('commercial', 16)}
+                        </div>
+                       </div>`,
+                className: 'custom-symbol-marker',
+                iconSize: [50, 50],
+                iconAnchor: [25, 50],
+                popupAnchor: [0, -50]
             });
             
             // Create marker at specified coordinates
@@ -947,8 +1038,9 @@
             const popupContent = `
                 <div class="info-popup">
                     <div class="popup-title">VDP Personalvermittlung</div>
-                    <div class="popup-address">Rheiner Str. 405, 49078 Osnabrück, Germany</div>
-                    <div class="popup-property"><strong>description:</strong> Professional recruitment and staffing services</div>
+                    <div class="popup-address">📍 Amselweg 41, 48565 Steinfurt</div>
+                    <div class="popup-property"><strong>Telefon:</strong> 0173 422 6990</div>
+                    <div class="popup-property"><strong>Website:</strong> <a href="https://www.vdp-Personal.de" target="_blank" style="color: #007cff;">www.vdp-Personal.de</a></div>
                 </div>
             `;
             

@@ -131,6 +131,11 @@ def map_embed_view(request):
     return render(request, 'maps/embed_new.html')
 
 
+def symbol_demo_view(request):
+    """View for displaying OSM symbol picker demo"""
+    return render(request, 'maps/symbol_demo.html')
+
+
 def map_data_api(request):
     """API returns map data for frontend - public access for embed"""
     import os
@@ -231,6 +236,8 @@ def map_data_api(request):
                         'id': layer.id,
                         'name': layer.geojson_file.name,
                         'color': layer.geojson_file.color,
+                        'symbol': layer.geojson_file.symbol,
+                        'symbol_key': layer.geojson_file.symbol,
                         'is_visible': layer.is_visible,
                         'feature_count': layer.geojson_file.feature_count,
                         'features': features_detail,

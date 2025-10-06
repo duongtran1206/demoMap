@@ -6,6 +6,7 @@
     <title>GeoMap Admin Dashboard</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/symbol-picker.css' %}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <meta name="csrf-token" content="{% csrf_token %}">
 </head>
@@ -246,8 +247,10 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="file-color">Display Color:</label>
-                        <input type="color" id="file-color" name="color" value="#FF0000">
+                        <label for="file-symbol">Map Symbol:</label>
+                        <div id="file-symbol-picker"></div>
+                        <input type="hidden" id="file-symbol" name="symbol" value="marker">
+                        <input type="hidden" id="file-color" name="color" value="#007cff">
                     </div>
                     
                     <div class="form-group" id="file-upload-group">
@@ -306,6 +309,48 @@
             
             // Trigger file upload
             window.geoManager.handleFileUpload();
+        });
+    </script>
+    
+    <!-- OSM Symbol Picker Scripts -->
+    <script src="{% static 'js/osm-symbols.js' %}"></script>
+    <script src="{% static 'js/symbol-picker.js' %}"></script>
+    
+    <script>
+        // Initialize symbol picker when document is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing symbol picker...');
+            console.log('OSM_SYMBOLS available:', typeof OSM_SYMBOLS !== 'undefined');
+            console.log('Container exists:', !!document.getElementById('file-symbol-picker'));
+            
+            // Wait a bit for all scripts to load
+            setTimeout(function() {
+                try {
+                    // Initialize symbol picker for the modal
+                    window.symbolPicker = new OSMSymbolPicker('file-symbol-picker', {
+                        defaultSymbol: 'marker',
+                        showLabel: false,
+                        onSymbolChange: function(symbolKey, symbolData) {
+                            console.log('🎯 Symbol changed callback triggered:', symbolKey, symbolData);
+                            
+                            // Update hidden inputs
+                            const symbolInput = document.getElementById('file-symbol');
+                            const colorInput = document.getElementById('file-color');
+                            
+                            if (symbolInput) symbolInput.value = symbolKey;
+                            if (colorInput) colorInput.value = symbolData.color;
+                            
+                            console.log('✅ Updated form values:', {
+                                symbol: symbolKey,
+                                color: symbolData.color
+                            });
+                        }
+                    });
+                    console.log('✅ Symbol picker initialized successfully');
+                } catch (error) {
+                    console.error('❌ Error initializing symbol picker:', error);
+                }
+            }, 300);
         });
     </script>
 </body>
