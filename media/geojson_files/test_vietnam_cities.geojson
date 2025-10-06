@@ -1,0 +1,41 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ho Chi Minh City",
+        "address": "Ho Chi Minh City, Vietnam",
+        "description": "Largest city in Vietnam"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [106.6297, 10.8231]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hanoi",
+        "address": "Hanoi, Vietnam", 
+        "description": "Capital city of Vietnam"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8542, 21.0285]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Da Nang",
+        "address": "Da Nang, Vietnam",
+        "description": "Central coastal city"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [108.2022, 16.0544]
+      }
+    }
+  ]
+}

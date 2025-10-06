@@ -30,7 +30,7 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filename': '/home/ubuntu/projects/demoMap/django.log',
+            'filename': '/home/ubuntu/demoMap/django.log',
         },
     },
     'root': {
