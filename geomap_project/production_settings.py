@@ -8,7 +8,21 @@ ALLOWED_HOSTS = ['15.152.37.134', 'localhost', '127.0.0.1']
 # Security settings
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
-X_FRAME_OPTIONS = 'DENY'
+X_FRAME_OPTIONS = 'ALLOWALL'
+
+# CORS settings for production
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://15.152.37.134",
+    "https://15.152.37.134",
+]
+
+# Additional CSRF settings
+CSRF_TRUSTED_ORIGINS = [
+    'http://15.152.37.134',
+    'https://15.152.37.134',
+]
 
 # Static files for production
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

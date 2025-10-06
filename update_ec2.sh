@@ -17,6 +17,11 @@ python manage.py migrate --settings=geomap_project.production_settings
 # Collect static files
 python manage.py collectstatic --noinput --settings=geomap_project.production_settings
 
+# Set proper permissions
+sudo chown -R ubuntu:www-data /home/ubuntu/demoMap/
+sudo chmod -R 755 /home/ubuntu/demoMap/
+sudo chmod -R 755 /home/ubuntu/demoMap/staticfiles/
+
 # Restart services
 sudo systemctl restart demomap
 sudo systemctl restart nginx

@@ -55,22 +55,40 @@ Restart=always
 WantedBy=multi-user.target
 EOF
 
+# Set proper permissions for static files
+sudo chown -R ubuntu:www-data /home/ubuntu/demoMap/
+sudo chmod -R 755 /home/ubuntu/demoMap/
+sudo chmod -R 755 /home/ubuntu/demoMap/staticfiles/
+
 # Create nginx configuration
 sudo tee /etc/nginx/sites-available/demomap > /dev/null <<EOF
 server {
     listen 80;
     server_name 15.152.37.134;
+    client_max_body_size 100M;
 
-    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /favicon.ico { 
+        access_log off; 
+        log_not_found off; 
+    }
     
-    location /static/ {
-        root /home/ubuntu/demoMap;
+    location /staticfiles/ {
+        alias /home/ubuntu/demoMap/staticfiles/;
         expires 30d;
         add_header Cache-Control "public, immutable";
+        add_header Access-Control-Allow-Origin "*";
+    }
+
+    location /static/ {
+        alias /home/ubuntu/demoMap/staticfiles/;
+        expires 30d;
+        add_header Cache-Control "public, immutable";
+        add_header Access-Control-Allow-Origin "*";
     }
 
     location /media/ {
-        root /home/ubuntu/demoMap;
+        alias /home/ubuntu/demoMap/media/;
+        add_header Access-Control-Allow-Origin "*";
     }
 
     location / {
@@ -80,6 +98,8 @@ server {
         proxy_set_header X-Real-IP \$remote_addr;
         proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto \$scheme;
+        add_header Cross-Origin-Opener-Policy "same-origin-allow-popups";
+        add_header Cross-Origin-Embedder-Policy "require-corp";
     }
 }
 EOF
