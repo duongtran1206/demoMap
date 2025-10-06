@@ -930,9 +930,43 @@
             }
         }
 
+        // Add custom marker
+        function addCustomMarker() {
+            // Create custom icon
+            const customIcon = L.icon({
+                iconUrl: '/static/images/login.jpg',
+                iconSize: [32, 32],
+                iconAnchor: [16, 32],
+                popupAnchor: [0, -32]
+            });
+            
+            // Create marker at specified coordinates
+            const marker = L.marker([52.118361, 7.4039243], {icon: customIcon});
+            
+            // Create popup content
+            const popupContent = `
+                <div class="info-popup">
+                    <div class="popup-title">VDP Personalvermittlung</div>
+                    <div class="popup-address">Rheiner Str. 405, 49078 Osnabrück, Germany</div>
+                    <div class="popup-property"><strong>description:</strong> Professional recruitment and staffing services</div>
+                </div>
+            `;
+            
+            marker.bindPopup(popupContent);
+            marker.addTo(map);
+            
+            // Add tooltip
+            marker.bindTooltip('VDP Personalvermittlung', {
+                permanent: false,
+                direction: 'top',
+                className: 'custom-tooltip'
+            });
+        }
+
         // Initialize when DOM is ready
         document.addEventListener('DOMContentLoaded', function() {
             loadMapDataWithTracking();
+            addCustomMarker();
             startAutoRefresh();
         });
 
