@@ -3,7 +3,7 @@ import os
 
 # Production settings
 DEBUG = False
-ALLOWED_HOSTS = ['15.152.37.134', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['15.152.37.134', 'ec2-15-152-37-134.ap-northeast-3.compute.amazonaws.com', 'localhost', '127.0.0.1', '*']
 
 # Security settings
 SECURE_BROWSER_XSS_FILTER = True
@@ -27,6 +27,11 @@ CSRF_TRUSTED_ORIGINS = [
 # Static files for production
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Static files directories
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 # Database - use file-based SQLite for production
 DATABASES = {
