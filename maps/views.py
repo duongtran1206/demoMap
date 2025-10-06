@@ -292,20 +292,15 @@ def admin_dashboard_view(request):
 
 @csrf_exempt
 def select_all_layers_api(request):
-    """API để chọn tất cả layers - chỉ admin"""
-    # Check if user is authenticated and is admin
-    if not request.user.is_authenticated or not (request.user.is_superuser or request.user.is_staff):
-        return JsonResponse({
-            'error': 'Authentication required - Admin access only', 
-            'status': 'error'
-        }, status=403)
-        
+    """API to select all layers - public access for embed map"""
     if request.method == 'POST':
         try:
-            MapLayer.objects.all().update(is_visible=True)
+            # Update all map layers to be visible
+            updated_count = MapLayer.objects.all().update(is_visible=True)
             return JsonResponse({
-                'message': 'Selected all layers', 
-                'status': 'success'
+                'message': f'Selected all layers ({updated_count} layers updated)', 
+                'status': 'success',
+                'updated_count': updated_count
             })
         except Exception as e:
             return JsonResponse({
@@ -317,20 +312,15 @@ def select_all_layers_api(request):
 
 @csrf_exempt
 def deselect_all_layers_api(request):
-    """API để bỏ chọn tất cả layers - chỉ admin"""
-    # Check if user is authenticated and is admin
-    if not request.user.is_authenticated or not (request.user.is_superuser or request.user.is_staff):
-        return JsonResponse({
-            'error': 'Authentication required - Admin access only', 
-            'status': 'error'
-        }, status=403)
-        
+    """API to deselect all layers - public access for embed map"""
     if request.method == 'POST':
         try:
-            MapLayer.objects.all().update(is_visible=False)
+            # Update all map layers to be hidden
+            updated_count = MapLayer.objects.all().update(is_visible=False)
             return JsonResponse({
-                'message': 'Deselected all layers', 
-                'status': 'success'
+                'message': f'Deselected all layers ({updated_count} layers updated)', 
+                'status': 'success',
+                'updated_count': updated_count
             })
         except Exception as e:
             return JsonResponse({

@@ -611,6 +611,14 @@
         async function selectAllLayers() {
             try {
                 console.log('Selecting all layers...');
+                
+                // Show loading state
+                const selectBtn = document.querySelector('.select-all-btn');
+                if (selectBtn) {
+                    selectBtn.disabled = true;
+                    selectBtn.textContent = 'Selecting...';
+                }
+                
                 const response = await fetch('/api/select-all-layers/', {
                     method: 'POST',
                     headers: {
@@ -624,31 +632,25 @@
                     const result = await response.json();
                     console.log('Select all result:', result);
                     
-                    // Update UI
-                    document.querySelectorAll('.layer-checkbox').forEach(cb => {
-                        cb.checked = true;
-                        console.log('Checkbox checked:', cb);
-                    });
-                    document.querySelectorAll('.layer-header').forEach(item => {
-                        item.classList.add('active');
-                        console.log('Header activated:', item);
-                    });
-                    
-                    // Add all layers to map
-                    Object.values(mapLayers).forEach(layer => {
-                        if (!map.hasLayer(layer)) {
-                            map.addLayer(layer);
-                            console.log('Layer added to map:', layer);
-                        }
-                    });
+                    // Reload map data to get updated visibility states
+                    await loadMapData();
                     
                     console.log('All layers selected successfully');
                 } else {
                     const errorText = await response.text();
                     console.error('Failed to select all layers:', response.status, errorText);
+                    alert('Failed to select all layers. Please try again.');
                 }
             } catch (error) {
                 console.error('Error selecting all layers:', error);
+                alert('Error selecting all layers. Please check your connection.');
+            } finally {
+                // Reset button state
+                const selectBtn = document.querySelector('.select-all-btn');
+                if (selectBtn) {
+                    selectBtn.disabled = false;
+                    selectBtn.textContent = 'Select All';
+                }
             }
         }
 
@@ -656,6 +658,14 @@
         async function deselectAllLayers() {
             try {
                 console.log('Deselecting all layers...');
+                
+                // Show loading state
+                const deselectBtn = document.querySelector('.deselect-all-btn');
+                if (deselectBtn) {
+                    deselectBtn.disabled = true;
+                    deselectBtn.textContent = 'Deselecting...';
+                }
+                
                 const response = await fetch('/api/deselect-all-layers/', {
                     method: 'POST',
                     headers: {
@@ -669,31 +679,25 @@
                     const result = await response.json();
                     console.log('Deselect all result:', result);
                     
-                    // Update UI
-                    document.querySelectorAll('.layer-checkbox').forEach(cb => {
-                        cb.checked = false;
-                        console.log('Checkbox unchecked:', cb);
-                    });
-                    document.querySelectorAll('.layer-header').forEach(item => {
-                        item.classList.remove('active');
-                        console.log('Header deactivated:', item);
-                    });
-                    
-                    // Remove all layers from map
-                    Object.values(mapLayers).forEach(layer => {
-                        if (map.hasLayer(layer)) {
-                            map.removeLayer(layer);
-                            console.log('Layer removed from map:', layer);
-                        }
-                    });
+                    // Reload map data to get updated visibility states
+                    await loadMapData();
                     
                     console.log('All layers deselected successfully');
                 } else {
                     const errorText = await response.text();
                     console.error('Failed to deselect all layers:', response.status, errorText);
+                    alert('Failed to deselect all layers. Please try again.');
                 }
             } catch (error) {
                 console.error('Error deselecting all layers:', error);
+                alert('Error deselecting all layers. Please check your connection.');
+            } finally {
+                // Reset button state
+                const deselectBtn = document.querySelector('.deselect-all-btn');
+                if (deselectBtn) {
+                    deselectBtn.disabled = false;
+                    deselectBtn.textContent = 'Deselect All';
+                }
             }
         }
 
