@@ -44,11 +44,26 @@ sudo ./update_ec2.sh
 ```
 
 ## Troubleshooting
-Nếu có lỗi, kiểm tra logs:
+
+### Nếu gặp lỗi 403 Forbidden với static files:
+```bash
+cd /home/ubuntu/demoMap
+chmod +x debug_ec2.sh
+sudo ./debug_ec2.sh
+```
+
+### Kiểm tra logs chi tiết:
 ```bash
 sudo journalctl -u demomap -f
 sudo tail -f /var/log/nginx/error.log
 sudo tail -f /home/ubuntu/demoMap/django.log
+```
+
+### Sửa permissions thủ công nếu cần:
+```bash
+sudo chown -R ubuntu:www-data /home/ubuntu/demoMap/
+sudo chmod -R 755 /home/ubuntu/demoMap/
+sudo chmod -R 755 /home/ubuntu/demoMap/staticfiles/
 ```
 
 ## Restart services nếu cần
