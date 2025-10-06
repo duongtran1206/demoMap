@@ -14,6 +14,11 @@ X_FRAME_OPTIONS = 'DENY'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+# Static files directories
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
 # Database - use file-based SQLite for production
 DATABASES = {
     'default': {

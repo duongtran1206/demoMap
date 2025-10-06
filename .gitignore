@@ -21,13 +21,13 @@
 # *.egg
 # MANIFEST
 
-# # Django
-# # *.log
-# # local_settings.py
-# # db.sqlite3
-# # db.sqlite3-journal
-# # /static/
-# # /media/
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+# /static/  # Keep static files in git for deployment
+# /media/
 
 # # Virtual environments
 # .env
