@@ -5,6 +5,9 @@ echo "Updating Django GeoMap on EC2..."
 
 cd /home/ubuntu/demoMap
 
+# Remove staticfiles to avoid merge conflicts
+sudo rm -rf staticfiles/
+
 # Pull latest changes
 git pull origin main
 
