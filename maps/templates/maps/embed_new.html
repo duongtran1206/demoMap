@@ -450,18 +450,10 @@
                     }
                 }
                 
-                const excludeFields = [...nameFields, ...addressFields];
-                const otherProperties = Object.keys(feature.properties).filter(key => 
-                    !excludeFields.includes(key) && 
-                    feature.properties[key] !== null && 
-                    feature.properties[key] !== ''
-                );
-                
-                if (otherProperties.length > 0) {
+                // Only show description field
+                if (feature.properties.description && feature.properties.description !== null && feature.properties.description !== '') {
                     content += '<hr style="margin: 10px 0; border: 1px solid #eee;">';
-                    otherProperties.forEach(key => {
-                        content += `<div class="popup-property"><strong>${key}:</strong> ${feature.properties[key]}</div>`;
-                    });
+                    content += `<div class="popup-property"><strong>description:</strong> ${feature.properties.description}</div>`;
                 }
             }
             
