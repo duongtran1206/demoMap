@@ -12,6 +12,35 @@ from .models import GeoJSONFile, MapLayer, FeatureVisibility
 from .serializers import GeoJSONFileSerializer, MapLayerSerializer
 from django.core.management import execute_from_command_line
 from django.contrib.auth.models import User
+from django.core.files.base import ContentFile
+import json
+import io
+
+
+def convert_custom_json_to_geojson(custom_data):
+    """Convert custom JSON format to GeoJSON FeatureCollection"""
+    if 'locations' not in custom_data:
+        return custom_data  # Already GeoJSON
+    
+    features = []
+    for location in custom_data['locations']:
+        feature = {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [location['longitude'], location['latitude']]
+            },
+            "properties": {
+                "name": location['name'],
+                "display_name": location.get('display_name', location['name'])
+            }
+        }
+        features.append(feature)
+    
+    return {
+        "type": "FeatureCollection",
+        "features": features
+    }
 
 
 class GeoJSONFileViewSet(viewsets.ModelViewSet):
@@ -21,21 +50,38 @@ class GeoJSONFileViewSet(viewsets.ModelViewSet):
     
     def create(self, request, *args, **kwargs):
         """Custom create method to handle file upload"""
+        # Handle file upload first if present
+        processed_file = None
+        if 'file' in request.FILES:
+            uploaded_file = request.FILES['file']
+            
+            # Read and parse the uploaded file
+            file_content = uploaded_file.read().decode('utf-8')
+            try:
+                custom_data = json.loads(file_content)
+                geojson_data = convert_custom_json_to_geojson(custom_data)
+                
+                # Create a ContentFile with GeoJSON content
+                geojson_content = json.dumps(geojson_data, ensure_ascii=False, indent=2)
+                processed_file = ContentFile(geojson_content.encode('utf-8'), name=uploaded_file.name)
+            except json.JSONDecodeError:
+                # If not valid JSON, use original file
+                processed_file = uploaded_file
+        
         # Ensure is_active defaults to True if not provided
         data = request.data.copy()
         if 'is_active' not in data:
             data['is_active'] = True
+        
+        # If we processed the file, replace it in the request data
+        if processed_file:
+            data['file'] = processed_file
         
         serializer = self.get_serializer(data=data)
         serializer.is_valid(raise_exception=True)
         
         # Create the instance
         instance = serializer.save()
-        
-        # Handle file upload if present
-        if 'file' in request.FILES:
-            instance.file = request.FILES['file']
-            instance.save()
         
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
@@ -44,15 +90,34 @@ class GeoJSONFileViewSet(viewsets.ModelViewSet):
         """Custom update method to handle file upload"""
         partial = kwargs.pop('partial', False)
         instance = self.get_object()
+        
+        # Handle file upload first if present
+        processed_file = None
+        if 'file' in request.FILES:
+            uploaded_file = request.FILES['file']
+            
+            # Read and parse the uploaded file
+            file_content = uploaded_file.read().decode('utf-8')
+            try:
+                custom_data = json.loads(file_content)
+                geojson_data = convert_custom_json_to_geojson(custom_data)
+                
+                # Create a ContentFile with GeoJSON content
+                geojson_content = json.dumps(geojson_data, ensure_ascii=False, indent=2)
+                processed_file = ContentFile(geojson_content.encode('utf-8'), name=uploaded_file.name)
+            except json.JSONDecodeError:
+                # If not valid JSON, use original file
+                processed_file = uploaded_file
+        
         serializer = self.get_serializer(instance, data=request.data, partial=partial)
         serializer.is_valid(raise_exception=True)
         
         # Save the instance
         instance = serializer.save()
         
-        # Handle file upload if present
-        if 'file' in request.FILES:
-            instance.file = request.FILES['file']
+        # If we processed the file, update it
+        if processed_file:
+            instance.file = processed_file
             instance.save()
 
         if getattr(instance, '_prefetched_objects_cache', None):
@@ -187,7 +252,7 @@ def map_data_api(request):
                     # Extract feature name and address
                     props = feature.get('properties', {})
                     name_fields = ['name', 'Name', 'NAME', 'ten', 'tên', 'title', 'Title']
-                    address_fields = ['address', 'Address', 'ADDRESS', 'dia_chi', 'địa chỉ', 'location', 'Location']
+                    address_fields = ['display_name', 'displayName', 'address', 'Address', 'ADDRESS', 'dia_chi', 'địa chỉ', 'location', 'Location']
                     
                     name = None
                     address = None

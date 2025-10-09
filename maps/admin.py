@@ -1,6 +1,34 @@
 from django.contrib import admin
 from django.utils.html import format_html
 from .models import GeoJSONFile, MapLayer
+import json
+import io
+
+
+def convert_custom_json_to_geojson(custom_data):
+    """Convert custom JSON format to GeoJSON FeatureCollection"""
+    if 'locations' not in custom_data:
+        return custom_data  # Already GeoJSON
+    
+    features = []
+    for location in custom_data['locations']:
+        feature = {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [location['longitude'], location['latitude']]
+            },
+            "properties": {
+                "name": location['name'],
+                "display_name": location.get('display_name', location['name'])
+            }
+        }
+        features.append(feature)
+    
+    return {
+        "type": "FeatureCollection",
+        "features": features
+    }
 
 
 @admin.register(GeoJSONFile)
@@ -23,6 +51,27 @@ class GeoJSONFileAdmin(admin.ModelAdmin):
             'classes': ('collapse',)
         }),
     )
+    
+    def save_model(self, request, obj, form, change):
+        """Override save_model to handle custom JSON conversion"""
+        if obj.file and not change:  # Only on creation
+            try:
+                # Read and parse the uploaded file
+                file_content = obj.file.read().decode('utf-8')
+                custom_data = json.loads(file_content)
+                geojson_data = convert_custom_json_to_geojson(custom_data)
+                
+                # Create a new file-like object with GeoJSON content
+                geojson_content = json.dumps(geojson_data, ensure_ascii=False, indent=2)
+                geojson_file = io.BytesIO(geojson_content.encode('utf-8'))
+                geojson_file.name = obj.file.name  # Keep original filename
+                
+                obj.file = geojson_file
+            except json.JSONDecodeError:
+                # If not valid JSON, save as is (assuming it's already GeoJSON)
+                pass
+        
+        super().save_model(request, obj, form, change)
     
     def feature_count_display(self, obj):
         count = obj.feature_count

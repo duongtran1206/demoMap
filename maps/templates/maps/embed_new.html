@@ -353,7 +353,7 @@
             left: 0;
         }
 
-        .custom-marker-symbol {
+        /* .custom-marker-symbol {
             position: absolute;
             bottom: -2px;
             right: -2px;
@@ -362,7 +362,7 @@
             padding: 2px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.4);
             border: 2px solid #007cff;
-        }
+        } */
         
         /* Legacy custom marker icon styling (fallback) */
         .custom-marker-icon {
@@ -485,7 +485,7 @@
             
             if (feature.properties) {
                 const nameFields = ['name', 'Name', 'NAME', 'ten', 'tên', 'title', 'Title'];
-                const addressFields = ['address', 'Address', 'ADDRESS', 'dia_chi', 'địa chỉ', 'location', 'Location'];
+                const addressFields = ['display_name', 'displayName', 'address', 'Address', 'ADDRESS', 'dia_chi', 'địa chỉ', 'location', 'Location'];
                 
                 let name = null;
                 let address = null;

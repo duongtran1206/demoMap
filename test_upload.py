@@ -6,7 +6,7 @@ def test_upload():
     # Login first
     session = requests.Session()
     
-    # Get CSRF token
+    # Get CSRF token from login page
     login_page = session.get('http://127.0.0.1:8000/login/')
     print(f"Login page status: {login_page.status_code}")
     
@@ -20,11 +20,15 @@ def test_upload():
     login_response = session.post('http://127.0.0.1:8000/login/', data=login_data)
     print(f"Login response status: {login_response.status_code}")
     
+    if login_response.status_code != 200:
+        print("Login failed")
+        return
+    
     # Test upload
-    files = {'file': open('test_vietnam_cities.geojson', 'rb')}
+    files = {'file': open('test_custom_locations.json', 'rb')}
     data = {
-        'name': 'Vietnam Cities Test',
-        'description': 'Test upload via API',
+        'name': 'Custom Locations Test',
+        'description': 'Test upload via API with custom JSON format',
         'is_active': 'true'
     }
     

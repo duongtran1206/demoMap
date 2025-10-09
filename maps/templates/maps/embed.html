@@ -320,26 +320,10 @@
             
             if (feature.properties) {
                 const nameFields = ['name', 'Name', 'NAME', 'ten', 'tên', 'title', 'Title'];
-                const addressFields = ['address', 'Address', 'ADDRESS', 'dia_chi', 'địa chỉ', 'location', 'Location'];
+                const addressFields = ['display_name', 'displayName', 'address', 'Address', 'ADDRESS', 'dia_chi', 'địa chỉ', 'location', 'Location'];
                 
-                let name = null;
-                let address = null;
-                
-                // Tìm tên
-                for (let field of nameFields) {
-                    if (feature.properties[field]) {
-                        name = feature.properties[field];
-                        break;
-                    }
-                }
-                
-                // Tìm địa chỉ
-                for (let field of addressFields) {
-                    if (feature.properties[field]) {
-                        address = feature.properties[field];
-                        break;
-                    }
-                }
+                let name = feature.properties.name || feature.properties.Name || feature.properties.NAME || feature.properties.ten || feature.properties.tên || feature.properties.title || feature.properties.Title;
+                let address = feature.properties.display_name || feature.properties.displayName || feature.properties.address || feature.properties.Address || feature.properties.ADDRESS || feature.properties.dia_chi || feature.properties['địa chỉ'] || feature.properties.location || feature.properties.Location || name;
                 
                 if (name) {
                     content += `<div class="popup-title">${name}</div>`;
