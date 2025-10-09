@@ -31,9 +31,11 @@ sudo rm -f /etc/nginx/sites-enabled/demomap
 
 # Reset nginx to default
 echo "Resetting nginx to default configuration..."
-sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.backup 2>/dev/null || true
-sudo rm -f /etc/nginx/sites-enabled/default
-sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+if [ -d "/etc/nginx/sites-available" ] && [ -d "/etc/nginx/sites-enabled" ]; then
+    sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.backup 2>/dev/null || true
+    sudo rm -f /etc/nginx/sites-enabled/default
+    sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/ 2>/dev/null || true
+fi
 
 # Reload systemd daemon
 echo "Reloading systemd daemon..."

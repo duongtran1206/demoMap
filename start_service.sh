@@ -23,6 +23,14 @@ if [ ! -d "$VENV_DIR" ]; then
     python3 -m venv $VENV_DIR
 fi
 
+# Check if virtual environment was created successfully
+if [ ! -f "$VENV_DIR/bin/activate" ]; then
+    echo "Error: Failed to create virtual environment. Installing python3-venv..."
+    sudo apt update
+    sudo apt install -y python3-venv
+    python3 -m venv $VENV_DIR
+fi
+
 # Activate virtual environment and install/update requirements
 echo "Installing/updating Python packages..."
 source $VENV_DIR/bin/activate
@@ -31,11 +39,11 @@ pip install -r requirements.txt
 
 # Run Django migrations
 echo "Running Django migrations..."
-python manage.py migrate
+python3 manage.py migrate
 
 # Collect static files
 echo "Collecting static files..."
-python manage.py collectstatic --noinput
+python3 manage.py collectstatic --noinput
 
 # Create systemd service file
 echo "Creating systemd service..."
@@ -58,8 +66,18 @@ RestartSec=5
 WantedBy=multi-user.target
 EOF
 
-# Create nginx configuration
-echo "Creating nginx configuration..."
+# Check if nginx is installed
+echo "Checking nginx installation..."
+if ! command -v nginx &> /dev/null; then
+    echo "Installing nginx..."
+    sudo apt update
+    sudo apt install -y nginx
+fi
+
+# Create nginx directories if they don't exist
+echo "Creating nginx directories..."
+sudo mkdir -p /etc/nginx/sites-available
+sudo mkdir -p /etc/nginx/sites-enabled
 sudo tee /etc/nginx/sites-available/demomap > /dev/null <<EOF
 server {
     listen 80;
