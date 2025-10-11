@@ -507,10 +507,58 @@
         .headquarters-tooltip::before {
             border-top-color: rgba(255, 107, 53, 0.9) !important;
         }
+
+        /* Toggle Layer Control Button */
+        .layer-control-toggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: #007bff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .layer-control-toggle:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .layer-control-toggle.hidden {
+            background: rgba(0, 123, 255, 0.9);
+            color: white;
+            border-color: #0056b3;
+        }
+
+        .toggle-icon {
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .layer-control-toggle.hidden .toggle-icon {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 <body>
     <div id="map"></div>
+    
+    <!-- Toggle Layer Control Button -->
+    <button id="layerControlToggle" class="layer-control-toggle">
+        <span class="toggle-icon">⚙️</span>
+        <span id="toggleText">Hide Layers</span>
+    </button>
     
     <div id="loading" class="loading-spinner">
         <div class="spinner"></div>
@@ -1232,6 +1280,12 @@
             loadMapDataWithTracking();
             addCustomMarker();
             startAutoRefresh();
+            
+            // Add toggle button listener
+            const toggleBtn = document.getElementById('layerControlToggle');
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', toggleLayerControl);
+            }
         });
 
         // Stop refresh when page is hidden (performance optimization)
@@ -1259,12 +1313,33 @@
             }
         });
         
+        // Toggle Layer Control visibility
+        function toggleLayerControl() {
+            const toggleBtn = document.getElementById('layerControlToggle');
+            const toggleText = document.getElementById('toggleText');
+            
+            if (customLayerControl) {
+                if (customLayerControl._container.style.display === 'none') {
+                    // Show layer control
+                    customLayerControl._container.style.display = 'block';
+                    toggleBtn.classList.remove('hidden');
+                    toggleText.textContent = 'Hide Layers';
+                } else {
+                    // Hide layer control
+                    customLayerControl._container.style.display = 'none';
+                    toggleBtn.classList.add('hidden');
+                    toggleText.textContent = 'Show Layers';
+                }
+            }
+        }
+        
         // Export functions to global scope
         window.toggleLayer = toggleLayer;
         window.toggleFeature = toggleFeature;
         window.toggleFeaturesList = toggleFeaturesList;
         window.selectAllLayers = selectAllLayers;
         window.deselectAllLayers = deselectAllLayers;
+        window.toggleLayerControl = toggleLayerControl;
     </script>
 </body>
 </html>
