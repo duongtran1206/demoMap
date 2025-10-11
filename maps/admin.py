@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import GeoJSONFile, MapLayer
+from django.db import models
+from .models import GeoJSONFile, MapLayer, CustomSymbol
 import json
 import io
 
@@ -33,18 +34,18 @@ def convert_custom_json_to_geojson(custom_data):
 
 @admin.register(GeoJSONFile)
 class GeoJSONFileAdmin(admin.ModelAdmin):
-    list_display = ['name', 'feature_count_display', 'color_display', 'is_active', 'created_at']
-    list_filter = ['is_active', 'created_at']
+    list_display = ['name', 'map_type', 'feature_count_display', 'color_display', 'symbol_display', 'is_active', 'created_at']
+    list_filter = ['is_active', 'map_type', 'custom_symbol', 'created_at']
     search_fields = ['name', 'description']
     list_editable = ['is_active']
     readonly_fields = ['feature_count_display', 'created_at', 'updated_at']
     
     fieldsets = (
         ('Thông tin cơ bản', {
-            'fields': ('name', 'description', 'file')
+            'fields': ('name', 'description', 'file', 'map_type')
         }),
         ('Cài đặt hiển thị', {
-            'fields': ('color', 'is_active')
+            'fields': ('color', 'custom_symbol', 'is_active')
         }),
         ('Thông tin bổ sung', {
             'fields': ('feature_count_display', 'created_at', 'updated_at'),
@@ -87,6 +88,15 @@ class GeoJSONFileAdmin(admin.ModelAdmin):
         )
     color_display.short_description = 'Màu sắc'
 
+    def symbol_display(self, obj):
+        if obj.custom_symbol and obj.custom_symbol.image:
+            return format_html('<img src="{}" style="max-width: 30px; max-height: 30px; border-radius: 3px;" title="{}" />', 
+                             obj.custom_symbol.image.url, obj.custom_symbol.name)
+        elif obj.symbol:
+            return format_html('<span style="font-size: 16px;">📍</span> <small>({})</small>', obj.symbol)
+        return "No symbol"
+    symbol_display.short_description = "Symbol"
+
 
 @admin.register(MapLayer)
 class MapLayerAdmin(admin.ModelAdmin):
@@ -94,3 +104,30 @@ class MapLayerAdmin(admin.ModelAdmin):
     list_filter = ['is_visible']
     list_editable = ['is_visible', 'order']
     ordering = ['order']
+
+@admin.register(CustomSymbol)
+class CustomSymbolAdmin(admin.ModelAdmin):
+    list_display = ['name', 'category', 'image_preview', 'is_active', 'created_at']
+    list_filter = ['is_active', 'category', 'created_at']
+    search_fields = ['name', 'category']
+    list_editable = ['is_active']
+    readonly_fields = ['image_preview', 'created_at', 'updated_at']
+
+    fieldsets = (
+        ('Thông tin cơ bản', {
+            'fields': ('name', 'image', 'category')
+        }),
+        ('Cài đặt', {
+            'fields': ('is_active',)
+        }),
+        ('Thông tin bổ sung', {
+            'fields': ('image_preview', 'created_at', 'updated_at'),
+            'classes': ('collapse',)
+        }),
+    )
+
+    def image_preview(self, obj):
+        if obj.image:
+            return format_html('<img src="{}" style="max-width: 50px; max-height: 50px; border-radius: 5px;" />', obj.image.url)
+        return "No image"
+    image_preview.short_description = "Preview"

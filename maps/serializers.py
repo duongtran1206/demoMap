@@ -1,15 +1,31 @@
 from rest_framework import serializers
-from .models import GeoJSONFile, MapLayer, FeatureVisibility
+from .models import GeoJSONFile, MapLayer, FeatureVisibility, CustomSymbol
+
+
+class CustomSymbolSerializer(serializers.ModelSerializer):
+    image_url = serializers.ReadOnlyField()
+    
+    class Meta:
+        model = CustomSymbol
+        fields = ['id', 'name', 'image_url', 'category', 'is_active']
 
 
 class GeoJSONFileSerializer(serializers.ModelSerializer):
     feature_count = serializers.ReadOnlyField()
     geojson_data = serializers.ReadOnlyField()
+    custom_symbol = serializers.PrimaryKeyRelatedField(
+        queryset=CustomSymbol.objects.all(),
+        required=False,
+        allow_null=True
+    )
     
     class Meta:
         model = GeoJSONFile
-        fields = ['id', 'name', 'description', 'file', 'color', 'symbol', 'is_active', 
-                 'feature_count', 'geojson_data', 'created_at']
+        fields = ['id', 'name', 'description', 'file', 'color', 'symbol', 'custom_symbol', 'is_active', 
+                 'map_type', 'feature_count', 'geojson_data', 'created_at']
+        extra_kwargs = {
+            'file': {'required': False}
+        }
 
 
 class FeatureVisibilitySerializer(serializers.ModelSerializer):

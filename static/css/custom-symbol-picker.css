@@ -1,0 +1,196 @@
+/* Custom Symbol Picker Styles */
+.custom-symbol-picker {
+    position: relative;
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.custom-symbol-picker-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+    font-size: 14px;
+}
+
+.custom-symbol-picker-header {
+    cursor: pointer;
+    user-select: none;
+}
+
+.selected-custom-symbol-display {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    transition: border-color 0.2s ease;
+}
+
+.selected-custom-symbol-display:hover {
+    border-color: #007bff;
+}
+
+.selected-custom-symbol-icon {
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selected-custom-symbol-name {
+    flex: 1;
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dropdown-arrow {
+    margin-left: 8px;
+    color: #666;
+    font-size: 12px;
+    transition: transform 0.2s ease;
+}
+
+.custom-symbol-picker-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    z-index: 1000;
+    max-height: 400px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-symbol-search {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.custom-symbol-search-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+}
+
+.custom-symbol-search-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+.custom-symbol-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 8px;
+    padding: 12px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.custom-symbol-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #f8f9fa;
+}
+
+.custom-symbol-option:hover {
+    background: #e9ecef;
+    border-color: #007bff;
+}
+
+.custom-symbol-option.selected {
+    background: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+
+.custom-symbol-option.selected .custom-symbol-name {
+    color: white;
+}
+
+.custom-symbol-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.custom-symbol-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.custom-symbol-name {
+    font-size: 11px;
+    text-align: center;
+    color: #666;
+    line-height: 1.2;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .custom-symbol-grid {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+        gap: 6px;
+        padding: 8px;
+    }
+
+    .custom-symbol-option {
+        padding: 6px;
+    }
+
+    .custom-symbol-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .custom-symbol-name {
+        font-size: 10px;
+    }
+}
+
+/* Scrollbar styling */
+.custom-symbol-grid::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-symbol-grid::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.custom-symbol-grid::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.custom-symbol-grid::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}

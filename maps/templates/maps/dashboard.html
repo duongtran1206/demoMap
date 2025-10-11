@@ -6,7 +6,7 @@
     <title>GeoMap Admin Dashboard</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
-    <link rel="stylesheet" href="{% static 'css/symbol-picker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom-symbol-picker.css' %}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <meta name="csrf-token" content="{% csrf_token %}">
 </head>
@@ -112,6 +112,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
+                                <th>Map Type</th>
                                 <th>File</th>
                                 <th>Features</th>
                                 <th>Color</th>
@@ -122,7 +123,7 @@
                         </thead>
                         <tbody id="geojson-list">
                             <tr>
-                                <td colspan="7" class="loading-container">
+                                <td colspan="8" class="loading-container">
                                     <div class="loading"></div>
                                     <p>Loading data...</p>
                                 </td>
@@ -136,6 +137,69 @@
                         <i class="fas fa-cog"></i>
                         Django Admin
                     </a>
+                </div>
+            </div>
+
+            <!-- Symbol Management -->
+            <div class="content-section">
+                <div class="section-header">
+                    <div class="section-title-area">
+                        <h2 class="section-title">
+                            <i class="fas fa-image"></i>
+                            Symbol Management
+                        </h2>
+                        <div class="section-description">
+                            Manage custom symbols for map markers (24x24 PNG format)
+                        </div>
+                    </div>
+                    <div class="section-actions">
+                        <button class="btn btn-success" onclick="refreshSymbolList()">
+                            <i class="fas fa-sync-alt"></i>
+                            Refresh
+                        </button>
+                        <button class="btn btn-primary" onclick="showUploadSymbolModal()">
+                            <i class="fas fa-upload"></i>
+                            Upload Symbol
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Symbol Stats -->
+                <div class="symbol-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number" id="total-symbols">0</span>
+                            <span class="stat-label">Total Symbols</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number" id="symbol-categories">0</span>
+                            <span class="stat-label">Categories</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-label">Format</span>
+                            <span class="stat-subtext">24x24 PNG</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="symbols-grid" id="symbols-container">
+                    <div class="loading-container">
+                        <div class="loading"></div>
+                        <p>Loading symbols...</p>
+                    </div>
                 </div>
             </div>
 
@@ -247,10 +311,17 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="file-symbol">Map Symbol:</label>
-                        <div id="file-symbol-picker"></div>
-                        <input type="hidden" id="file-symbol" name="symbol" value="marker">
-                        <input type="hidden" id="file-color" name="color" value="#007cff">
+                        <label for="file-map-type">Map Type:</label>
+                        <select id="file-map-type" name="map_type" required>
+                            <option value="embed">Embed Map</option>
+                            <option value="embed_vn">Embed VN Map</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="file-custom-symbol">Map Symbol:</label>
+                        <div id="file-custom-symbol-picker"></div>
+                        <input type="hidden" id="file-custom-symbol" name="custom_symbol" value="">
                     </div>
                     
                     <div class="form-group" id="file-upload-group">
@@ -311,46 +382,310 @@
             window.geoManager.handleFileUpload();
         });
     </script>
-    
-    <!-- OSM Symbol Picker Scripts -->
-    <script src="{% static 'js/osm-symbols.js' %}"></script>
-    <script src="{% static 'js/symbol-picker.js' %}"></script>
-    
+
+    <!-- Upload Symbol Modal -->
+    <div id="uploadSymbolModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <i class="fas fa-upload"></i>
+                    <div>
+                        <h3>Upload Custom Symbol</h3>
+                        <p class="modal-subtitle">Add a new symbol for map markers</p>
+                    </div>
+                </div>
+                <span class="modal-close" onclick="closeUploadSymbolModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <!-- Upload Info -->
+                <div class="upload-info">
+                    <div class="info-item">
+                        <i class="fas fa-info-circle"></i>
+                        <div>
+                            <strong>Supported formats:</strong> JPEG, PNG, GIF, WebP
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-magic"></i>
+                        <div>
+                            <strong>Auto-conversion:</strong> Images will be resized to 24x24 PNG
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-palette"></i>
+                        <div>
+                            <strong>Transparency:</strong> PNG/GIF transparency is preserved
+                        </div>
+                    </div>
+                </div>
+
+                <form id="upload-symbol-form" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="symbol-name">Symbol Name *</label>
+                        <input type="text" id="symbol-name" name="name" required
+                               placeholder="Enter symbol name (e.g., Hospital, Restaurant)">
+                        <span class="form-help">This name will be displayed in the symbol picker</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="symbol-image">Symbol Image *</label>
+                        <div class="file-upload-area" id="symbol-upload-area">
+                            <div class="upload-icon">
+                                <i class="fas fa-image"></i>
+                            </div>
+                            <div class="upload-text">Click to select or drag & drop image</div>
+                            <input type="file" id="symbol-image" name="symbol_image" accept="image/*" required>
+                        </div>
+                        <small class="form-help">Supported: JPEG, PNG, GIF, WebP. Will be automatically resized to 24x24px.</small>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="closeUploadSymbolModal()">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Upload & Convert</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Symbol Picker Scripts -->
+    <script src="{% static 'js/custom-symbol-picker.js' %}"></script>
+
     <script>
-        // Initialize symbol picker when document is ready
+        // Initialize custom symbol picker when document is ready
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM loaded, initializing symbol picker...');
-            console.log('OSM_SYMBOLS available:', typeof OSM_SYMBOLS !== 'undefined');
-            console.log('Container exists:', !!document.getElementById('file-symbol-picker'));
-            
-            // Wait a bit for all scripts to load
-            setTimeout(function() {
-                try {
-                    // Initialize symbol picker for the modal
-                    window.symbolPicker = new OSMSymbolPicker('file-symbol-picker', {
-                        defaultSymbol: 'marker',
-                        showLabel: false,
-                        onSymbolChange: function(symbolKey, symbolData) {
-                            console.log('Symbol changed callback triggered:', symbolKey, symbolData);
-                            
-                            // Update hidden inputs
-                            const symbolInput = document.getElementById('file-symbol');
-                            const colorInput = document.getElementById('file-color');
-                            
-                            if (symbolInput) symbolInput.value = symbolKey;
-                            if (colorInput) colorInput.value = symbolData.color;
-                            
-                            console.log('Updated form values:', {
-                                symbol: symbolKey,
-                                color: symbolData.color
-                            });
-                        }
-                    });
-                    console.log('Symbol picker initialized successfully');
-                } catch (error) {
-                    console.error('❌ Error initializing symbol picker:', error);
+            console.log('DOM loaded, custom symbol picker will be initialized when modal opens');
+        });
+
+        // Function to initialize custom symbol picker when modal opens
+        function initializeCustomSymbolPicker(defaultSymbol = null) {
+            console.log('Initializing custom symbol picker with default:', defaultSymbol);
+            console.log('Container exists:', !!document.getElementById('file-custom-symbol-picker'));
+
+            try {
+                // Initialize custom symbol picker for the modal
+                window.customSymbolPicker = initCustomSymbolPicker('file-custom-symbol-picker', {
+                    defaultSymbol: defaultSymbol,
+                    showLabel: false,
+                    onSymbolChange: function(symbolId, symbolData) {
+                        console.log('Custom symbol changed callback triggered:', symbolId, symbolData);
+
+                        // Update hidden input
+                        const customSymbolInput = document.getElementById('file-custom-symbol');
+
+                        if (customSymbolInput) customSymbolInput.value = symbolId || '';
+                        console.log('Updated custom symbol value:', symbolId);
+                    }
+                });
+                console.log('Custom symbol picker initialized successfully');
+                return true;
+            } catch (error) {
+                console.error('❌ Error initializing custom symbol picker:', error);
+                return false;
+            }
+        }
+
+        // Function to reinitialize custom symbol picker when modal opens
+        function reinitializeCustomSymbolPicker(defaultSymbol = null) {
+            if (window.customSymbolPicker) {
+                // Reset picker
+                window.customSymbolPicker.setSymbol(defaultSymbol);
+            } else {
+                // Initialize if not exists
+                initializeCustomSymbolPicker(defaultSymbol);
+            }
+        }
+
+        // Symbol Management Functions
+        async function loadSymbols() {
+            try {
+                const response = await fetch('/api/custom-symbols/');
+                const data = await response.json();
+
+                if (data.status === 'success') {
+                    displaySymbols(data.symbols);
+                } else {
+                    showMessage('Failed to load symbols', 'error');
                 }
-            }, 300);
+            } catch (error) {
+                console.error('Error loading symbols:', error);
+                showMessage('Error loading symbols', 'error');
+            }
+        }
+
+        function displaySymbols(symbols) {
+            const container = document.getElementById('symbols-container');
+
+            // Update stats
+            updateSymbolStats(symbols);
+
+            if (symbols.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-image" style="font-size: 48px; color: #ccc; margin-bottom: 15px;"></i>
+                        <p>No symbols uploaded yet</p>
+                        <p style="color: #666; font-size: 0.9rem;">Click "Upload Symbol" above to add your first symbol</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const symbolsHtml = symbols.map(symbol => `
+                <div class="symbol-card">
+                    <img src="${symbol.image_url}" alt="${symbol.name}" class="symbol-image">
+                    <div class="symbol-name">${symbol.name}</div>
+                    <div class="symbol-category">${symbol.category}</div>
+                    <div class="symbol-actions">
+                        <button class="symbol-delete-btn" onclick="deleteSymbol(${symbol.id}, '${symbol.name}')" title="Delete Symbol">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+
+            container.innerHTML = symbolsHtml;
+        }
+
+        function updateSymbolStats(symbols) {
+            // Update total symbols
+            document.getElementById('total-symbols').textContent = symbols.length;
+
+            // Update categories count
+            const categories = new Set(symbols.map(s => s.category));
+            document.getElementById('symbol-categories').textContent = categories.size;
+        }
+
+        function showUploadSymbolModal() {
+            document.getElementById('uploadSymbolModal').style.display = 'flex';
+            document.getElementById('upload-symbol-form').reset();
+        }
+
+        function closeUploadSymbolModal() {
+            document.getElementById('uploadSymbolModal').style.display = 'none';
+        }
+
+        function refreshSymbolList() {
+            loadSymbols();
+        }
+
+        async function deleteSymbol(symbolId, symbolName) {
+            if (!confirm(`Are you sure you want to delete the symbol "${symbolName}"? This action cannot be undone.`)) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`/api/delete-symbol/${symbolId}/`, {
+                    method: 'DELETE',
+                    headers: {
+                        'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+                    }
+                });
+
+                const data = await response.json();
+
+                if (data.status === 'success') {
+                    showMessage('Symbol deleted successfully', 'success');
+                    loadSymbols();
+                } else {
+                    showMessage(data.message || 'Failed to delete symbol', 'error');
+                }
+            } catch (error) {
+                console.error('Error deleting symbol:', error);
+                showMessage('Error deleting symbol', 'error');
+            }
+        }
+
+        // Initialize symbols on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSymbols();
+            
+            // Ensure upload symbol modal is hidden on page load
+            const uploadModal = document.getElementById('uploadSymbolModal');
+            if (uploadModal) {
+                uploadModal.style.display = 'none';
+            }
+        });
+
+        // Upload symbol form handling
+        document.getElementById('upload-symbol-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch('/api/upload-symbol/', {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+                    },
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (data.status === 'success') {
+                    showMessage('Symbol uploaded and converted successfully!', 'success');
+                    closeUploadSymbolModal();
+                    loadSymbols();
+                } else {
+                    showMessage(data.message || 'Upload failed', 'error');
+                }
+            } catch (error) {
+                console.error('Error uploading symbol:', error);
+                showMessage('Error uploading symbol', 'error');
+            } finally {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // File upload area interactions
+        const symbolUploadArea = document.getElementById('symbol-upload-area');
+        const symbolFileInput = document.getElementById('symbol-image');
+
+        symbolUploadArea.addEventListener('click', () => {
+            symbolFileInput.click();
+        });
+
+        symbolFileInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const fileName = file.name;
+                const fileSize = (file.size / 1024 / 1024).toFixed(2);
+                symbolUploadArea.querySelector('.upload-text').textContent = `${fileName} (${fileSize} MB)`;
+                symbolUploadArea.classList.add('has-file');
+            }
+        });
+
+        // Drag and drop for symbol upload
+        symbolUploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            symbolUploadArea.classList.add('dragover');
+        });
+
+        symbolUploadArea.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            symbolUploadArea.classList.remove('dragover');
+        });
+
+        symbolUploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            symbolUploadArea.classList.remove('dragover');
+
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                symbolFileInput.files = files;
+                const file = files[0];
+                const fileName = file.name;
+                const fileSize = (file.size / 1024 / 1024).toFixed(2);
+                symbolUploadArea.querySelector('.upload-text').textContent = `${fileName} (${fileSize} MB)`;
+                symbolUploadArea.classList.add('has-file');
+            }
         });
     </script>
 </body>

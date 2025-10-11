@@ -3,14 +3,59 @@ import json
 import os
 
 
+class CustomSymbol(models.Model):
+    """Model for storing custom symbol images"""
+    name = models.CharField(max_length=100, verbose_name="Symbol Name")
+    image = models.ImageField(upload_to='symbols/', verbose_name="Symbol Image")
+    category = models.CharField(max_length=50, blank=True, null=True, verbose_name="Category")
+    is_active = models.BooleanField(default=True, verbose_name="Active")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Custom Symbol"
+        verbose_name_plural = "Custom Symbols"
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return self.name
+
+    def delete(self, *args, **kwargs):
+        """Override delete to remove image file from filesystem"""
+        if self.image:
+            if os.path.isfile(self.image.path):
+                os.remove(self.image.path)
+        super().delete(*args, **kwargs)
+
+    @property
+    def image_url(self):
+        """Return the URL of the symbol image"""
+        if self.image:
+            return self.image.url
+        return None
+
+
 class GeoJSONFile(models.Model):
     """Model for storing GeoJSON files information"""
     name = models.CharField(max_length=200, verbose_name="Layer Name")
     description = models.TextField(blank=True, null=True, verbose_name="Description")
     file = models.FileField(upload_to='geojson_files/', verbose_name="GeoJSON File")
     color = models.CharField(max_length=7, default="#007cff", verbose_name="Display Color")
-    symbol = models.CharField(max_length=50, default="marker", verbose_name="Map Symbol")
+    symbol = models.CharField(max_length=50, default="marker", verbose_name="Map Symbol (Legacy)")
+    custom_symbol = models.ForeignKey(
+        CustomSymbol,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        verbose_name="Custom Symbol"
+    )
     is_active = models.BooleanField(default=True, verbose_name="Active")
+    map_type = models.CharField(
+        max_length=20,
+        choices=[('embed', 'Embed Map'), ('embed_vn', 'Embed VN Map')],
+        default='embed',
+        verbose_name="Map Type"
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     

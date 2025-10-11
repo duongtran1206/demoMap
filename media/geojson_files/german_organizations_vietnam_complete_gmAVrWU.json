@@ -1,0 +1,142 @@
+{
+  "locations": [
+    {
+      "name": "AHK Vietnam Hà Nội",
+      "display_name": "AHK Vietnam Hà Nội  45 Hoàng Quốc Việt, Nghĩa Đô, Cầu Giấy, Hà Nội, Việt Nam",
+      "latitude": 21.046085660008256,
+      "longitude": 105.80412760887474
+    },
+    {
+      "name": "DAAD Vietnam",
+      "display_name": "DAAD Vietnam  Deutsches Haus, Office, 33 Lê Duẩn, Bến Nghé, Quận 1, Hồ Chí Minh, Việt Nam",
+      "latitude": 10.782316117247701,
+      "longitude": 106.7004464827399
+    },
+    {
+      "name": "GIZ Vietnam Hà Nội",
+      "display_name": "GIZ Vietnam Hà Nội  Tầng 4-5, Tòa nhà 63 Lý Thái Tổ, Hoàn Kiếm, Hà Nội, Vietnam",
+      "latitude": 21.02603631391497,
+      "longitude": 105.84577068897873
+    },
+    {
+      "name": "Phòng Công nghiệp và Thương mại Đức tại Việt Nam (AHK Vietnam)",
+      "display_name": "Phòng Công nghiệp và Thương mại Đức tại Việt Nam (AHK Vietnam)  Tòa nhà Friendship, 31 Lê Duẩn, Bến Nghé, Quận 1, Hồ Chí Minh, Việt Nam",
+      "latitude": 10.782698870247646,
+      "longitude": 106.70087251739449
+    },
+    {
+      "name": "Trường Quốc tế Đức TP.HCM (IGS)",
+      "display_name": "Trường Quốc tế Đức TP.HCM (IGS)  253/11 (251A, Lương Định Của, An Phú, Thủ Đức, Hồ Chí Minh 700000, Việt Nam",
+      "latitude": 10.790631876316711,
+      "longitude": 106.74801809808174
+    },
+    {
+      "name": "Trường THCS Thực hành Sài Gòn",
+      "display_name": "Trường THCS Thực hành Sài Gòn  220 Đường Trần Bình Trọng, Phường 4, Quận 5, Hồ Chí Minh, Việt Nam",
+      "latitude": 10.761116511513002,
+      "longitude": 106.67988145390436
+    },
+    {
+      "name": "Trường THCS Trung Vương",
+      "display_name": "Trường THCS Trung Vương  26 P. Hàng Bài, Hàng Bài, Hoàn Kiếm, Hà Nội, Việt Nam",
+      "latitude": 21.023547214452826,
+      "longitude": 105.85223384239498
+    },
+    {
+      "name": "Trường THCS Đống Đa",
+      "display_name": "Trường THCS Đống Đa  28 P. Lương Định Của, Phương Đình, Đống Đa, Hà Nội 100000, Việt Nam",
+      "latitude": 21.005811640319514,
+      "longitude": 105.83512908231712
+    },
+    {
+      "name": "Trường THPT Chu Văn An",
+      "display_name": "Trường THPT Chu Văn An  18 Phan Chu Trinh, Hoàn Kiếm, Hà Nội, Vietnam",
+      "latitude": 21.0206926,
+      "longitude": 105.8555969
+    },
+    {
+      "name": "Trường THPT Chuyên Ngoại ngữ Hà Nội",
+      "display_name": "Trường THPT Chuyên Ngoại ngữ Hà Nội  2 Đ. Phạm Văn Đồng, Mai Dịch, Cầu Giấy, Hà Nội, Việt Nam",
+      "latitude": 21.04043827402446,
+      "longitude": 105.7827903631226
+    },
+    {
+      "name": "Trường THPT Hoa Vang Đà Nẵng",
+      "display_name": "Trường THPT Hoa Vang Đà Nẵng  Hoa Vang, Đà Nẵng, Vietnam",
+      "latitude": 15.987104,
+      "longitude": 108.1383355
+    },
+    {
+      "name": "Trường THPT Lomonosov Hà Nội",
+      "display_name": "Trường THPT Lomonosov Hà Nội  6 P. Trần Văn Cẩn, Mỹ Đình, Nam Từ Liêm, Hà Nội 100000, Việt Nam",
+      "latitude": 21.030206580061858,
+      "longitude": 105.76761467123042
+    },
+    {
+      "name": "Trường THPT Nguyễn Gia Thiều",
+      "display_name": "Trường THPT Nguyễn Gia Thiều  27 ngõ 298, Ngọc Lâm, Long Biên, Hà Nội, Việt Nam",
+      "latitude": 21.0468048925014,
+      "longitude": 105.87381484778197
+    },
+    {
+      "name": "Trường THPT Trần Đại Nghĩa",
+      "display_name": "Trường THPT Trần Đại Nghĩa  20 Lý Tự Trọng, Quận 1, TP.HCM, Vietnam",
+      "latitude": 10.7790689196392,
+      "longitude": 106.70234688402896
+    },
+    {
+      "name": "Trường Việt Đức Hà Nội",
+      "display_name": "Trường Việt Đức Hà Nội  16 Nhật Chiêu, Tây Hồ, Hà Nội, Vietnam",
+      "latitude": 21.0712057,
+      "longitude": 105.813965
+    },
+    {
+      "name": "Trường Đại học Việt Đức (VGU)",
+      "display_name": "Trường Đại học Việt Đức (VGU)  Đ. VĐ 4, Thới Hoà, Bến Cát, Bình Dương 75000, Việt Nam",
+      "latitude": 11.107665406558066,
+      "longitude": 106.61415991969044
+    },
+    {
+      "name": "Tổng lãnh sự quán Đức tại TP.HCM",
+      "display_name": "Tổng lãnh sự quán Đức tại TP.HCM  126 Nguyễn Thị Minh Khai, Phường 6, Quận 3, TP.HCM, Vietnam",
+      "latitude": 10.787183530554023,
+      "longitude": 106.70004622493875
+    },
+    {
+      "name": "ULIS Middle School (UMS)",
+      "display_name": "ULIS Middle School (UMS)  Phạm Văn Đồng, Cầu Giấy, Hà Nội, Vietnam",
+      "latitude": 21.0406284,
+      "longitude": 105.7810891
+    },
+    {
+      "name": "VFS Global Hà Nội",
+      "display_name": "VFS Global Hà Nội  Tầng 7, Tòa nhà Detech II, 107 Nguyễn Phong Sắc, Cầu Giấy, Hà Nội, Vietnam",
+      "latitude": 21.007225833866784,
+      "longitude": 105.84028455767083
+    },
+    {
+      "name": "VFS Global TP.HCM",
+      "display_name": "VFS Global TP.HCM  Tầng 3, Tòa nhà Bitexco Financial Tower, 2 Hải Triều, Quận 1, TP.HCM, Vietnam",
+      "latitude": 10.777765223920486,
+      "longitude": 106.69841927301245
+    },
+    {
+      "name": "Viện Goethe Hà Nội",
+      "display_name": "Viện Goethe Hà Nội  56-58-60 Nguyễn Thái Học, Ba Đình, Hà Nội, Vietnam",
+      "latitude": 21.030191,
+      "longitude": 105.8376444
+    },
+    {
+      "name": "Viện Goethe TP.HCM",
+      "display_name": "Viện Goethe TP.HCM  C/X Đô Thành, Cao Thắng/Số 1/18 Bàn Cờ, Phường 4, Quận 3, Hồ Chí Minh 70000, Việt Nam",
+      "latitude": 10.773840842659297,
+      "longitude": 106.68086369623369
+    },
+    {
+      "name": "Đại sứ quán CHLB Đức tại Hà Nội",
+      "display_name": "Đại sứ quán CHLB Đức tại Hà Nội  29 Trần Phú, Ba Đình, Hà Nội, Vietnam",
+      "latitude": 21.0306016,
+      "longitude": 105.8401914
+    }
+  ]
+}

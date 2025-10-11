@@ -101,6 +101,7 @@ class GeoJSONManager {
         row.innerHTML = `
             <td>${file.id}</td>
             <td class="file-name-cell" title="${file.name}">${file.name}</td>
+            <td>${file.map_type === 'embed' ? 'Embed Map' : 'Embed VN Map'}</td>
             <td class="file-path-cell" title="${fileName}">${fileName}</td>
             <td>${file.feature_count || 0}</td>
             <td>
@@ -180,23 +181,75 @@ class GeoJSONManager {
 
     // CRUD Operations
     showCreateModal() {
-        this.currentEditId = null;
-        document.getElementById('modal-title').textContent = 'Add New GeoJSON File';
-        document.getElementById('file-id').value = '';
-        document.getElementById('file-name').value = '';
-        document.getElementById('file-description').value = '';
-        document.getElementById('file-color').value = '#007cff';
-        document.getElementById('file-symbol').value = 'marker';
-        document.getElementById('geojson-file').value = '';
-        document.getElementById('file-active').checked = true;
-        
-        // Reset symbol picker if available
-        if (window.symbolPicker) {
-            window.symbolPicker.setSymbol('marker');
+        // Show modal first
+        const modal = document.getElementById('crudModal');
+        if (!modal) {
+            console.error('Modal element not found!');
+            return;
         }
-        document.getElementById('file-upload-group').style.display = 'block';
-        document.getElementById('submit-btn').textContent = 'Create';
-        document.getElementById('crudModal').style.display = 'block';
+        modal.style.display = 'block';
+
+        // Wait for modal to be displayed and elements to be available
+        const setupModal = () => {
+            console.log('Setting up create modal elements...');
+            this.currentEditId = null;
+
+            const elements = {
+                modalTitle: document.getElementById('modal-title'),
+                fileId: document.getElementById('file-id'),
+                fileName: document.getElementById('file-name'),
+                fileDesc: document.getElementById('file-description'),
+                fileMapType: document.getElementById('file-map-type'),
+                customSymbolInput: document.getElementById('file-custom-symbol'),
+                geojsonFileInput: document.getElementById('geojson-file'),
+                fileActive: document.getElementById('file-active'),
+                uploadGroup: document.getElementById('file-upload-group'),
+                submitBtn: document.getElementById('submit-btn')
+            };
+
+            // Check if all required elements exist
+            const missingElements = Object.entries(elements).filter(([key, el]) => !el && key !== 'customSymbolInput');
+            if (missingElements.length > 0) {
+                console.error('Missing elements:', missingElements.map(([key]) => key));
+                // Retry after a short delay
+                setTimeout(setupModal, 50);
+                return;
+            }
+
+            // Set up elements
+            if (elements.modalTitle) elements.modalTitle.textContent = 'Add New GeoJSON File';
+            if (elements.fileId) elements.fileId.value = '';
+            if (elements.fileName) elements.fileName.value = '';
+            if (elements.fileDesc) elements.fileDesc.value = '';
+            if (elements.fileMapType) elements.fileMapType.value = 'embed';
+
+            console.log('Custom symbol input element:', elements.customSymbolInput);
+            if (elements.customSymbolInput) {
+                elements.customSymbolInput.value = '';
+                console.log('Set custom symbol input to empty');
+            } else {
+                console.warn('Custom symbol input not found - this may be expected if modal is still loading');
+            }
+
+            if (elements.geojsonFileInput) elements.geojsonFileInput.value = '';
+            if (elements.fileActive) elements.fileActive.checked = true;
+            if (elements.uploadGroup) elements.uploadGroup.style.display = 'block';
+            if (elements.submitBtn) elements.submitBtn.textContent = 'Create';
+
+            // Initialize custom symbol picker
+            setTimeout(() => {
+                if (typeof initializeCustomSymbolPicker === 'function') {
+                    initializeCustomSymbolPicker(9); // Default to Caritas Symbol (ID 9)
+                }
+            }, 100);
+
+            console.log('Create modal setup complete');
+        };
+
+        // Use multiple attempts to ensure elements are available
+        requestAnimationFrame(() => {
+            setTimeout(setupModal, 10);
+        });
     }
 
     async editFile(id) {
@@ -209,22 +262,40 @@ class GeoJSONManager {
             
             const file = await response.json();
             
-            this.currentEditId = id;
-            document.getElementById('modal-title').textContent = 'Edit GeoJSON File';
-            document.getElementById('file-id').value = file.id;
-            document.getElementById('file-name').value = file.name || '';
-            document.getElementById('file-description').value = file.description || '';
-            document.getElementById('file-color').value = file.color || '#007cff';
-            document.getElementById('file-symbol').value = file.symbol || 'marker';
-            document.getElementById('file-active').checked = file.is_active;
-            
-            // Update symbol picker if available
-            if (window.symbolPicker) {
-                window.symbolPicker.setSymbol(file.symbol || 'marker');
-            }
-            document.getElementById('file-upload-group').style.display = 'none';
-            document.getElementById('submit-btn').textContent = 'Update';
+            // Show modal first
             document.getElementById('crudModal').style.display = 'block';
+
+            // Small delay to ensure modal is rendered
+            setTimeout(() => {
+                this.currentEditId = id;
+                document.getElementById('modal-title').textContent = 'Edit GeoJSON File';
+                document.getElementById('file-id').value = file.id;
+                document.getElementById('file-name').value = file.name || '';
+                document.getElementById('file-description').value = file.description || '';
+                document.getElementById('file-map-type').value = file.map_type || 'embed';
+                
+                const customSymbolInput = document.getElementById('file-custom-symbol');
+                if (customSymbolInput) customSymbolInput.value = file.custom_symbol ? file.custom_symbol.id : '';
+
+                document.getElementById('file-active').checked = file.is_active;
+
+                // Update custom symbol picker if available
+                if (window.customSymbolPicker) {
+                    window.customSymbolPicker.setSymbol(file.custom_symbol ? file.custom_symbol.id : 9); // Default to Caritas Symbol (ID 9)
+                } else {
+                    // Initialize picker with current symbol
+                    setTimeout(() => {
+                        if (typeof initializeCustomSymbolPicker === 'function') {
+                            initializeCustomSymbolPicker(file.custom_symbol ? file.custom_symbol.id : 9); // Default to Caritas Symbol (ID 9)
+                        }
+                    }, 100);
+                }
+                if (customSymbolInput) customSymbolInput.value = file.custom_symbol ? file.custom_symbol.id : '';
+
+                document.getElementById('file-active').checked = file.is_active;
+                document.getElementById('file-upload-group').style.display = 'none';
+                document.getElementById('submit-btn').textContent = 'Update';
+            }, 10);
         } catch (error) {
             console.error('Error loading file for edit:', error);
             this.showMessage('Error loading file details', 'error');
@@ -294,9 +365,21 @@ Updated: ${new Date(file.updated_at).toLocaleString()}`;
         const formData = new FormData();
         formData.append('name', document.getElementById('file-name').value);
         formData.append('description', document.getElementById('file-description').value);
-        formData.append('color', document.getElementById('file-color').value);
-        formData.append('symbol', document.getElementById('file-symbol').value);
+        formData.append('map_type', document.getElementById('file-map-type').value);
+        
+        // Always use custom symbol
+        formData.append('custom_symbol', document.getElementById('file-custom-symbol').value);
+        formData.append('symbol', 'marker'); // Default emoji symbol (not used)
+        
         formData.append('is_active', document.getElementById('file-active').checked);
+
+        console.log('Form data before submit:', {
+            name: document.getElementById('file-name').value,
+            description: document.getElementById('file-description').value,
+            map_type: document.getElementById('file-map-type').value,
+            custom_symbol: document.getElementById('file-custom-symbol').value,
+            is_active: document.getElementById('file-active').checked
+        });
 
         const fileInput = document.getElementById('geojson-file');
         if (fileInput.files.length > 0) {
@@ -577,6 +660,31 @@ function refreshFileList() {
 let geoManager;
 document.addEventListener('DOMContentLoaded', function() {
     geoManager = new GeoJSONManager();
+    
+    // Add symbol type toggle functionality
+    document.addEventListener('change', function(e) {
+        if (e.target.name === 'symbol_type') {
+            const customGroup = document.getElementById('custom-symbol-group');
+            const emojiGroup = document.getElementById('emoji-symbol-group');
+            
+            if (e.target.value === 'custom') {
+                if (customGroup) customGroup.style.display = 'block';
+                if (emojiGroup) emojiGroup.style.display = 'none';
+                // Initialize custom symbol picker if not already done
+                setTimeout(() => {
+                    if (typeof initializeCustomSymbolPicker === 'function' && !window.customSymbolPicker) {
+                        initializeCustomSymbolPicker(null);
+                    }
+                }, 100);
+            } else if (e.target.value === 'emoji') {
+                if (customGroup) customGroup.style.display = 'none';
+                if (emojiGroup) emojiGroup.style.display = 'block';
+                // Clear custom symbol value
+                const customSymbolInput = document.getElementById('file-custom-symbol');
+                if (customSymbolInput) customSymbolInput.value = '';
+            }
+        }
+    });
 });
 
 // Add CSS animations

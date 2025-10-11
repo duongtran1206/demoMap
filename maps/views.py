@@ -8,13 +8,154 @@ from django.contrib import messages
 from rest_framework import viewsets, permissions, status
 from rest_framework.decorators import action, permission_classes
 from rest_framework.response import Response
-from .models import GeoJSONFile, MapLayer, FeatureVisibility
-from .serializers import GeoJSONFileSerializer, MapLayerSerializer
+from .models import GeoJSONFile, MapLayer, FeatureVisibility, CustomSymbol
+from .serializers import GeoJSONFileSerializer, MapLayerSerializer, CustomSymbolSerializer
 from django.core.management import execute_from_command_line
 from django.contrib.auth.models import User
 from django.core.files.base import ContentFile
 import json
 import io
+
+
+@csrf_exempt
+def custom_symbols_api(request):
+    """API endpoint to get list of custom symbols"""
+    if request.method == 'GET':
+        symbols = CustomSymbol.objects.filter(is_active=True).order_by('category', 'name')
+        serializer = CustomSymbolSerializer(symbols, many=True)
+        return JsonResponse({
+            'status': 'success',
+            'symbols': serializer.data
+        })
+    return JsonResponse({'status': 'error', 'message': 'Method not allowed'}, status=405)
+
+
+@csrf_exempt
+def upload_symbol_api(request):
+    """API endpoint to upload and convert symbol images"""
+    if not request.user.is_authenticated or not (request.user.is_superuser or request.user.is_staff):
+        return JsonResponse({'status': 'error', 'message': 'Admin access required'}, status=403)
+
+    if request.method == 'POST':
+        try:
+            from PIL import Image
+            import os
+            from django.core.files.storage import default_storage
+            from django.core.files.base import ContentFile
+
+            if 'symbol_image' not in request.FILES:
+                return JsonResponse({'status': 'error', 'message': 'No image file provided'}, status=400)
+
+            uploaded_file = request.FILES['symbol_image']
+            symbol_name = request.POST.get('name', '').strip()
+
+            if not symbol_name:
+                return JsonResponse({'status': 'error', 'message': 'Symbol name is required'}, status=400)
+
+            # Validate file type
+            allowed_types = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp']
+            if uploaded_file.content_type not in allowed_types:
+                return JsonResponse({'status': 'error', 'message': 'Invalid file type. Only JPEG, PNG, GIF, WebP allowed'}, status=400)
+
+            # Process image
+            image = Image.open(uploaded_file)
+
+            # Convert to RGB if necessary (for JPEG compatibility)
+            if image.mode in ('RGBA', 'LA', 'P'):
+                background = Image.new('RGB', image.size, (255, 255, 255))
+                if image.mode == 'RGBA':
+                    background.paste(image, mask=image.split()[-1])
+                else:
+                    background.paste(image)
+                image = background
+
+            # Resize to 24x24
+            image_resized = image.resize((24, 24), Image.Resampling.LANCZOS)
+
+            # Save as PNG
+            from io import BytesIO
+            output = BytesIO()
+            image_resized.save(output, format='PNG')
+            output.seek(0)
+
+            # Create filename
+            safe_name = "".join(c for c in symbol_name if c.isalnum() or c in (' ', '-', '_')).rstrip()
+            filename = f"symbols/{safe_name}.png"
+
+            # Save to media
+            file_content = ContentFile(output.getvalue())
+            saved_path = default_storage.save(filename, file_content)
+
+            # Create database record
+            symbol = CustomSymbol.objects.create(
+                name=symbol_name,
+                image=saved_path,
+                category='uploaded',
+                is_active=True
+            )
+
+            return JsonResponse({
+                'status': 'success',
+                'message': 'Symbol uploaded and converted successfully',
+                'symbol': {
+                    'id': symbol.id,
+                    'name': symbol.name,
+                    'image_url': symbol.image_url,
+                    'category': symbol.category
+                }
+            })
+
+        except Exception as e:
+            import traceback
+            return JsonResponse({
+                'status': 'error',
+                'message': f'Upload failed: {str(e)}',
+                'debug': traceback.format_exc() if request.GET.get('debug') else None
+            }, status=500)
+
+    return JsonResponse({'status': 'error', 'message': 'Method not allowed'}, status=405)
+
+
+@csrf_exempt
+def delete_symbol_api(request, symbol_id):
+    """API endpoint to delete a custom symbol"""
+    if not request.user.is_authenticated or not (request.user.is_superuser or request.user.is_staff):
+        return JsonResponse({'status': 'error', 'message': 'Admin access required'}, status=403)
+
+    if request.method == 'DELETE':
+        try:
+            symbol = CustomSymbol.objects.get(id=symbol_id)
+
+            # Check if symbol is being used
+            from maps.models import GeoJSONFile
+            usage_count = GeoJSONFile.objects.filter(custom_symbol=symbol).count()
+
+            if usage_count > 0:
+                return JsonResponse({
+                    'status': 'error',
+                    'message': f'Cannot delete symbol. It is being used by {usage_count} GeoJSON file(s).'
+                }, status=400)
+
+            # Delete the file
+            symbol.image.delete(save=False)
+
+            # Delete the record
+            symbol.delete()
+
+            return JsonResponse({
+                'status': 'success',
+                'message': 'Symbol deleted successfully'
+            })
+
+        except CustomSymbol.DoesNotExist:
+            return JsonResponse({'status': 'error', 'message': 'Symbol not found'}, status=404)
+        except Exception as e:
+            return JsonResponse({
+                'status': 'error',
+                'message': f'Delete failed: {str(e)}'
+            }, status=500)
+
+    return JsonResponse({'status': 'error', 'message': 'Method not allowed'}, status=405)
 
 
 def convert_custom_json_to_geojson(custom_data):
@@ -50,6 +191,9 @@ class GeoJSONFileViewSet(viewsets.ModelViewSet):
     
     def create(self, request, *args, **kwargs):
         """Custom create method to handle file upload"""
+        print(f"Request POST: {request.POST}")  # Debug log
+        print(f"Request FILES: {request.FILES}")  # Debug log
+        
         # Handle file upload first if present
         processed_file = None
         if 'file' in request.FILES:
@@ -73,15 +217,39 @@ class GeoJSONFileViewSet(viewsets.ModelViewSet):
         if 'is_active' not in data:
             data['is_active'] = True
         
+        print(f"Creating GeoJSONFile with data: {data}")  # Debug log
+        
         # If we processed the file, replace it in the request data
         if processed_file:
             data['file'] = processed_file
+        else:
+            # Create a sample GeoJSON file if no file was uploaded
+            sample_geojson = {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [105.8342, 21.0278]  # Hanoi coordinates
+                        },
+                        "properties": {
+                            "name": "Sample Location",
+                            "description": "This is a sample location created without file upload"
+                        }
+                    }
+                ]
+            }
+            geojson_content = json.dumps(sample_geojson, ensure_ascii=False, indent=2)
+            data['file'] = ContentFile(geojson_content.encode('utf-8'), name=f"{data.get('name', 'sample')}.geojson")
         
         serializer = self.get_serializer(data=data)
         serializer.is_valid(raise_exception=True)
         
         # Create the instance
         instance = serializer.save()
+        
+        print(f"Created GeoJSONFile with id {instance.id}, map_type: {instance.map_type}")  # Debug log
         
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
@@ -195,16 +363,22 @@ def map_embed_view(request):
     """View for displaying embeddable map"""
     return render(request, 'maps/embed_new.html')
 
+def map_embed_vn_view(request):
+    """View for displaying embeddable VN map"""
+    return render(request, 'maps/embed_new.html')
+
 
 def symbol_demo_view(request):
     """View for displaying OSM symbol picker demo"""
     return render(request, 'maps/symbol_demo.html')
 
 
-def map_data_api(request):
+def map_data_api(request, map_type='embed'):
     """API returns map data for frontend - public access for embed"""
     import os
     is_vercel = os.environ.get('VERCEL', False)
+    
+    print(f"map_data_api called with map_type: {map_type}")  # Debug log
     
     try:
         # Initialize database if needed on Vercel
@@ -223,7 +397,8 @@ def map_data_api(request):
                     pass
         
         layers = MapLayer.objects.filter(
-            geojson_file__is_active=True
+            geojson_file__is_active=True,
+            geojson_file__map_type=map_type
         ).select_related('geojson_file').prefetch_related('feature_visibilities')
         
         data = []
@@ -301,8 +476,9 @@ def map_data_api(request):
                         'id': layer.id,
                         'name': layer.geojson_file.name,
                         'color': layer.geojson_file.color,
-                        'symbol': layer.geojson_file.symbol,
-                        'symbol_key': layer.geojson_file.symbol,
+                        'symbol': layer.geojson_file.custom_symbol.image_url if layer.geojson_file.custom_symbol else '/media/symbols/Caritas.png',
+                        'symbol_key': layer.geojson_file.custom_symbol.name if layer.geojson_file.custom_symbol else 'Caritas Symbol',
+                        'symbol_type': 'custom',
                         'is_visible': layer.is_visible,
                         'feature_count': layer.geojson_file.feature_count,
                         'features': features_detail,
@@ -700,3 +876,30 @@ def welcome_view(request):
         </html>
         """
         return HttpResponse(error_html)
+
+
+@csrf_exempt
+def custom_symbols_api(request):
+    """API to get list of custom symbols for the picker"""
+    try:
+        symbols = CustomSymbol.objects.filter(is_active=True).order_by('name')
+        symbol_data = []
+        
+        for symbol in symbols:
+            symbol_data.append({
+                'id': symbol.id,
+                'name': symbol.name,
+                'image_url': symbol.image_url,
+                'category': symbol.category
+            })
+        
+        return JsonResponse({
+            'status': 'success',
+            'symbols': symbol_data
+        })
+        
+    except Exception as e:
+        return JsonResponse({
+            'status': 'error',
+            'message': str(e)
+        }, status=500)
