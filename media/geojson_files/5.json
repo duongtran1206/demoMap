@@ -1,0 +1,383 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1292083,
+          54.317899
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Kiel (Schleswig-Holstein)",
+        "display_name": "49, Herzog-Friedrich-Straße, Vorstadt, Kiel, Schleswig-Holstein, 24103, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.147054,
+          54.0910133
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Rostock (Mecklenburg-Vorpommern)",
+        "display_name": "Zentrum Kirchlicher Dienste Mecklenburg, 19, Alter Markt, Östliche Altstadt, Stadtmitte, Ortsbeirat 14 : Stadtmitte, Rostock, Mecklenburg-Vorpommern, 18055, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5920245,
+          53.5592031
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Bremerhaven (Bremen)",
+        "display_name": "Stadthaus 7, 31B, Hinrich-Schmalfeldt-Straße, Klushof, Lehe, Stadtbezirk Bremerhaven-Nord, Bremerhaven, Bremen, 27576, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.0297508,
+          53.5441871
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Hamburg (Hamburg)",
+        "display_name": "Hamburg Welcome Center for Professionals, 32b, Süderstraße, Hammerbrook, Hamburg-Mitte, Hamburg, 20097, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2103008,
+          53.10278
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Oldenburg (Niedersachsen)",
+        "display_name": "Kaufpark Kreyenbrück, 125, Alter Postweg, Kreyenbrück, Oldenburg, Niedersachsen, 26133, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7956192,
+          53.0770412
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Bremen (Bremen)",
+        "display_name": "45, Am Deich, Alte Neustadt, Neustadt, Bremen-Süd, Bremen, 28199, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.1529282,
+          52.8489707
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Salzwedel (Sachsen-Anhalt)",
+        "display_name": "IHK Magdeburg Geschäftsstelle Salzwedel, 22-24, Altperverstraße, Altstadt, Salzwedel, Altmarkkreis Salzwedel, Sachsen-Anhalt, 29410, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3890599,
+          52.455915
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Berlin (Berlin)",
+        "display_name": "5, Lorenzweg, Tempelhof, Tempelhof-Schöneberg, Berlin, 12099, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3843963,
+          52.5027885
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Magdeburg (Sachsen-Anhalt)",
+        "display_name": "Stresemannstraße, Zeitungsviertel, Kreuzberg, Friedrichshain-Kreuzberg, Berlin, 10963, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.04219,
+          51.8953221
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Halberstadt (Sachsen-Anhalt)",
+        "display_name": "Zora, 1, Steinhof, Halberstadt, Landkreis Harz, Sachsen-Anhalt, 38820, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.3004,
+          53.1795296
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Cottbus (Brandenburg)",
+        "display_name": "23a, Straße der Jugend, Heiddorf, Neu Kaliß, Dömitz-Malliß, Ludwigslust-Parchim, Mecklenburg-Vorpommern, 19294, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.9639142,
+          51.4716863
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Halle (Saale) (Sachsen-Anhalt)",
+        "display_name": "19, Röpziger Straße, Glaucha, Südliche Innenstadt, Halle (Saale), Sachsen-Anhalt, 06110, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1388719,
+          51.4794859
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Bochum (Nordrhein-Westfalen)",
+        "display_name": "9, Westenfelder Straße, Wattenscheid, Bochum-Wattenscheid, Bochum, Nordrhein-Westfalen, 44866, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.7954904,
+          51.2764548
+        ]
+      },
+      "properties": {
+        "name": "Fachstelle Faire Integration Düsseldorf (Nordrhein-Westfalen)",
+        "display_name": "5, Franz-Rennefeld-Weg, Lichtenbroich, Stadtbezirk 6, Düsseldorf, Nordrhein-Westfalen, 40472, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.024209,
+          50.9661363
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Erfurt (Thüringen)",
+        "display_name": "44, Schillerstraße, Löbervorstadt, Erfurt, Thüringen, 99096, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.9303533,
+          50.8332431
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Chemnitz (Sachsen)",
+        "display_name": "Jägerstraße, Zentrum, Chemnitz, Sachsen, 09111, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.7271951,
+          51.0576666
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Dresden (Sachsen)",
+        "display_name": "art'buero, 3, Könneritzstraße, Wilsdruffer Vorstadt/Seevorstadt-West, Wilsdruffer Vorstadt, Altstadt, Dresden, Sachsen, 01067, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6670341,
+          50.1035537
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Frankfurt a.M. (Hessen)",
+        "display_name": "Gewerkschaftshaus Frankfurt, 69-77, Wilhelm-Leuschner-Straße, Gutleutviertel, Innenstadt 1, Frankfurt am Main, Hessen, 60329, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2732734,
+          49.9978303
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Mainz (Rheinland-Pfalz)",
+        "display_name": "6, Heiliggrabgasse, Altstadt, Mainz, Bodenheim, Rheinland-Pfalz, 55116, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2241835,
+          50.0697326
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Wiesbaden (Hessen)",
+        "display_name": "Integrationsabteilung, 2, Alcide-de-Gasperi-Straße, Europaviertel, Rheingauviertel / Hollerborn, Wiesbaden, Hessen, 65197, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.9872483,
+          49.2396419
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Saarbrücken (Saarland)",
+        "display_name": "Arbeitskammer des Saarlandes, 6-8, Fritz-Dobisch-Straße, Hauptbahnhof, St. Johann, Bezirk Mitte, Saarbrücken, Regionalverband Saarbrücken, Saarland, 66111, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.3766608,
+          49.0112896
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Karlsruhe (Baden-Württemberg)",
+        "display_name": "Internationales Begegnungszentrum, 12d, Kaiserallee, Weststadt Mittlerer Teil, Weststadt, Karlsruhe, Baden-Württemberg, 76133, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0747272,
+          49.4487908
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Nürnberg (Bayern)",
+        "display_name": "Gewerkschaftshaus, 5-7, Kornmarkt, Altstadt, St. Lorenz, Nürnberg, Bayern, 90402, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1748438,
+          48.7789467
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Stuttgart (Baden-Württemberg)",
+        "display_name": "Willi-Bleicher-Haus, 20, Willi-Bleicher-Straße, Neue Vorstadt, Stuttgart-Mitte, Stuttgart, Baden-Württemberg, 70174, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0822983,
+          48.5214438
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Tübingen (Baden-Württemberg)",
+        "display_name": "136, Bismarckstraße, Au/Unterer Wert, Tübingen, Landkreis Tübingen, Baden-Württemberg, 72072, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.8886108,
+          48.3785762
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration Augsburg (Bayern)",
+        "display_name": "Maschinen- und Kesselhaus, 29a, Wertachstraße, Rugendasviertel, Rechts der Wertach, Oberhausen, Augsburg, Bayern, 86153, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.6203438,
+          48.132667
+        ]
+      },
+      "properties": {
+        "name": "Beratungsstelle Faire Integration München (Bayern)",
+        "display_name": "22, Neumarkter Straße, 14.1, Berg am Laim, München, Bayern, 81673, Deutschland"
+      }
+    }
+  ]
+}

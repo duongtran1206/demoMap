@@ -1,0 +1,1139 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.531007,
+          52.0191005
+        ]
+      },
+      "properties": {
+        "name": "Bielefeld",
+        "display_name": "Bielefeld Regionalkoordinator: Lutz Diekjobst Tel.: 0175 7114551 E-Mail: bielefeld@vera.ses-bonn.de Koordinatorin SES Bonn: Tina Schubert Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3643 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.4333264,
+          54.7833021
+        ]
+      },
+      "properties": {
+        "name": "Flensburg",
+        "display_name": "Flensburg Regionalkoordinator: Bodo R. Steglich Mobil: 0152 53551036 Mail: flensburg@vera.ses-bonn.de Koordination SES Bonn: Sebastian Pohl Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-52 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.135555,
+          54.3227085
+        ]
+      },
+      "properties": {
+        "name": "Kiel",
+        "display_name": "Kiel Regionalkoordinator: Klaus Brandl Mobil: 0163 5744986 E-Mail: kiel@vera.ses-bonn.de Koordinator SES Bonn: Sebastian Pohl Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-52 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.684738,
+          53.866444
+        ]
+      },
+      "properties": {
+        "name": "Lübeck",
+        "display_name": "Lübeck Regionalkoordinator: Henning Henschel Tel.: 04509 1472 E-Mail: luebeck@vera.ses-bonn.de Burkhard Blanck Tel.: 04544 822 70 68 E-Mail: luebeck@vera.ses-bonn.de Koordination SES Bonn: Sebastian Pohl Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-52 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9614889,
+          53.8371714
+        ]
+      },
+      "properties": {
+        "name": "Süd-Holstein",
+        "display_name": "Süd-Holstein Koordinator SES Bonn: Sebastian Pohl Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-52 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.000654,
+          53.550341
+        ]
+      },
+      "properties": {
+        "name": "Hamburg",
+        "display_name": "Hamburg Regionalkoordinatoren: Volker Hiebel Tel.: 0151 50971684 E-Mail: hamburg@vera.ses-bonn.de Dr. Michael Dehn Tel.: 0176 80737740 E-Mail: hamburg@vera.ses-bonn.de Koordination SES Bonn: Sebastian Pohl Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-52 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.1286127,
+          54.0924445
+        ]
+      },
+      "properties": {
+        "name": "Rostock",
+        "display_name": "Rostock Regionalkoordinator: Frank Kalz Tel.: 0157 74583098 E-Mail: rostock@vera.ses-bonn.de Koordinator SES Bonn: Sebastian Pohl Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-52 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.4148038,
+          53.6288297
+        ]
+      },
+      "properties": {
+        "name": "Schwerin",
+        "display_name": "Schwerin Regionalkoordinator: Klaus Nowak Tel.: 0172 3814054 E-Mail: schwerin@vera.ses-bonn.de Koordinator SES Bonn: Sebastian Pohl Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-52 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2602781,
+          53.5574458
+        ]
+      },
+      "properties": {
+        "name": "Neubrandenburg",
+        "display_name": "Neubrandenburg Regionalkoordinatorin: Franziska Leist-Milk Tel.: 0395 7792966 E-Mail: neubrandenburg@vera.ses-bonn.de Koordinator SES Bonn: Sebastian Pohl Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-52 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5865509,
+          53.5522264
+        ]
+      },
+      "properties": {
+        "name": "Bremerhaven",
+        "display_name": "Bremerhaven Regionalkoordinator: Walter Rentzel Tel.: 0474 37817 E-Mail: bremerhaven@vera.ses-bonn.de Walter Rentzel Koordinatorin SES Bonn: Christina Rohde Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-132 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8071646,
+          53.0758196
+        ]
+      },
+      "properties": {
+        "name": "Bremen",
+        "display_name": "Bremen Regionalkoordinator: Horst-Peter Witt Tel.: 0421 6989017 Mobil: 0176 39153344 E-Mail: bremen@vera.ses-bonn.de Koordinatorin SES Bonn: Christina Rohde Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-132 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.2058304,
+          53.3670541
+        ]
+      },
+      "properties": {
+        "name": "Ostfriesland",
+        "display_name": "Ostfriesland Regionalkoordinatorin: Heidi Wahren Tel.: 0175 5258786 E-Mail: ostfriesland@vera.ses-bonn.de Koordinatorin SES Bonn: Christina Rohde Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-132 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2146017,
+          53.1389753
+        ]
+      },
+      "properties": {
+        "name": "Oldenburg",
+        "display_name": "Oldenburg Regionalkoordinatoren: Rüdiger Manke Tel.: 0441 71546 Mobil: 0175 2478366 E-Mail: oldenburg@vera.ses-bonn.de Ingo Bergfeld Mobil: 0172 6522494 E-Mail: OLMuensterland@vera.ses-bonn.de Koordinatorin SES Bonn: Christina Rohde Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-132 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.475438,
+          53.599794
+        ]
+      },
+      "properties": {
+        "name": "Stade",
+        "display_name": "Stade Regionalkoordinator: Dr. Rolf Jäger Tel.: 04162 6701 Mobil: 0172 4316739 E-Mail: stade@vera.ses-bonn.de Koordinatorin SES Bonn: Christina Rohde Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-132 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.049741,
+          52.266837
+        ]
+      },
+      "properties": {
+        "name": "Osnabrück",
+        "display_name": "Osnabrück Regionalkoordinator: Bernd Falke Tel.: 0172 5129773 E-Mail: osnabrueck@vera.ses-bonn.de Koordinatorin SES Bonn: Christina Rohde Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-132 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.7385532,
+          52.3744779
+        ]
+      },
+      "properties": {
+        "name": "Hannover",
+        "display_name": "Hannover Regionalkoordinator: Michael Mente Mobil: 0179 9716434 Mail: hannover@vera.ses-bonn.de Koordinatorin SES Bonn: Christina Rohde Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-132 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9513046,
+          52.1521636
+        ]
+      },
+      "properties": {
+        "name": "Hildesheim",
+        "display_name": "Hildesheim Regionalkoordinator: Hermann Hartmann Tel.: 05127 5511 Mobil: 0162 2088005 E-Mail: hildesheim@vera.ses-bonn.de Koordinatorin SES Bonn: Christina Rohde Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-132 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.5236066,
+          52.2646577
+        ]
+      },
+      "properties": {
+        "name": "Braunschweig",
+        "display_name": "Braunschweig Regionalkoordinator: Reinhard Manke Tel.: 0151 64417745 E-Mail: braunschweig@vera.ses-bonn.de Koordinatorin SES Bonn: Christina Rohde Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-132 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.083862,
+          50.776351
+        ]
+      },
+      "properties": {
+        "name": "Aachen",
+        "display_name": "Aachen Regionalkoordinatorin: Dr. Marion Meyer zur Heyde Tel.: 02408 2973 Mobil: 01511 2314381 E-Mail: aachen@vera.ses-bonn.de Koordinatorin SES Bonn: Tina Schubert Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3643 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.10066,
+          50.735851
+        ]
+      },
+      "properties": {
+        "name": "Bonn",
+        "display_name": "Bonn Regionalkoordinator: Günter Schmidt Tel.: 0228 482905 Mobil: 0171 2862121 E-Mail: bonn@vera.ses-bonn.de Koordinatorin SES Bonn: Sonja Sommerfeld Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3611 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.959974,
+          50.938361
+        ]
+      },
+      "properties": {
+        "name": "Köln",
+        "display_name": "Köln Regionalkoordinator: Eckhart Schwartzkopff Tel.: 02234 63853 Mobil: 0171 1233853 E-Mail: koeln@vera.ses-bonn.de Koordinatorin SES Bonn: Tina Schubert Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3643 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.5853,
+          51.3388
+        ]
+      },
+      "properties": {
+        "name": "Mittlerer",
+        "display_name": "Mittlerer Niederrhein (Krefeld, Neuss, Mönchengladbach) Regionalkoordinatorin: Margret Winkens Tel: 0172 609 89 87 E-Mail: mittlererniederrhein@vera.ses-bonn.de Koordinatorin SES Bonn: Tina Schubert Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3643 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.7763137,
+          51.2254018
+        ]
+      },
+      "properties": {
+        "name": "Düsseldorf",
+        "display_name": "Düsseldorf Regionalkoordinator: Hans Gerlitz Tel.: 0211 7333226 E-Mail: duesseldorf@vera.ses-bonn.de Koordinatorin SES Bonn: Tina Schubert Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3643 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.759562,
+          51.434999
+        ]
+      },
+      "properties": {
+        "name": "Duisburg",
+        "display_name": "Duisburg Regionalkoordinator: Hans-B. Kleckel Tel.: 0171 2290194 E-Mail: duisburg@vera.ses-bonn.de Koordinatorin SES Bonn: Tina Schubert Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3643 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.0158171,
+          51.4582235
+        ]
+      },
+      "properties": {
+        "name": "Essen",
+        "display_name": "Essen Regionalkoordinator: Hans-B. Kleckel Tel.: 0171 2290194 E-Mail: ruhr@vera.ses-bonn.de Koordinatorin SES Bonn: Tina Schubert Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3643 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1780374,
+          51.264018
+        ]
+      },
+      "properties": {
+        "name": "Wuppertal",
+        "display_name": "Wuppertal Regionalkoordinator: Volker Lieb Tel.: 0202 3097796 Mobil: 0157 87891731 E-Mail: wsr@vera.ses-bonn.de Koordinatorin SES Bonn: Tina Schubert Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3643 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.0605908,
+          51.4002384
+        ]
+      },
+      "properties": {
+        "name": "Arnsberg",
+        "display_name": "Arnsberg Koordinatorin SES Bonn: Tina Schubert Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3643 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6251879,
+          51.9625101
+        ]
+      },
+      "properties": {
+        "name": "Münster",
+        "display_name": "Münster Regionalkoordinatoren: Petra Dransmann Mobil:  0151 61664731 E-Mail: muenster@vera.ses-bonn.de Martin Lohmann Mobil: 0160 94680051 E-Mail: muenster@vera.ses-bonn.de Koordinatorin SES Bonn: Tina Schubert Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3643 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8791526,
+          51.936284
+        ]
+      },
+      "properties": {
+        "name": "Detmold",
+        "display_name": "Detmold Regionalkoordinationen: Lutz Diekjobst Tel.: 0175 7114551 E-Mail: detmold@vera.ses-bonn.de Koordinatorin SES Bonn: Tina Schubert Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3643 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.4652789,
+          51.5142273
+        ]
+      },
+      "properties": {
+        "name": "Dortmund",
+        "display_name": "Dortmund Regionalkoordinatorin: Angela Hövelmann Tel.: 02361 891102 E-Mail: dortmund@vera.ses-bonn.de Koordinatorin SES Bonn: Tina Schubert Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3643 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.0591397,
+          52.4009309
+        ]
+      },
+      "properties": {
+        "name": "Potsdam",
+        "display_name": "Potsdam Regionalkoordinator: Heinz-Michael Welsch Tel.: 0172 9182870 E-Mail: potsdam@vera.ses-bonn.de Koordinatorin SES Bonn: Daniela Moosmann Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3612 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.549452,
+          52.3412273
+        ]
+      },
+      "properties": {
+        "name": "Frankfurt",
+        "display_name": "Frankfurt (Oder) Regionalkoordinator: Lothar Stolle Mobil: 0176-64687953 E-Mail: ostbrandenburg@vera.ses-bonn.de Koordinatorin SES Bonn: Daniela Moosmann Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3612 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.3357307,
+          51.7567447
+        ]
+      },
+      "properties": {
+        "name": "Cottbus",
+        "display_name": "Cottbus Regionalkoordinatorin: Martina Schaar Mobil: 0151 11612030 E-Mail: cottbus@vera.ses-bonn.de Koordinatorin SES Bonn: Daniela Moosmann Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3612 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3888599,
+          52.5170365
+        ]
+      },
+      "properties": {
+        "name": "Berlin",
+        "display_name": "Berlin Regionalkoordinatoren: Auguste Hennecke-Bauernfeind Tel.: 030 2189279 E-Mail: berlin@vera.ses-bonn.de Carl-Hans Strudthoff Tel.: 0172 9166556 E-Mail: berlin@vera.ses-bonn.de Koordinatorin SES Bonn: Daniela Moosmann Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3612 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.6399609,
+          52.1315889
+        ]
+      },
+      "properties": {
+        "name": "Magdeburg",
+        "display_name": "Magdeburg Regionalkoordinator: Werner Schich Tel.: 0172 3237234 E-Mail: magdeburg@vera.ses-bonn.de Koordinator SES Bonn: Felix Strauch Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3696 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.9705452,
+          51.4825041
+        ]
+      },
+      "properties": {
+        "name": "Halle",
+        "display_name": "Halle Regionalkoordinator: Volker Röhr Tel.: 0160 1532125 E-Mail: halle@vera.ses-bonn.de Koordinator SES Bonn: Felix Strauch Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3696 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.5943951,
+          50.3533278
+        ]
+      },
+      "properties": {
+        "name": "Koblenz",
+        "display_name": "Koblenz Regionalkoordinator: Erwin Fries Tel.: 02743 3169 Mobil: 0171 2651088 E-Mail: koblenz@vera.ses-bonn.de Koordinatorin SES Bonn: Paula Erdmann Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3660 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6441878,
+          49.7596208
+        ]
+      },
+      "properties": {
+        "name": "Trier",
+        "display_name": "Trier Regionalkoordinator: Gerhard Kirsch Tel.: 06865 911897 E-Mail: trier@vera.ses-bonn.de Koordinatorin SES Bonn: Paula Erdmann Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3660 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2762513,
+          50.0012314
+        ]
+      },
+      "properties": {
+        "name": "Rheinhessen/Mainz",
+        "display_name": "Rheinhessen/Mainz Regionalkoordinator: Klaus Neese Tel.: 06132 20 34 Mobil: 0172 61 11 524 E-Mail: rheinhessen@vera.ses-bonn.de Koordinator SES Bonn: Paula Erdmann Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3660 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.8657658,
+          49.8431642
+        ]
+      },
+      "properties": {
+        "name": "Bad",
+        "display_name": "Bad Kreuznach Regionalkoordinator: Michael Lenzen Tel.: 0176 39242861 E-Mail: badkreuznach@vera.ses-bonn.de Koordinatorin SES Bonn: Paula Erdmann Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3660 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.7689951,
+          49.4432174
+        ]
+      },
+      "properties": {
+        "name": "Kaiserslautern",
+        "display_name": "Kaiserslautern Regionalkoordinator: Klaus Zimmermann Tel.: 0160 7878755 E-Mail: pfalz@vera.ses-bonn.de Koordinatorin SES Bonn: Paula Erdmann Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3660 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.57893,
+          49.94782
+        ]
+      },
+      "properties": {
+        "name": "Bayreuth",
+        "display_name": "Bayreuth Regionalkoordinator: Karl-Heinz Ulrich Mobil: 0151 70543921 E-Mail: oberfranken@vera.ses-bonn.de Koordinatorin SES Bonn: Sonja Sommerfeld Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3611 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1493636,
+          49.9740542
+        ]
+      },
+      "properties": {
+        "name": "Aschaffenburg",
+        "display_name": "Aschaffenburg Regionalkoordinatoren: Dieter Helfricht Tel.: 0931 77895, Mobil: 01577 3515269 E-Mail: unterfranken@vera.ses-bonn.de Elge Scherer Tel.: 06024 630010, Mobil: 0157 52865202 E-Mail: unterfranken@vera.ses-bonn.de Koordinatorin SES Bonn: Sonja Sommerfeld Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3611 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.932966,
+          49.79245
+        ]
+      },
+      "properties": {
+        "name": "Würzburg",
+        "display_name": "Würzburg Regionalkoordinatoren: Dieter Helfricht Tel.: 0931 77895, Mobil: 01577 3515269 E-Mail: unterfranken@vera.ses-bonn.de Elge Scherer Tel.: 06024 630010, Mobil: 0157 52865202 E-Mail: unterfranken@vera.ses-bonn.de Koordinatorin SES Bonn: Sonja Sommerfeld Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3611 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.077298,
+          49.453872
+        ]
+      },
+      "properties": {
+        "name": "Nürnberg",
+        "display_name": "Nürnberg Regionalkoordinator: Konrad Braun Tel.: 0911 7530123, Mobil: 0151 11736810 E-Mail: nuernberg@vera.ses-bonn.de Koordinatorin SES Bonn: Sonja Sommerfeld Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3611 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.0974869,
+          49.0195333
+        ]
+      },
+      "properties": {
+        "name": "Regensburg",
+        "display_name": "Regensburg Koordinatorin SES Bonn: Sonja Sommerfeld Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3611 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.8986971,
+          48.3668041
+        ]
+      },
+      "properties": {
+        "name": "Augsburg",
+        "display_name": "Augsburg Regionalkoordinatorin: Josefine Steiger Mobil: 0151 10613560 E-Mail: schwaben@vera.ses-bonn.de Koordinatorin SES Bonn: Sonja Sommerfeld Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3611 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4609744,
+          48.5748229
+        ]
+      },
+      "properties": {
+        "name": "Passau",
+        "display_name": "Passau Regionalkoordinator: Martin Brunner Tel.: 09901 6831, Mobil: 0176 54284226 E-Mail: niederbayern@vera.ses-bonn.de Koordinatorin SES Bonn: Sonja Sommerfeld Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3611 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.5753822,
+          48.1371079
+        ]
+      },
+      "properties": {
+        "name": "München",
+        "display_name": "München Regionalkoordinatoren: Rudolf Herwig Tel.: 01522 1817161 E-Mail: muenchen@vera.ses-bonn.de Franz Schropp Tel.: 0170 2233311 E-Mail: muenchen@vera.ses-bonn.de Koordinatorin SES Bonn: Sonja Sommerfeld Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3611 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.321836370672,
+          47.839603267371
+        ]
+      },
+      "properties": {
+        "name": "Kempten",
+        "display_name": "Kempten Regionalkoordinator: Roland Müller Tel.: 08349 676, Mobil: 0172 6069350 E-Mail: kempten@vera.ses-bonn.de Koordinatorin SES Bonn: Sonja Sommerfeld Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3611 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.467236,
+          49.489591
+        ]
+      },
+      "properties": {
+        "name": "Rhein-Neckar-Odenwald",
+        "display_name": "Rhein-Neckar-Odenwald (Mannheim) Koordinatorin SES Bonn: Paula Erdmann Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3660 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.218655,
+          49.142291
+        ]
+      },
+      "properties": {
+        "name": "Heilbronn",
+        "display_name": "Heilbronn Regionalkoordinator: Klaus Harder Tel.: 0171 3755359 E-Mail: heilbronn@vera.ses-bonn.de Koordinatorin SES Bonn: Paula Erdmann Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3660 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4034195,
+          49.0068705
+        ]
+      },
+      "properties": {
+        "name": "Karlsruhe",
+        "display_name": "Karlsruhe Regionalkoordinatorin: Ingrid Albicker-Omidi Tel.: 0721 1613329, Mobil: 0176 84753250 E-Mail: karlsruhe@vera.ses-bonn.de Koordinatorin SES Bonn: Paula Erdmann Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3660 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7029532,
+          48.8908846
+        ]
+      },
+      "properties": {
+        "name": "Pforzheim",
+        "display_name": "Pforzheim Regionalkoordinatorin: Ingrid Albicker-Omidi Tel.: 0721 1613329, Mobil: 0176 84753250 E-Mail: nordschwarzwald@vera.ses-bonn.de Koordination SES Bonn: Paula Erdmann Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3660 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1800132,
+          48.7784485
+        ]
+      },
+      "properties": {
+        "name": "Stuttgart",
+        "display_name": "Stuttgart Regionalkoordinator: Ralf Holzner Mobil: 0159 06482046 E-Mail: stuttgart@vera.ses-bonn.de Koordinatorin SES Bonn: Paula Erdmann Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3660 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.944378,
+          48.4716556
+        ]
+      },
+      "properties": {
+        "name": "Offenburg",
+        "display_name": "Offenburg Regionalkoordinator: Werner Gmeiner Tel.: 0171 76256268 E-Mail: offenburg@vera.ses-bonn.de Koordinatorin SES Bonn: Melanie Notarp Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3554 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9934336,
+          48.3974003
+        ]
+      },
+      "properties": {
+        "name": "Ulm",
+        "display_name": "Ulm Regionalkoordinatoren: Edgar Härle Tel.: 07351 76581 E-Mail: ulm@vera.ses-bonn.de Koordinatorin SES Bonn: Melanie Notarp Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3554 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2114144,
+          48.4919508
+        ]
+      },
+      "properties": {
+        "name": "Reutlingen",
+        "display_name": "Reutlingen Regionalkoordinatorin: Ute Pfeifer Mobil: 0163 480 3131 E-Mail: neckar-alb@vera.ses-bonn.de Koordinatorin SES Bonn: Melanie Notarp Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3554 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.494588,
+          48.0632739
+        ]
+      },
+      "properties": {
+        "name": "Villingen-Schwenningen",
+        "display_name": "Villingen-Schwenningen Regionalkoordinator: Gerhard Gaiser Tel.: 07836 96966 E-Mail: schwarzwald@vera.ses-bonn.de Koordinatorin SES Bonn: Melanie Notarp Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3554 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.8494005,
+          47.9960901
+        ]
+      },
+      "properties": {
+        "name": "Freiburg",
+        "display_name": "Freiburg Regionalkoordinator: Andreas Wießler Tel.: 0174 3463428 E-Mail: freiburg@vera.ses-bonn.de Koordinatorin SES Bonn: Melanie Notarp Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3554 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.612468,
+          47.7811014
+        ]
+      },
+      "properties": {
+        "name": "Ravensburg",
+        "display_name": "Ravensburg Regionalkoordinator: Eugen Dorsch Tel.: 0163 4903131 ravensburg@vera.ses-bonn.de Koordinatorin SES Bonn: Melanie Notarp Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3554 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1750718,
+          47.659216
+        ]
+      },
+      "properties": {
+        "name": "Konstanz",
+        "display_name": "Konstanz Regionalkoordinator: Alfred Greis Tel.: 07531 78788 E-Mail: konstanz@vera.ses-bonn.de Koordinatorin SES Bonn: Melanie Notarp Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3554 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6607218,
+          47.6120896
+        ]
+      },
+      "properties": {
+        "name": "Lörrach",
+        "display_name": "Lörrach Regionalkoordinator: Bruno Rüttnauer Tel.: 07762 8629 E-Mail: hochrhein@vera.ses-bonn.de Koordinatorin SES Bonn: Melanie Notarp Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3554 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.996379,
+          49.234362
+        ]
+      },
+      "properties": {
+        "name": "Saarbrücken",
+        "display_name": "Saarbrücken Regionalkoordinator: Gerhard Hussong Tel.: 06821 32456, Mobil: 0179 2285954 E-Mail: saarland@vera.ses-bonn.de Koordinatorin SES Bonn: Paula Erdmann Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3660 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0287364,
+          50.9777974
+        ]
+      },
+      "properties": {
+        "name": "Erfurt",
+        "display_name": "Erfurt Regionalkoordinatorin: Marina Ohlendorf Mobil: 0173 3668942 E-Mail: erfurt@vera.ses-bonn.de Koordinator SES Bonn: Felix Strauch Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3696 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.0796208,
+          50.8772301
+        ]
+      },
+      "properties": {
+        "name": "Gera",
+        "display_name": "Gera Regionalkoordinatorin: Dr. Elke Schmiedeknecht Tel.: 036424 52077 Mobil: 0170 7624041 E-Mail: ostthueringen@vera.ses-bonn.de Koordinator SES Bonn: Felix Strauch Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3696 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.6926437,
+          50.6086518
+        ]
+      },
+      "properties": {
+        "name": "Suhl",
+        "display_name": "Suhl Regionalkoordinator: Ralf Groteloh Tel.: 036205 90496 Mobil: 0171 7703184 E-Mail: suedthueringen@vera.ses-bonn.de Koordinator SES Bonn: Felix Strauch Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3696 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.4924096,
+          51.3154546
+        ]
+      },
+      "properties": {
+        "name": "Kassel",
+        "display_name": "Kassel Regionalkoordinator: Helmut Henkel Tel.: 06424 3592 E-Mail: kassel-marburg@vera.ses-bonn.de Koordinator SES Bonn: Felix Strauch Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3696 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7757742,
+          50.8117327
+        ]
+      },
+      "properties": {
+        "name": "Marburg",
+        "display_name": "Marburg Regionalkoordinator: Helmut Henkel Tel.: 06424 3592 E-Mail: kassel-marburg@vera.ses-bonn.de Koordinator SES Bonn: Felix Strauch Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3696 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6742306,
+          50.5862066
+        ]
+      },
+      "properties": {
+        "name": "Gießen",
+        "display_name": "Gießen Regionalkoordinatorin: Eva-Marie Fay Tel.: 02772 570941 E-Mail: mittelhessen@vera.ses-bonn.de Koordinator SES Bonn: Felix Strauch Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3696 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2416556,
+          50.0820384
+        ]
+      },
+      "properties": {
+        "name": "Wiesbaden",
+        "display_name": "Wiesbaden Regionalkoordinator: Hermann Ries Tel.: 06128 71415 E-Mail: wiesbaden@vera.ses-bonn.de Koordinatorin SES Bonn: Felix  Strauch Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3696 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6820917,
+          50.1106444
+        ]
+      },
+      "properties": {
+        "name": "Frankfurt",
+        "display_name": "Frankfurt Regionalkoordinatorin: Rita Kranz Mobil.: 0171 2842817 E-Mail: frankfurt@vera.ses-bonn.de Friedrich Halfbrodt Mobil.: 0173 7002445 E-Mail: frankfurt@vera.ses-bonn.de Koordinator SES Bonn: Felix Strauch Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3696 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.651177,
+          49.872775
+        ]
+      },
+      "properties": {
+        "name": "Darmstadt",
+        "display_name": "Darmstadt Regionalkoordinator: Joachim Eichhorn Tel.: 06102 574583, Mobil: 0173 3032145 E-Mail: suedhessen@vera.ses-bonn.de Koordinator SES Bonn: Felix Strauch Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3696 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3747329,
+          51.3406321
+        ]
+      },
+      "properties": {
+        "name": "Leipzig",
+        "display_name": "Leipzig Regionalkoordinatorin: Brigitte Morof-Windhorst Tel.: 0151 11639038 E-Mail: leipzig@vera.ses-bonn.de Koordinator SES Bonn: Felix Strauch Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3696 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.7381437,
+          51.0493286
+        ]
+      },
+      "properties": {
+        "name": "Dresden",
+        "display_name": "Dresden Regionalkoordinatorin: Eva-Maria Hutsch Tel.: 03528 440811, Mobil: 0171 7573048 E-Mail: dresden@vera.ses-bonn.de Koordinator SES Bonn: Felix Strauch Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3696 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.9252977,
+          50.8322608
+        ]
+      },
+      "properties": {
+        "name": "Chemnitz",
+        "display_name": "Chemnitz Regionalkoordinator: Achim Klisch Tel.: 03721 23003, Mobil: 0162 7763057 E-Mail: chemnitz@vera.ses-bonn.de Koordinator SES Bonn: Felix Strauch Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3696 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.1123441,
+          49.1982825
+        ]
+      },
+      "properties": {
+        "name": "Landau",
+        "display_name": "Landau Regionalkoordinator: Hermann Kimmel Tel.: 0151 56182578 E-Mail: pfalz-suew@vera.ses-bonn.de Koordinatorin SES Bonn: Paula Erdmann Kaiserstraße 185 53113 Bonn Tel.: 0228 26090 3660 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.152923,
+          48.6767637
+        ]
+      },
+      "properties": {
+        "name": "Heidenheim",
+        "display_name": "Heidenheim an der Brenz Regionalkoordinatorin: Margret Russ Tel.: 07340 7668 E-Mail: ostwuerttemberg@vera.ses-bonn.de Koordinatorin SES Bonn: Melanie Notarp Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3554 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.866667,
+          53.316667
+        ]
+      },
+      "properties": {
+        "name": "Buchholz",
+        "display_name": "Buchholz Regionalkoordinator: Michael Gehrke Tel.: 0176 38368435 E-Mail: buchholz@vera.ses-bonn.de Koordinatorin SES Bonn: Christina Rohde Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-132 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.016667,
+          50.883331
+        ]
+      },
+      "properties": {
+        "name": "Siegen",
+        "display_name": "Siegen Koordinatorin SES Bonn: Tina Schubert Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-3643 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.4115,
+          53.2464
+        ]
+      },
+      "properties": {
+        "name": "Lüneburg",
+        "display_name": "Lüneburg Regionalkoordinatorin: Andrea Bassen Mobil: 0155 63664727 Mail: lueneburg@vera.ses-bonn.de Koordinatorin SES Bonn: Christina Rohde Kaiserstraße 185 53113 Bonn Tel.: 0228 26090-132 Fax: 0228 26090-177 E-Mail: vera@ses-bonn.de"
+      }
+    }
+  ]
+}

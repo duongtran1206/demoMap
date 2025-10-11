@@ -1,0 +1,201 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.406395,
+          52.524499
+        ]
+      },
+      "properties": {
+        "name": "Goethe-Institut Berlin",
+        "display_name": "Goethe-Institut Berlin Neue Schönhauser Straße 20 10178 Berlin Tel.: +49 89 1222 3 1222 Fax: +49 30 25906-400 E-Mail: kundenservice-d@goethe.de http://www.goethe.de/berlin"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.10526,
+          50.730248
+        ]
+      },
+      "properties": {
+        "name": "Goethe-Institut Bonn",
+        "display_name": "Goethe-Institut Bonn Lennéstraße 6 53113 Bonn Tel.: +49 89 1222 3 1222 E-Mail: kundenservice-d@goethe.de http://www.goethe.de/bonn"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.852042,
+          53.107118
+        ]
+      },
+      "properties": {
+        "name": "Goethe-Institut Bremen",
+        "display_name": "Goethe-Institut Bremen Bibliothekstraße 7, Glashalle 28359 Bremen Tel.: +49 89 1222 3 1222 Fax: +49 421 325242 E-Mail: kundenservice-d@goethe.de http://www.goethe.de/bremen"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.753519,
+          51.073996
+        ]
+      },
+      "properties": {
+        "name": "Goethe-Institut Dresden",
+        "display_name": "Goethe-Institut Dresden Königsbrückerstraße 84 01099 Dresden Tel.: +49 89 1222 3 1222 Fax: +49 351 80011-10 E-Mail: kundenservice-d@goethe.de http://www.goethe.de/dresden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.792884,
+          51.221792
+        ]
+      },
+      "properties": {
+        "name": "Goethe-Institut Düsseldorf",
+        "display_name": "Goethe-Institut Düsseldorf Immermannstraße 65 40210 Düsseldorf Tel.: +49 89 1222 3 1222 Fax: +49 211 771084 E-Mail: kundenservice-d@goethe.de http://www.goethe.de/duesseldorf"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.688238343015957,
+          50.118082119128424
+        ]
+      },
+      "properties": {
+        "name": "Goethe-Institut Frankfurt",
+        "display_name": "Goethe-Institut Frankfurt Bleichstraße 1 60313 Frankfurt am Main Tel.: +49 89 1222 3 1222 Fax: +49 69 9620395 E-Mail: kundenservice-d@goethe.de http://www.goethe.de/frankfurt"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.840449,
+          47.994654
+        ]
+      },
+      "properties": {
+        "name": "Goethe-Institut Freiburg",
+        "display_name": "Goethe-Institut Freiburg Wilhelmstraße 17 79098 Freiburg Tel.: +49 89 1222 3 1222 Fax: +49 761 38671-15 E-Mail: kundenservice-d@goethe.de http://www.goethe.de/freiburg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.929075,
+          51.543038
+        ]
+      },
+      "properties": {
+        "name": "Goethe-Institut Göttingen",
+        "display_name": "Goethe-Institut Göttingen Jutta-Limbach-Straße 3 37073 Göttingen Tel.: +49 89 1222 3 1222 Fax: +49 551 54744-44 E-Mail: kundenservice-d@goethe.de http://www.goethe.de/goettingen"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.007812,
+          53.549555
+        ]
+      },
+      "properties": {
+        "name": "Goethe-Institut Hamburg",
+        "display_name": "Goethe-Institut Hamburg Hühnerposten 1 20097 Hamburg Tel.: +49 89 1222 3 1222 Fax: +49 40 238543-99 E-Mail: kundenservice-d@goethe.de http://www.goethe.de/hamburg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4844,
+          49.469202
+        ]
+      },
+      "properties": {
+        "name": "Goethe-Institut Heidelberg",
+        "display_name": "Goethe-Institut Heidelberg Oskar-Meixner Straße 6 68163 Mannheim Tel.: +49 89 1222 3 1222 Fax: +49 621 83385-55 E-Mail: kundenservice-d@goethe.de http://www.goethe.de/heidelberg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4844,
+          49.469202
+        ]
+      },
+      "properties": {
+        "name": "Goethe-Institut Mannheim",
+        "display_name": "Goethe-Institut Mannheim Oskar-Meixner Straße 6 68163 Mannheim Tel.: +49 89 1222 3 1222 Fax: +49 621 83385-55 E-Mail: kundenservice-d@goethe.de http://www.goethe.de/mannheim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.591184,
+          48.127381
+        ]
+      },
+      "properties": {
+        "name": "Goethe-Institut München",
+        "display_name": "Goethe-Institut München Rablstraße 24 81669 München Tel.: +49 89 1222 3 1222 Fax: +49 89 551903-35 E-Mail: kundenservice-d@goethe.de http://www.goethe.de/muenchen"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.57534,
+          48.14471
+        ]
+      },
+      "properties": {
+        "name": "Goethe-Institut Zentrale München",
+        "display_name": "Goethe-Institut Zentrale München Oskar-von-Miller-Ring 18 80333 München Tel.: +49 89 15921-0 Fax: +49 89 15921-450 E-Mail: info@goethe.de http://www.goethe.de/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.735399,
+          49.113596
+        ]
+      },
+      "properties": {
+        "name": "Goethe-Institut Schwäbisch Hall",
+        "display_name": "Goethe-Institut Schwäbisch Hall Am Spitalbach 8 74523 Schwäbisch Hall Tel.: +49 89 1222 3 1222 Fax: +49 791 97887-77 E-Mail: kundenservice-d@goethe.de http://www.goethe.de/schwaebisch-hall"
+      }
+    }
+  ]
+}

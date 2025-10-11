@@ -1,0 +1,2245 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.99938,
+          52.0705741
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft für den Kreis Borken mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft für den Kreis Borken mbH  Erhardstraße 11, 48683 Ahaus, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.90346,
+          51.76216
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft Ahlen mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft Ahlen mbH  Rottmannstraße, 59229 Ahlen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5900142,
+          49.1286374
+        ]
+      },
+      "properties": {
+        "name": "Regionale Wirtschaftsförderung Bruchsal GmbH",
+        "display_name": "Regionale Wirtschaftsförderung Bruchsal GmbH  Talstraße, 76646 Bruchsal, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.500987,
+          47.6755462
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Bodenseekreis GmbH",
+        "display_name": "Wirtschaftsförderung Bodenseekreis GmbH  Spatenstraße 12, 88046 Friedrichshafen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1911438,
+          49.1456762
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsregion Heilbronn-Franken GmbH",
+        "display_name": "Wirtschaftsregion Heilbronn-Franken GmbH  Jahnheide 1, 74080 Heilbronn, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2400002,
+          49.1435881
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Raum Heilbronn GmbH",
+        "display_name": "Wirtschaftsförderung Raum Heilbronn GmbH  Pfühlstraße 82, 74076 Heilbronn, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.8109744,
+          48.5724262
+        ]
+      },
+      "properties": {
+        "name": "Kehl Marketing GmbH",
+        "display_name": "Kehl Marketing GmbH  Rheinstraße 77, 77694 Kehl, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.9335753,
+          48.4678871
+        ]
+      },
+      "properties": {
+        "name": "nectanet",
+        "display_name": "nectanet  Marlener Straße 2, 77656 Offenburg, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6681693,
+          48.8768108
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Nordschwarzwald GmbH",
+        "display_name": "Wirtschaftsförderung Nordschwarzwald GmbH  Falkengarten 3, 75180 Pforzheim, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7125222,
+          48.8989713
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaft und Stadtmarketing Pforzheim",
+        "display_name": "Wirtschaft und Stadtmarketing Pforzheim  Gneisenaustraße 12, 75177 Pforzheim, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2065072,
+          48.486131
+        ]
+      },
+      "properties": {
+        "name": "Standortagentur Tübingen - Reutlingen - Zollernalb GmbH",
+        "display_name": "Standortagentur Tübingen - Reutlingen - Zollernalb GmbH  Hindenburgstraße, 72762 Reutlingen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.7887084,
+          48.8005215
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft mbH Region Ostwürttemberg (WiRO)",
+        "display_name": "Wirtschaftsförderungsgesellschaft mbH Region Ostwürttemberg (WiRO)  Bahnhofplatz 5, 73525 Schwäbisch Gmünd, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2185546,
+          48.0873947
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungs- und Standortmarketinggesellschaft Landkreis Sigmaringen mbH",
+        "display_name": "Wirtschaftsförderungs- und Standortmarketinggesellschaft Landkreis Sigmaringen mbH  Fürst-Wilhelm-Straße 5-7, 72488 Sigmaringen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0020843,
+          48.7083068
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Sindelfingen GmbH",
+        "display_name": "Wirtschaftsförderung Sindelfingen GmbH  Planiestraße 2, 71063 Sindelfingen (Stadt), Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1770844,
+          48.7829729
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Region Stuttgart GmbH (WRS)",
+        "display_name": "Wirtschaftsförderung Region Stuttgart GmbH (WRS)  Friedrichstraße 10, 70174 Stuttgart, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9908915,
+          48.4019751
+        ]
+      },
+      "properties": {
+        "name": "Verein zur Förderung der Innovationsregion Ulm - Spitze im Süden e.V.",
+        "display_name": "Verein zur Förderung der Innovationsregion Ulm - Spitze im Süden e.V.  Olgastraße, 89073 Ulm, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4623687,
+          48.0546659
+        ]
+      },
+      "properties": {
+        "name": "WIR Villingen-Schwenningen GmbH",
+        "display_name": "WIR Villingen-Schwenningen GmbH  Bertholdstraße 7, 78050 Villingen-Schwenningen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.31601,
+          48.83227
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaft-, Tourismus  und Marketing WTM GmbH Waiblingen",
+        "display_name": "Wirtschaft-, Tourismus  und Marketing WTM GmbH Waiblingen  Scheuerngasse, 71332 Waiblingen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.8687079,
+          49.4457572
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Amberg",
+        "display_name": "Wirtschaftsförderung Amberg  Emailfabrikstraße, 92224 Amberg, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.8973779,
+          48.3707453
+        ]
+      },
+      "properties": {
+        "name": "Regio Augsburg Wirtschaft GmbH",
+        "display_name": "Regio Augsburg Wirtschaft GmbH  Karlstraße 2, 86150 Augsburg, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.5825827,
+          47.7595349
+        ]
+      },
+      "properties": {
+        "name": "WirtschaftsForum Oberland e.V.",
+        "display_name": "WirtschaftsForum Oberland e.V.  Professor-Max-Lange-Platz 1, 83646 Bad Tölz, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.9640031,
+          50.2594386
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft der Stadt Coburg mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft der Stadt Coburg mbH  Mauer 14, 96450 Coburg, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.96848,
+          47.84157
+        ]
+      },
+      "properties": {
+        "name": "Berchtesgadener Land Wirtschaftsservice GmbH",
+        "display_name": "Berchtesgadener Land Wirtschaftsservice GmbH  Sägewerkstraße 3, 83395 Freilassing, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.3139453,
+          47.7207713
+        ]
+      },
+      "properties": {
+        "name": "Allgäu GmbH - Gesellschaft für Standort und Tourismus",
+        "display_name": "Allgäu GmbH - Gesellschaft für Standort und Tourismus  Allgäuer Straße 1, 87435 Kempten (Allgäu), Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.8308299,
+          47.7893865
+        ]
+      },
+      "properties": {
+        "name": "REO Regionalentwicklung Oberland KU",
+        "display_name": "REO Regionalentwicklung Oberland KU  Rathausplatz 2, 83714 Miesbach, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.50859,
+          48.53287
+        ]
+      },
+      "properties": {
+        "name": "Kommunalunternehmen Strukturentwicklung Landkreis Pfaffenhofen a.d.Ilm (KUS)",
+        "display_name": "Kommunalunternehmen Strukturentwicklung Landkreis Pfaffenhofen a.d.Ilm (KUS)  Spitalstraße 7, 85276 Pfaffenhofen an der Ilm, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.3416428,
+          47.9985203
+        ]
+      },
+      "properties": {
+        "name": "gwt Starnberg GmbH - Region StarnbergAmmersee",
+        "display_name": "gwt Starnberg GmbH - Region StarnbergAmmersee  Kirchplatz 3, 82319 Starnberg, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.6385737,
+          47.8666721
+        ]
+      },
+      "properties": {
+        "name": "Chiemgau GmbH Wirtschaftsförderung",
+        "display_name": "Chiemgau GmbH Wirtschaftsförderung  Seuffertstraße 12, 83278 Traunstein, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.494957,
+          52.316515
+        ]
+      },
+      "properties": {
+        "name": "Investor Center Ostbrandenburg GmbH",
+        "display_name": "Investor Center Ostbrandenburg GmbH  Im Technologiepark 1, 15236 Frankfurt (Oder), Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.8270861,
+          52.948814
+        ]
+      },
+      "properties": {
+        "name": "REG Regionalentwicklungsgesellschaft Nordwestbrandenburg mbH",
+        "display_name": "REG Regionalentwicklungsgesellschaft Nordwestbrandenburg mbH  Alt Ruppiner Allee 40, 16816 Neuruppin, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.7756787,
+          52.8557572
+        ]
+      },
+      "properties": {
+        "name": "Wirtschafts- und Tourismus- entwicklungs GmbH / WITO GmbH",
+        "display_name": "Wirtschafts- und Tourismus- entwicklungs GmbH / WITO GmbH  Albert-Einstein-Straße, 16225 Eberswalde, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.6507212,
+          51.7523874
+        ]
+      },
+      "properties": {
+        "name": "Centrum für Innovation und Technologie GmbH",
+        "display_name": "Centrum für Innovation und Technologie GmbH  Inselstraße 31, 03149 Forst (Lausitz), Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2070131,
+          52.6339035
+        ]
+      },
+      "properties": {
+        "name": "Wirtschafts- Innovations- u. Tourismusförderung Oberhavel GmbH",
+        "display_name": "Wirtschafts- Innovations- u. Tourismusförderung Oberhavel GmbH  Neuendorfstraße 23 A, 16761 Hennigsdorf, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.8934343,
+          52.5696263
+        ]
+      },
+      "properties": {
+        "name": "STIC Wirtschaftsförderungsgesellschaft Märkisch-Oderland mbH",
+        "display_name": "STIC Wirtschaftsförderungsgesellschaft Märkisch-Oderland mbH  Garzauer Chaussee 1, 15344 Strausberg, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.6343704,
+          52.3258372
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft Dahme-Spreewald mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft Dahme-Spreewald mbH  Freiheitstraße 120, 15745 Wildau, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.803665,
+          53.0790659
+        ]
+      },
+      "properties": {
+        "name": "WFB Wirtschaftsförderung Bremen GmbH",
+        "display_name": "WFB Wirtschaftsförderung Bremen GmbH  Hanseatenhof 9, 28195 Bremen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9875848,
+          53.4658488
+        ]
+      },
+      "properties": {
+        "name": "Süderelbe AG",
+        "display_name": "Süderelbe AG  Veritaskai 4, 21079 Hamburg, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.728402,
+          50.8594226
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft für den Landkreis Hersfeld-Rotenburg mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft für den Landkreis Hersfeld-Rotenburg mbH  Leinenweberstraße 1, 36251 Bad Hersfeld, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6220793,
+          49.6804403
+        ]
+      },
+      "properties": {
+        "name": "Marketing- und Entwicklungs-Gesellschaft Bensheim mbH",
+        "display_name": "Marketing- und Entwicklungs-Gesellschaft Bensheim mbH  Hauptstraße 39, 64625 Bensheim, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.032402,
+          51.1937193
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft Werra-Meißner-Kreis mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft Werra-Meißner-Kreis mbH  Niederhoner Straße 54, 37269 Eschwege, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7116929,
+          50.1110534
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Frankfurt GmbH",
+        "display_name": "Wirtschaftsförderung Frankfurt GmbH  Hanauer Landstraße 126-128, 60314 Frankfurt am Main, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6425394,
+          49.6398593
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Bergstraße GmbH",
+        "display_name": "Wirtschaftsförderung Bergstraße GmbH  Wilhelmstraße 51, 64646 Heppenheim, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8694079,
+          51.2725674
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Waldeck-Frankenberg GmbH",
+        "display_name": "Wirtschaftsförderung Waldeck-Frankenberg GmbH  Lengefelder Straße 6, 34497 Korbach, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5666627,
+          49.6519051
+        ]
+      },
+      "properties": {
+        "name": "Entwicklungsgesellschaft Lorsch mbH",
+        "display_name": "Entwicklungsgesellschaft Lorsch mbH  Kaiser-Wilhelm-Platz 1, 64653 Lorsch, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7720251,
+          50.7857601
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsentwicklungsgesellschaft Marburg-Biedenkopf mbH",
+        "display_name": "Wirtschaftsentwicklungsgesellschaft Marburg-Biedenkopf mbH  Im Lichtenholz 60, 35043 Marburg, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.1846328,
+          53.864546
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft Nordwestmecklenburg mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft Nordwestmecklenburg mbH  August-Bebel-Straße 1, 23936 Grevesmühlen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.1719029,
+          53.7923932
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Landkreis Rostock GmbH",
+        "display_name": "Wirtschaftsförderung Landkreis Rostock GmbH  Am Wall 3, 18273 Güstrow, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.5037337,
+          53.3208764
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft Südwestmecklenburg mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft Südwestmecklenburg mbH  Garnisonsstraße 7, 19288 Ludwigslust, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.096366,
+          54.0942698
+        ]
+      },
+      "properties": {
+        "name": "Wirtschafts- und Technologieförderung Rostock GmbH",
+        "display_name": "Wirtschafts- und Technologieförderung Rostock GmbH  Schweriner Straße 10, 18069 Rostock, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.6915616,
+          52.8658114
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft Deltaland mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft Deltaland mbH  Walsroder Straße 9, 29683 Bad Fallingbostel, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.53972,
+          52.260545
+        ]
+      },
+      "properties": {
+        "name": "Braunschweig Zukunft GmbH",
+        "display_name": "Braunschweig Zukunft GmbH  Körnerstraße 19, 38102 Braunschweig, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.5079696,
+          52.2681003
+        ]
+      },
+      "properties": {
+        "name": "Struktur-Förderung Braunschweig",
+        "display_name": "Struktur-Förderung Braunschweig  Klosterstraße, 38118 Braunschweig, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.8692844,
+          53.3537983
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung im Landkreis Harburg GmbH",
+        "display_name": "Wirtschaftsförderung im Landkreis Harburg GmbH  Bäckerstraße, 21244 Buchholz in der Nordheide, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.3687,
+          52.60759
+        ]
+      },
+      "properties": {
+        "name": "Gesellschaft für Wirtschaftsförderung und Stadtmarketing Diepholz mbH",
+        "display_name": "Gesellschaft für Wirtschaftsförderung und Stadtmarketing Diepholz mbH  Rathausmarkt 1, 49356 Diepholz, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.42221,
+          51.90992
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Region Goslar GmbH & Co.KG",
+        "display_name": "Wirtschaftsförderung Region Goslar GmbH & Co.KG  Klubgartenstraße 5, 38640 Goslar, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9142617,
+          51.5266677
+        ]
+      },
+      "properties": {
+        "name": "GWG Gesellschaft für Wirtschaftsförderung und Stadtentwicklung Göttingen mbH",
+        "display_name": "GWG Gesellschaft für Wirtschaftsförderung und Stadtentwicklung Göttingen mbH  Ederstieg, 37081 Göttingen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9533828,
+          51.5397009
+        ]
+      },
+      "properties": {
+        "name": "WRGN Wirtschaftsförderung Region Göttingen Northeim GmbH",
+        "display_name": "WRGN Wirtschaftsförderung Region Göttingen Northeim GmbH  Schlegelweg 6, 37075 Göttingen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.3761922,
+          52.0988549
+        ]
+      },
+      "properties": {
+        "name": "Weserbergland AG",
+        "display_name": "Weserbergland AG  Kuhlmannstraße, 31785 Hameln, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.7586403,
+          52.3628843
+        ]
+      },
+      "properties": {
+        "name": "HRG-Hannover Region Grundstücksgesellschaft mbH & Co. KG",
+        "display_name": "HRG-Hannover Region Grundstücksgesellschaft mbH & Co. KG  Sallstraße 69, 30171 Hannover, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9506359,
+          52.1558375
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft Hildesheim Region (HI-REG) mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft Hildesheim Region (HI-REG) mbH  Kaiserstraße 15, 31134 Hildesheim, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.2974284,
+          52.697077
+        ]
+      },
+      "properties": {
+        "name": "Emsland GmbH",
+        "display_name": "Emsland GmbH  Haselünner Straße 3, 49716 Meppen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2201793,
+          52.6289611
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung im Landkreis Nienburg / Weser GmbH",
+        "display_name": "Wirtschaftsförderung im Landkreis Nienburg / Weser GmbH  Hannoversche Straße 76, 31582 Nienburg/Weser, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.0705544,
+          52.2477397
+        ]
+      },
+      "properties": {
+        "name": "WIGOS Wirtschaftsförderungsgesellsch. Osnabrücker Land mbH",
+        "display_name": "WIGOS Wirtschaftsförderungsgesellsch. Osnabrücker Land mbH  Am Schölerberg 1, 49082 Osnabrück, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.0371981,
+          52.277255
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Osnabrück GmbH",
+        "display_name": "Wirtschaftsförderung Osnabrück GmbH  Natruper-Tor-Wall 2a, 49076 Osnabrück, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.4771681,
+          53.5992772
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Landkreis Stade GmbH",
+        "display_name": "Wirtschaftsförderung Landkreis Stade GmbH  Große Schmiedestraße 6,8,10, 21682 Stade, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.7891743,
+          52.4256101
+        ]
+      },
+      "properties": {
+        "name": "Wolfsburg Wirtschaft und Marketing GmbH",
+        "display_name": "Wolfsburg Wirtschaft und Marketing GmbH  Porschestraße 26-30, 38440 Wolfsburg, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6785666,
+          51.2885796
+        ]
+      },
+      "properties": {
+        "name": "Gesellschaft zur Wirtschafts- und Strukturförderung im Märkischen Kreis mbH",
+        "display_name": "Gesellschaft zur Wirtschafts- und Strukturförderung im Märkischen Kreis mbH  Lindenstraße 45, 58762 Altena, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.0323409,
+          51.7619417
+        ]
+      },
+      "properties": {
+        "name": "Gesellschaft für Wirtschaftsförderung im Kreis Warendorf mbH",
+        "display_name": "Gesellschaft für Wirtschaftsförderung im Kreis Warendorf mbH  Vorhelmer Straße 81, 59269 Beckum, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6295021,
+          50.9441912
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Rhein-Erft GmbH",
+        "display_name": "Wirtschaftsförderung Rhein-Erft GmbH  Sportparkstraße 2;4;4a;4b, 50126 Bergheim, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1855656,
+          50.9597164
+        ]
+      },
+      "properties": {
+        "name": "Rheinisch-Bergische Wirtschaftsförderungsgesellschaft mbH",
+        "display_name": "Rheinisch-Bergische Wirtschaftsförderungsgesellschaft mbH  51429 Bergisch Gladbach, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5301556,
+          52.021608
+        ]
+      },
+      "properties": {
+        "name": "WEGE mbH - Wirtschaftsförderung für Bielefeld",
+        "display_name": "WEGE mbH - Wirtschaftsförderung für Bielefeld  Goldstraße 16-18, 33602 Bielefeld, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6173262,
+          51.8385474
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungs- und Stadtmarketing Gesellschaft Bocholt mbH & Co. KG",
+        "display_name": "Wirtschaftsförderungs- und Stadtmarketing Gesellschaft Bocholt mbH & Co. KG  Osterstraße 23, 46397 Bocholt, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.2158467,
+          51.4807429
+        ]
+      },
+      "properties": {
+        "name": "Bochum Wirtschaftsförderung Wifo GmbH",
+        "display_name": "Bochum Wirtschaftsförderung Wifo GmbH  Viktoriastraße 10, 44787 Bochum, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.023623,
+          50.7584725
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungs- und Entwicklungsgesellschaft mbH Bornheim",
+        "display_name": "Wirtschaftsförderungs- und Entwicklungsgesellschaft mbH Bornheim  Johann-Philipp-Reis-Straße 15, 53332 Bornheim, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.9158712,
+          51.9331563
+        ]
+      },
+      "properties": {
+        "name": "GILDE Gewerbe- und Innovationszentrum Lippe-Detmold GmbH",
+        "display_name": "GILDE Gewerbe- und Innovationszentrum Lippe-Detmold GmbH  Bad Meinberger Straße 1, 32760 Detmold, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.7575858,
+          51.4355444
+        ]
+      },
+      "properties": {
+        "name": "Duisburg Business & Innovation GmbH",
+        "display_name": "Duisburg Business & Innovation GmbH  Am Hafen, 47051 Duisburg, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.2861427,
+          51.8262734
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Kreis Coesfeld GmbH",
+        "display_name": "Wirtschaftsförderung Kreis Coesfeld GmbH  Fehrbelliner Platz 11, 48249 Dülmen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.2415671,
+          51.8332834
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungs- und Stadtmarketing-GmbH Emmerich am Rhein",
+        "display_name": "Wirtschaftsförderungs- und Stadtmarketing-GmbH Emmerich am Rhein  Willibrordstraße 2, 46446 Emmerich am Rhein, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.0213063,
+          51.4465189
+        ]
+      },
+      "properties": {
+        "name": "Business Metropole Ruhr GmbH",
+        "display_name": "Business Metropole Ruhr GmbH  Kronprinzenstraße 30, 45128 Essen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6128775,
+          52.0934726
+        ]
+      },
+      "properties": {
+        "name": "Gesellschaft zur Entwicklung und Förderung der Wirtschaft in der Stadt Greven mbH",
+        "display_name": "Gesellschaft zur Entwicklung und Förderung der Wirtschaft in der Stadt Greven mbH  An der Martinischule, 48268 Greven, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.5691131,
+          51.0292777
+        ]
+      },
+      "properties": {
+        "name": "Oberbergische Aufbau GmbH",
+        "display_name": "Oberbergische Aufbau GmbH  Moltkestraße 34, 51643 Gummersbach, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.3455853,
+          51.904726
+        ]
+      },
+      "properties": {
+        "name": "pro Wirtschaft GT GmbH",
+        "display_name": "pro Wirtschaft GT GmbH  Auf dem Stempel, 33334 Gütersloh, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.474189,
+          51.3576342
+        ]
+      },
+      "properties": {
+        "name": "HAGEN.WIRTSCHAFTSENTWICKLUNG GmbH",
+        "display_name": "HAGEN.WIRTSCHAFTSENTWICKLUNG GmbH  Mittelstraße 22, 58095 Hagen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.8111554,
+          51.6867907
+        ]
+      },
+      "properties": {
+        "name": "IMPULS. Die Hammer Wirtschaftsagentur GmbH",
+        "display_name": "IMPULS. Die Hammer Wirtschaftsagentur GmbH  Münsterstraße 5, 59065 Hamm, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1744021,
+          51.3974378
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsagentur Ennepe-Ruhr GmbH (EN-Agentur)",
+        "display_name": "Wirtschaftsförderungsagentur Ennepe-Ruhr GmbH (EN-Agentur)  Eickener Straße 39, 45525 Hattingen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6737656,
+          52.1152019
+        ]
+      },
+      "properties": {
+        "name": "Interkommunale Wirtschaftsförderungsgesellschaft mbH im Kreis Herford",
+        "display_name": "Interkommunale Wirtschaftsförderungsgesellschaft mbH im Kreis Herford  Gehrenberg 25, 32052 Herford-Stadt, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.2079369,
+          51.5560065
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft Herne mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft Herne mbH  Westring 303, 44629 Herne, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1486709,
+          51.5831192
+        ]
+      },
+      "properties": {
+        "name": "WiN Emscher-Lippe GmbH",
+        "display_name": "WiN Emscher-Lippe GmbH  Herner Straße 10, 45699 Herten, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.38802,
+          51.77745
+        ]
+      },
+      "properties": {
+        "name": "Gesellschaft für Wirtschaftsförderung im Kreis Höxter GmbH",
+        "display_name": "Gesellschaft für Wirtschaftsförderung im Kreis Höxter GmbH  Corveyer Allee 7, 37671 Höxter, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6966211,
+          51.3755216
+        ]
+      },
+      "properties": {
+        "name": "Gesellschaft für Wirtschaftsförderung Iserlohn mbH",
+        "display_name": "Gesellschaft für Wirtschaftsförderung Iserlohn mbH  Kurt-Schumacher-Ring 5, 58636 Iserlohn, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1173286,
+          51.7791676
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Kreis Kleve GmbH",
+        "display_name": "Wirtschaftsförderung Kreis Kleve GmbH  Mittelweg 132, 47533 Kleve, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1487493,
+          51.7938974
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaft, Tourismus & Marketing Stadt Kleve GmbH",
+        "display_name": "Wirtschaft, Tourismus & Marketing Stadt Kleve GmbH  Emmericher Straße 258, 47533 Kleve, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.9509594,
+          50.9433157
+        ]
+      },
+      "properties": {
+        "name": "KölnBusiness Wirtschaftsförderungs-GmbH",
+        "display_name": "KölnBusiness Wirtschaftsförderungs-GmbH  Börsenplatz 1, 50668 Köln, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.011356,
+          51.0679521
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Leverkusen GmbH",
+        "display_name": "Wirtschaftsförderung Leverkusen GmbH  Stauffenbergstraße 14-20, 51379 Leverkusen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.3441889,
+          51.6599363
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Lippstadt GmbH",
+        "display_name": "Wirtschaftsförderung Lippstadt GmbH  Erwitter Straße 105, 59557 Lippstadt, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6357264,
+          51.2180179
+        ]
+      },
+      "properties": {
+        "name": "Stadtentwicklungsgesellschaft Lüdenscheid mbH",
+        "display_name": "Stadtentwicklungsgesellschaft Lüdenscheid mbH  Humboldtstraße 36, 58511 Lüdenscheid, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.7932354,
+          51.4363863
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungs- und Stadtentwicklungsgesellschaft Menden mbH",
+        "display_name": "Wirtschaftsförderungs- und Stadtentwicklungsgesellschaft Menden mbH  Bahnhofstraße 24, 58706 Menden (Sauerland), Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.5947765,
+          51.4727222
+        ]
+      },
+      "properties": {
+        "name": "Wir4 - Wirtschaftsförderung für Moers, Kamp-Lintfort, Neukirchen-Vluyn und Rheinberg AöR",
+        "display_name": "Wir4 - Wirtschaftsförderung für Moers, Kamp-Lintfort, Neukirchen-Vluyn und Rheinberg AöR  Genender Platz 1, 47445 Moers, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.4418821,
+          51.1973838
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Mönchengladbach GmbH",
+        "display_name": "Wirtschaftsförderung Mönchengladbach GmbH  Steinmetzstraße 57, 41061 Mönchengladbach, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6093876,
+          51.9717959
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Münster GmbH",
+        "display_name": "Wirtschaftsförderung Münster GmbH  Steinfurter Straße 60a, 48149 Münster, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.846903,
+          51.029024
+        ]
+      },
+      "properties": {
+        "name": "Südwestfalen Agentur GmbH",
+        "display_name": "Südwestfalen Agentur GmbH  Martinstraße 15, 57462 Olpe, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.9496542,
+          50.6347321
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungs- und Entwicklungsgesellschaft der Stadt Rheinbach mbH",
+        "display_name": "Wirtschaftsförderungs- und Entwicklungsgesellschaft der Stadt Rheinbach mbH  Marie-Curie-Straße 1, 53359 Rheinbach, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.440144,
+          52.2797114
+        ]
+      },
+      "properties": {
+        "name": "EWG - Entwicklungs- und Wirtschaftsförderungsgesellschaft für Rheine mbH",
+        "display_name": "EWG - Entwicklungs- und Wirtschaftsförderungsgesellschaft für Rheine mbH  Heiliggeistplatz 2, 48431 Rheine, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2840108,
+          51.1522546
+        ]
+      },
+      "properties": {
+        "name": "Schmallenberg Unternehmen Zukunft e.V.",
+        "display_name": "Schmallenberg Unternehmen Zukunft e.V.  Oststraße 3, 57392 Schmallenberg, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.1184244,
+          51.5713933
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Kreis Soest GmbH",
+        "display_name": "Wirtschaftsförderung Kreis Soest GmbH  Sigefridwall 20, 59494 Soest, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.074691,
+          51.1591152
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Solingen GmbH & Co. KG",
+        "display_name": "Wirtschaftsförderung Solingen GmbH & Co. KG  Grünewalder Straße 92, 42657 Solingen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.0992144,
+          51.1862563
+        ]
+      },
+      "properties": {
+        "name": "Bergische Struktur- und Wirtschaftsförderungsgesellschaft mbH",
+        "display_name": "Bergische Struktur- und Wirtschaftsförderungsgesellschaft mbH  Stöcken 21, 42651 Solingen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.3426198,
+          52.1498138
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungs- und Entwicklungsgesellschaft Steinfurt mbH",
+        "display_name": "Wirtschaftsförderungs- und Entwicklungsgesellschaft Steinfurt mbH  Tecklenburger Straße 8, 48565 Steinfurt, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.0069188,
+          51.3292717
+        ]
+      },
+      "properties": {
+        "name": "Wi.Sta Sundern-Sorpesee GmbH",
+        "display_name": "Wi.Sta Sundern-Sorpesee GmbH  Talweg, 59846 Sundern, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6861379,
+          51.5424598
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft für den Kreis Unna mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft für den Kreis Unna mbH  Friedrich-Ebert-Straße 19, 59425 Unna, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.3837944,
+          51.2597359
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung für den Kreis Viersen",
+        "display_name": "Wirtschaftsförderung für den Kreis Viersen  Willy-Brandt-Ring 17, 41747 Viersen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1596236,
+          51.2366642
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Wuppertal AöR",
+        "display_name": "Wirtschaftsförderung Wuppertal AöR  Lise-Meitner-Straße 13, 42119 Wuppertal, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.8745362,
+          50.7876783
+        ]
+      },
+      "properties": {
+        "name": "Regionale Entwicklungsgesellschaft Betzdorf",
+        "display_name": "Regionale Entwicklungsgesellschaft Betzdorf  Hellerstraße, 57518 Betzdorf, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.166057,
+          49.6102052
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungs- und Projektentwicklungsgesellschaft Kreis Birkenfeld mbH",
+        "display_name": "Wirtschaftsförderungs- und Projektentwicklungsgesellschaft Kreis Birkenfeld mbH  Neubrücker Straße 7, 55768 Hoppstädten-Weiersbach, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.5659165,
+          50.3450694
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft am Mittelrhein mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft am Mittelrhein mbH  Auf dem Gockelsberg 15b, 56075 Koblenz, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6037404,
+          50.3623943
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft Koblenz mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft Koblenz mbH  Kastorhof, 56068 Koblenz, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.1346789,
+          49.1923755
+        ]
+      },
+      "properties": {
+        "name": "Mittelstandsberatungs- und betreuungsgesellschaft Südliche Weinstraße mbH",
+        "display_name": "Mittelstandsberatungs- und betreuungsgesellschaft Südliche Weinstraße mbH  Marie-Curie-Straße 5, 76829 Landau in der Pfalz, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4454245,
+          49.4857805
+        ]
+      },
+      "properties": {
+        "name": "W.E.G. Wirtschaftsentwicklungs- gesellschaft Ludwigshafen",
+        "display_name": "W.E.G. Wirtschaftsentwicklungs- gesellschaft Ludwigshafen  Rathausplatz 10, 67059 Ludwigshafen am Rhein, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.82857,
+          50.43101
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft Westerwaldkreis mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft Westerwaldkreis mbH  Peter-Altmeier-Platz 1, 56410 Montabaur, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.1357686,
+          49.3536732
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsentwicklungsgesellschaft Neustadt an der Weinstraße mbH",
+        "display_name": "Wirtschaftsentwicklungsgesellschaft Neustadt an der Weinstraße mbH  Marktplatz 1, 67433 Neustadt an der Weinstraße, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.4625643,
+          50.4293675
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung im Landkreis Neuwied GmbH",
+        "display_name": "Wirtschaftsförderung im Landkreis Neuwied GmbH  Marktstraße 80, 56564 Neuwied, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.5209734,
+          49.9845736
+        ]
+      },
+      "properties": {
+        "name": "Regionalrat Wirtschaft Rhein-Hunsrück e.V.",
+        "display_name": "Regionalrat Wirtschaft Rhein-Hunsrück e.V.  Hunsgasse 10, 55469 Simmern/Hunsrück, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.7690816,
+          49.4454945
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft Stadt und Landkreis Kaiserslautern mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft Stadt und Landkreis Kaiserslautern mbH  Fruchthallstraße, 67655 Kaiserslautern, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.27147,
+          49.35762
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft Saarpfalz mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft Saarpfalz mbH  Saarpfalz-Park 1a, 66450 Bexbach, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6365207,
+          49.4401066
+        ]
+      },
+      "properties": {
+        "name": "Gesellschaft für Wirtschaftsförderung im Landkreis Merzig / Wadern mbH",
+        "display_name": "Gesellschaft für Wirtschaftsförderung im Landkreis Merzig / Wadern mbH  Bahnhofstraße 27, 66663 Merzig, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.7576247,
+          49.3113827
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung im Landkreis Saarlouis GmbH",
+        "display_name": "Wirtschaftsförderung im Landkreis Saarlouis GmbH  Walter-Bloch-Straße 6, 66740 Saarlouis, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1765171,
+          49.3495421
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft im Landkreis Neunkirchen mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft im Landkreis Neunkirchen mbH  Bliespromenade 5, 66538 Neunkirchen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1757001,
+          49.4598458
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft St. Wendeler Land mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft St. Wendeler Land mbH  Werschweilerstraße 40, 66606 Sankt Wendel, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.9887746,
+          51.1559542
+        ]
+      },
+      "properties": {
+        "name": "Europastadt GörlitzZgorzelec GmbH",
+        "display_name": "Europastadt GörlitzZgorzelec GmbH  Plattnerstraße, 02826 Görlitz, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.3817977,
+          53.8061559
+        ]
+      },
+      "properties": {
+        "name": "Wirtschafts- und Aufbaugesellschaft Stormarn mbH",
+        "display_name": "Wirtschafts- und Aufbaugesellschaft Stormarn mbH  Mommsenstraße, 23843 Bad Oldesloe, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.3077337,
+          53.9368214
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsentwicklung Kreis Segeberg",
+        "display_name": "Wirtschaftsentwicklung Kreis Segeberg  Kurhausstraße 1, 23795 Bad Segeberg, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.17278,
+          53.88965
+        ]
+      },
+      "properties": {
+        "name": "Entwicklungsgesellschaft Westholstein mbH",
+        "display_name": "Entwicklungsgesellschaft Westholstein mbH  Hamburger Straße, 25541 Brunsbüttel, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.63513,
+          54.1236
+        ]
+      },
+      "properties": {
+        "name": "Entwicklungsgesellschaft Ostholstein mbH EGOH",
+        "display_name": "Entwicklungsgesellschaft Ostholstein mbH EGOH  Max-Planck-Straße, 23701 Eutin, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0488204,
+          54.4791767
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft Nordfriesland mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft Nordfriesland mbH  Schloßstraße, 25813 Husum, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1246054,
+          54.3416673
+        ]
+      },
+      "properties": {
+        "name": "KiWi, Kieler Wirtschaftsförderungs- und Strukturentwicklungs GmbH",
+        "display_name": "KiWi, Kieler Wirtschaftsförderungs- und Strukturentwicklungs GmbH  Fraunhoferstraße 2-4, 24118 Kiel, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.6985361,
+          53.8670531
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung LÜBECK GmbH",
+        "display_name": "Wirtschaftsförderung LÜBECK GmbH  Falkenstraße, 23564 Lübeck, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.961633,
+          54.0716132
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsagentur Neumünster GmbH",
+        "display_name": "Wirtschaftsagentur Neumünster GmbH  Memellandstraße 2, 24537 Neumünster, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.993149,
+          53.7074892
+        ]
+      },
+      "properties": {
+        "name": "Entwicklungsgesellschaft Norderstedt mbH",
+        "display_name": "Entwicklungsgesellschaft Norderstedt mbH"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.7726759,
+          53.7003046
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft Kreis Herzogtum Lauenburg",
+        "display_name": "Wirtschaftsförderungsgesellschaft Kreis Herzogtum Lauenburg  Junkernstraße 7, 23909 Ratzeburg, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.663945,
+          54.296373
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft des Kreises Rendsburg-Eckernförde mbH & Co. KG",
+        "display_name": "Wirtschaftsförderungsgesellschaft des Kreises Rendsburg-Eckernförde mbH & Co. KG  Berliner Straße 2, 24768 Rendsburg, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.7664118,
+          53.7123994
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungs- und Entwicklungsgesellschaft des Kreises Pinneberg mbH",
+        "display_name": "Wirtschaftsförderungs- und Entwicklungsgesellschaft des Kreises Pinneberg mbH  Lise-Meitner-Allee 18, 25436 Tornesch, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.592794,
+          50.9288264
+        ]
+      },
+      "properties": {
+        "name": "JenaWirtschaft - Wirtschaftsförderungsgesellschaft Jena mbH",
+        "display_name": "JenaWirtschaft - Wirtschaftsförderungsgesellschaft Jena mbH  Steinweg 10, 07743 Jena, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.3302399,
+          50.7000498
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsagentur Region Saalfeld-Rudolfstadt c/o IGZ GmbH",
+        "display_name": "Wirtschaftsagentur Region Saalfeld-Rudolfstadt c/o IGZ GmbH  Prof.-Hermann-Klare-Straße 6, 07407 Rudolstadt, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.4014449,
+          50.4392298
+        ]
+      },
+      "properties": {
+        "name": "Andernach Gesellschaft für Stadtmarketing, Wirtschaft & Tourismus",
+        "display_name": "Andernach Gesellschaft für Stadtmarketing, Wirtschaft & Tourismus  Gartenstraße, 56626 Andernach, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.7335111,
+          52.3869384
+        ]
+      },
+      "properties": {
+        "name": "hannoverimpuls GmbH",
+        "display_name": "hannoverimpuls GmbH  Vahrenwalder Straße, 30165 Hannover, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.6129541,
+          47.7884692
+        ]
+      },
+      "properties": {
+        "name": "WIR - Wirtschafts- und Innovationsförderungsgesellschaft Landkreis Ravensburg mbH",
+        "display_name": "WIR - Wirtschafts- und Innovationsförderungsgesellschaft Landkreis Ravensburg mbH  Bleicherstraße 3/1, 88212 Ravensburg, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.6868383,
+          50.5494828
+        ]
+      },
+      "properties": {
+        "name": "Region Fulda GmbH",
+        "display_name": "Region Fulda GmbH  Petersberger Straße 32, 36037 Fulda, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2167031,
+          52.2627188
+        ]
+      },
+      "properties": {
+        "name": "Wirtschafts- und Tourismusfördergesellschaft Landkreis Peine mbH",
+        "display_name": "Wirtschafts- und Tourismusfördergesellschaft Landkreis Peine mbH  Ilseder Hütte 10, 31241 Ilsede, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6179236,
+          49.2123196
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft Südwestpfalz mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft Südwestpfalz mbH  Unterer Sommerwaldweg 40-42, 66953 Pirmasens, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9837448,
+          53.5512797
+        ]
+      },
+      "properties": {
+        "name": "HIW Hamburg Invest Wirtschaftsförderungsgesellschaft mbH",
+        "display_name": "HIW Hamburg Invest Wirtschaftsförderungsgesellschaft mbH  Wexstraße 7, 20355 Hamburg, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4449662,
+          52.9026224
+        ]
+      },
+      "properties": {
+        "name": "WLO Wirtschaftsförderungsgesellschaft für den Landkreis Oldenburg mbH",
+        "display_name": "WLO Wirtschaftsförderungsgesellschaft für den Landkreis Oldenburg mbH  Delmenhorster Straße, 27793 Wildeshausen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.97118,
+          51.24777
+        ]
+      },
+      "properties": {
+        "name": "Gesellschaft für Wirtschaftsförderung in Mettmann mbH (GfW Mettmann)",
+        "display_name": "Gesellschaft für Wirtschaftsförderung in Mettmann mbH (GfW Mettmann)  Neanderstraße 85, 40822 Mettmann, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9470777,
+          52.1685829
+        ]
+      },
+      "properties": {
+        "name": "TZH BASE 29 GmbH",
+        "display_name": "TZH BASE 29 GmbH  Richthofenstraße 29, 31137 Hildesheim, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.2625218,
+          51.659644
+        ]
+      },
+      "properties": {
+        "name": "Entwicklungs- und Wirtschaftsförderungsgesellschaft Anhalt-Bitterfeld mbH",
+        "display_name": "Entwicklungs- und Wirtschaftsförderungsgesellschaft Anhalt-Bitterfeld mbH  Andresenstraße 1a, 06766 Bitterfeld-Wolfen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.44809,
+          53.24649
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungs-GmbH für Stadt und Landkreis Lüneburg",
+        "display_name": "Wirtschaftsförderungs-GmbH für Stadt und Landkreis Lüneburg  Stadtkoppel 12, 21337 Lüneburg, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.65813,
+          47.609715
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsregion Südwest GmbH",
+        "display_name": "Wirtschaftsregion Südwest GmbH  Marie-Curie-Straße 8, 79539 Lörrach (Kernstadt), Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.1557872,
+          50.1451511
+        ]
+      },
+      "properties": {
+        "name": "StaTa GmbH Stadtmarketing und Standortentwicklung Taunusstein",
+        "display_name": "StaTa GmbH Stadtmarketing und Standortentwicklung Taunusstein  Im Obergrund 2, 65232 Taunusstein, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.9386627,
+          50.958097
+        ]
+      },
+      "properties": {
+        "name": "Stadtentwicklungsgesellschaft Pirna mbH",
+        "display_name": "Stadtentwicklungsgesellschaft Pirna mbH  Breite Straße 2, 01796 Pirna, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.9558417,
+          51.138945
+        ]
+      },
+      "properties": {
+        "name": "Entwicklungsgesellschaft Niederschlesische Oberlausitz mbH",
+        "display_name": "Entwicklungsgesellschaft Niederschlesische Oberlausitz mbH  Landgutweg 2, 02827 Görlitz, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.0807794,
+          50.8781914
+        ]
+      },
+      "properties": {
+        "name": "Gesellschaft für Wirtschaft und Tourismus Gera mbH",
+        "display_name": "Gesellschaft für Wirtschaft und Tourismus Gera mbH  Schloßstraße 1, 07545 Gera, Deutschland"
+      }
+    }
+  ]
+}

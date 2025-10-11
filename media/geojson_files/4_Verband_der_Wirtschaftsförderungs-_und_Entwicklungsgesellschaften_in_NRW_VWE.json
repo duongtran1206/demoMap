@@ -1,0 +1,1125 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0487441,
+          50.7757341
+        ]
+      },
+      "properties": {
+        "name": "AGIT Aachener Gesellschaft f. Innovation u. Technologietransfer mbH",
+        "display_name": "AGIT Aachener Gesellschaft f. Innovation u. Technologietransfer mbH  Pauwelsstraße 17, 52074 Aachen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.0802866,
+          51.1652256
+        ]
+      },
+      "properties": {
+        "name": "Bergische Struktur- u. Wirtschaftsförderungsgesellschaft mbH",
+        "display_name": "Bergische Struktur- u. Wirtschaftsförderungsgesellschaft mbH  Kölner Straße 8, 42651 Solingen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5682559,
+          51.3944233
+        ]
+      },
+      "properties": {
+        "name": "BWT - Brilon Wirtschaft und Tourismus GmbH",
+        "display_name": "BWT - Brilon Wirtschaft und Tourismus GmbH  Derkere Straße 10a, 59929 Brilon, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.5629077,
+          51.0274474
+        ]
+      },
+      "properties": {
+        "name": "Entwicklungsgesellschaft Gummersbach mbH",
+        "display_name": "Entwicklungsgesellschaft Gummersbach mbH  Brückenstraße 4, 51643 Gummersbach, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.9154746,
+          51.9326242
+        ]
+      },
+      "properties": {
+        "name": "GILDE GmbH, Gewerbe- u. Innovationszentrum Lippe-Detmold GmbH",
+        "display_name": "GILDE GmbH, Gewerbe- u. Innovationszentrum Lippe-Detmold GmbH  Bad Meinberger Straße 1, 32760 Detmold, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.474226,
+          51.3578786
+        ]
+      },
+      "properties": {
+        "name": "HAGEN.WIRTSCHAFTSENTWICKLUNG GmbH",
+        "display_name": "HAGEN.WIRTSCHAFTSENTWICKLUNG GmbH  Rathausstraße 2, 58095 Hagen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.5690656,
+          51.0292102
+        ]
+      },
+      "properties": {
+        "name": "Oberbergische Aufbau GmbH",
+        "display_name": "Oberbergische Aufbau GmbH  Moltkestraße 34, 51643 Gummersbach, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5432024,
+          52.0286369
+        ]
+      },
+      "properties": {
+        "name": "OstWestfalenLippe GmbH",
+        "display_name": "OstWestfalenLippe GmbH  Walther-Rathenau-Straße 33-35, 33602 Bielefeld, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1883547,
+          50.9581852
+        ]
+      },
+      "properties": {
+        "name": "Rheinisch-Bergische Wirtschaftsförderungsgesellschaft mbH",
+        "display_name": "Rheinisch-Bergische Wirtschaftsförderungsgesellschaft mbH  Friedrich-Ebert-Straße 75, 51429 Bergisch Gladbach, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1883547,
+          50.9581852
+        ]
+      },
+      "properties": {
+        "name": "Rheinisch-Bergisches TechnologieZentrum GmbH",
+        "display_name": "Rheinisch-Bergisches TechnologieZentrum GmbH  Friedrich-Ebert-Straße 75, 51429 Bergisch Gladbach, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2839644,
+          51.1522239
+        ]
+      },
+      "properties": {
+        "name": "Schmallenberg Unternehmen Zukunft e.V.",
+        "display_name": "Schmallenberg Unternehmen Zukunft e.V.  Oststraße 3, 57392 Schmallenberg, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.635621,
+          51.2180101
+        ]
+      },
+      "properties": {
+        "name": "Stadtentwicklungsgesellschaft Lüdenscheid mbH",
+        "display_name": "Stadtentwicklungsgesellschaft Lüdenscheid mbH  Humboldtstraße 36, 58511 Lüdenscheid, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.846402,
+          50.8632744
+        ]
+      },
+      "properties": {
+        "name": "Start Hürth Zentrum für Technologie u. Existenzgründung GmbH",
+        "display_name": "Start Hürth Zentrum für Technologie u. Existenzgründung GmbH  Goldenbergstraße 1, 50354 Hürth, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.8469414,
+          51.0289995
+        ]
+      },
+      "properties": {
+        "name": "Südwestfalen Agentur GmbH",
+        "display_name": "Südwestfalen Agentur GmbH  Martinstraße 15, 57462 Olpe, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5303353,
+          52.0217275
+        ]
+      },
+      "properties": {
+        "name": "WEGE Wirtschaftsentwicklungsgesellschaft Bielefeld mbH",
+        "display_name": "WEGE Wirtschaftsentwicklungsgesellschaft Bielefeld mbH  Goldstraße 16-18, 33602 Bielefeld, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.4378646,
+          51.1951783
+        ]
+      },
+      "properties": {
+        "name": "WFMG-Wirtschaftsförderung Mönchengladbach GmbH",
+        "display_name": "WFMG-Wirtschaftsförderung Mönchengladbach GmbH  Steinmetzstraße 57-61, 41061 Mönchengladbach, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.9684188,
+          51.4549793
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Arnsberg GmbH",
+        "display_name": "Wirtschaftsförderung Arnsberg GmbH  Möhnestraße 55, 59755 Arnsberg, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.9689266,
+          51.6707134
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung in Dorsten GmbH",
+        "display_name": "Wirtschaftsförderung in Dorsten GmbH  Bismarckstraße 24, 46284 Dorsten, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6173328,
+          51.8385588
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungs- u. Stadtmarketingges. Bocholt mbH & Co. KG",
+        "display_name": "Wirtschaftsförderungs- u. Stadtmarketingges. Bocholt mbH & Co. KG  Osterstraße 23, 46397 Bocholt, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.9994112,
+          52.0705784
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft für den Kreis Borken mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft für den Kreis Borken mbH  Erhardstraße 11, 48683 Ahaus, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6964192,
+          51.1966684
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft Rhein-Kreis Neuss mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft Rhein-Kreis Neuss mbH  Oberstraße 91, 41460 Neuss, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.0245848,
+          52.2156458
+        ]
+      },
+      "properties": {
+        "name": "WTG Wirtschaftsförderungsgesellschaft der Stadt Gronau mbH",
+        "display_name": "WTG Wirtschaftsförderungsgesellschaft der Stadt Gronau mbH  Fabrikstraße 3, 48599 Gronau, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.021332,
+          51.4465347
+        ]
+      },
+      "properties": {
+        "name": "Business Metropole Ruhr",
+        "display_name": "Business Metropole Ruhr  Kronprinzenstraße 30, 45128 Essen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.7378467,
+          51.4513836
+        ]
+      },
+      "properties": {
+        "name": "Duisburg Business & Innovation GmbH",
+        "display_name": "Duisburg Business & Innovation GmbH  Dr.-Hammacher-Str. 49, 47119 Duisburg, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.7378467,
+          51.4513836
+        ]
+      },
+      "properties": {
+        "name": "Effizienzagentur NRW",
+        "display_name": "Effizienzagentur NRW  Dr.-Hammacher-Straße 49, 47119 Duisburg, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.4401535,
+          52.2796856
+        ]
+      },
+      "properties": {
+        "name": "Entwicklungs- und Wirtschaftsförderungsgesellschaft für Rheine mbH",
+        "display_name": "Entwicklungs- und Wirtschaftsförderungsgesellschaft für Rheine mbH  Heiliggeistplatz 2, 48431 Rheine, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.010252,
+          51.4563073
+        ]
+      },
+      "properties": {
+        "name": "Essener Wirtschaftsförderungsgesellschaft mbH",
+        "display_name": "Essener Wirtschaftsförderungsgesellschaft mbH  Kennedyplatz 5, 45127 Essen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6785753,
+          51.2885639
+        ]
+      },
+      "properties": {
+        "name": "Gesellschaft für Wirtschaft- und Strukturförderung mbH",
+        "display_name": "Gesellschaft für Wirtschaft- und Strukturförderung mbH  Lindenstr. 45, 58762 Altena, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.3310829,
+          51.7685153
+        ]
+      },
+      "properties": {
+        "name": "Gesellschaft für Wirtschaftsförderung im Kreis Höxter mbH",
+        "display_name": "Gesellschaft für Wirtschaftsförderung im Kreis Höxter mbH  37671 Höxter, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.0323585,
+          51.7619201
+        ]
+      },
+      "properties": {
+        "name": "Gesellschaft für Wirtschaftsförderung im Kreis Warendorf mbH",
+        "display_name": "Gesellschaft für Wirtschaftsförderung im Kreis Warendorf mbH  Vorhelmer Str. 81, 59269 Beckum, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.721685,
+          51.3898392
+        ]
+      },
+      "properties": {
+        "name": "Gesellschaft für Wirtschaftsförderung Iserlohn mbH",
+        "display_name": "Gesellschaft für Wirtschaftsförderung Iserlohn mbH  58636 Iserlohn, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.9186596,
+          51.5529595
+        ]
+      },
+      "properties": {
+        "name": "Gesellschaft für Wirtschaftsförderung und Stadtentwicklung mbH Werl",
+        "display_name": "Gesellschaft für Wirtschaftsförderung und Stadtentwicklung mbH Werl  Hedwig-Dransfeld-Str. 23, 59457 Werl, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6513542,
+          52.0921352
+        ]
+      },
+      "properties": {
+        "name": "Gesellschaft zur Entwicklung und Förderung der Wirtschaft in der Stadt Greven mbH",
+        "display_name": "Gesellschaft zur Entwicklung und Förderung der Wirtschaft in der Stadt Greven mbH  48268 Greven, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.3470067,
+          51.148913
+        ]
+      },
+      "properties": {
+        "name": "HEG Hückeswagener Entwicklungsgesellschaft mbH & Co.KG",
+        "display_name": "HEG Hückeswagener Entwicklungsgesellschaft mbH & Co.KG  42499 Hückeswagen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6590196,
+          52.0904839
+        ]
+      },
+      "properties": {
+        "name": "Interkommunale Wirtschaftsförderungsgesellschaft mbH im Kreis Herford",
+        "display_name": "Interkommunale Wirtschaftsförderungsgesellschaft mbH im Kreis Herford  32052 Herford, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.9511319,
+          50.9434679
+        ]
+      },
+      "properties": {
+        "name": "Köln Business Wirtschaftsförderungs-GmbH",
+        "display_name": "Köln Business Wirtschaftsförderungs-GmbH  Börsenplatz 1, 50667 Köln, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8874725,
+          51.9062473
+        ]
+      },
+      "properties": {
+        "name": "Lippe Tourismus & Marketing GmbH",
+        "display_name": "Lippe Tourismus & Marketing GmbH  32760 Detmold, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8563626,
+          52.2979251
+        ]
+      },
+      "properties": {
+        "name": "Mindener Entwicklungs- und Wirtschaftsförderungs-gesellschaft mbH",
+        "display_name": "Mindener Entwicklungs- und Wirtschaftsförderungs-gesellschaft mbH  32427 Minden, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6832135,
+          52.130328
+        ]
+      },
+      "properties": {
+        "name": "Münsterland e.V.",
+        "display_name": "Münsterland e.V.  Airportallee 1, 48268 Greven, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.7625655,
+          51.2128703
+        ]
+      },
+      "properties": {
+        "name": "NRW.Global Business GmbH",
+        "display_name": "NRW.Global Business GmbH  Völklinger Str. 4, 40219 Düsseldorf, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.880045,
+          51.4884014
+        ]
+      },
+      "properties": {
+        "name": "OWT Oberhausener Wirtschafts- und Tourismusförderung GmbH",
+        "display_name": "OWT Oberhausener Wirtschafts- und Tourismusförderung GmbH  Centroallee 269, 46047 Oberhausen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6669714,
+          52.1204363
+        ]
+      },
+      "properties": {
+        "name": "PRO HERFORD GmbH",
+        "display_name": "PRO HERFORD GmbH  Goebenstraße 3-7, 32052 Herford, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.4297662,
+          51.7675731
+        ]
+      },
+      "properties": {
+        "name": "Stadtentwicklungsgesellschaft Rees mbH",
+        "display_name": "Stadtentwicklungsgesellschaft Rees mbH  46459 Rees, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2694684,
+          51.3513478
+        ]
+      },
+      "properties": {
+        "name": "Stadtmarketing Meschede e.V. (Wirtschaftsförderung)",
+        "display_name": "Stadtmarketing Meschede e.V. (Wirtschaftsförderung)  Sophienweg 3, 59872 Meschede, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.847815,
+          51.0998138
+        ]
+      },
+      "properties": {
+        "name": "Stadtmarketing- u. Wirtschaftsförderungsgesellschaft Dormagen mbH",
+        "display_name": "Stadtmarketing- u. Wirtschaftsförderungsgesellschaft Dormagen mbH  41539 Dormagen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.269776,
+          51.4442386
+        ]
+      },
+      "properties": {
+        "name": "Straelener Wirtschaftsförderungsgesellschaft mbH",
+        "display_name": "Straelener Wirtschaftsförderungsgesellschaft mbH  Rathausstr. 1, 47638 Straelen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1490594,
+          50.8199359
+        ]
+      },
+      "properties": {
+        "name": "Troisdorfer Wirtschaftsförderungs- und Stadtmarketing GmbH (TROWISTA)",
+        "display_name": "Troisdorfer Wirtschaftsförderungs- und Stadtmarketing GmbH (TROWISTA)  Kronenstraße 51, 53840 Troisdorf, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.2156039,
+          51.4807698
+        ]
+      },
+      "properties": {
+        "name": "WEG Bochum mbH",
+        "display_name": "WEG Bochum mbH  Viktoriastr. 10, 44787 Bochum, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.3425675,
+          52.1498618
+        ]
+      },
+      "properties": {
+        "name": "WEST Wirtschaftsförderungs-und Entwicklungsgesellschaft Steinfurt mbH",
+        "display_name": "WEST Wirtschaftsförderungs-und Entwicklungsgesellschaft Steinfurt mbH  Tecklenburger Str. 8, 48565 Steinfurt, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.2638942,
+          51.8521768
+        ]
+      },
+      "properties": {
+        "name": "Wfc Wirtschaftsförderung Kreis Coesfeld GmbH",
+        "display_name": "Wfc Wirtschaftsförderung Kreis Coesfeld GmbH  48249 Dülmen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.5652272,
+          51.332177
+        ]
+      },
+      "properties": {
+        "name": "WFG Wirtschaftsförderungsge-sellschaft Krefeld mbH",
+        "display_name": "WFG Wirtschaftsförderungsge-sellschaft Krefeld mbH  Neue Linner Str. 87, 47798 Krefeld, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.903271,
+          51.7624176
+        ]
+      },
+      "properties": {
+        "name": "WFG Wirtschaftsförderungsgesellschaft Ahlen mbH im gdz OFFICE PLUS+",
+        "display_name": "WFG Wirtschaftsförderungsgesellschaft Ahlen mbH im gdz OFFICE PLUS+  Beckumer Str. 34, 59229 Ahlen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.9845165,
+          51.0306617
+        ]
+      },
+      "properties": {
+        "name": "WFL Wirtschaftsförderung Leverkusen GmbH",
+        "display_name": "WFL Wirtschaftsförderung Leverkusen GmbH  Dönhoffstr. 39, 51373 Leverkusen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.0074283,
+          51.3299816
+        ]
+      },
+      "properties": {
+        "name": "Wi.Sta Sundern-Sorpesee GmbH",
+        "display_name": "Wi.Sta Sundern-Sorpesee GmbH  Rathausplatz 7, 59846 Sundern, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1486798,
+          51.5831223
+        ]
+      },
+      "properties": {
+        "name": "WiN Emscher-Lippe GmbH",
+        "display_name": "WiN Emscher-Lippe GmbH  Herner Str. 10, 45699 Herten, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.4498679,
+          50.8322293
+        ]
+      },
+      "properties": {
+        "name": "WIN.DN Wirtschafts- und Innovationsnetzwerk Düren GmbH",
+        "display_name": "WIN.DN Wirtschafts- und Innovationsnetzwerk Düren GmbH  52353 Düren, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6058175,
+          51.4923999
+        ]
+      },
+      "properties": {
+        "name": "Wir 4 Wirtschaftsförderung für Moers, Kamp-Lintfort, Neukirchen-Vluyn und Rheinberg AöR",
+        "display_name": "Wir 4 Wirtschaftsförderung für Moers, Kamp-Lintfort, Neukirchen-Vluyn und Rheinberg AöR  47445 Moers, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.1085663,
+          51.5736222
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaft und Marketing Soest GmbH",
+        "display_name": "Wirtschaft und Marketing Soest GmbH  Teichsmühlengasse 3, 59494 Soest, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.9958547,
+          50.7089659
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Alfter GmbH",
+        "display_name": "Wirtschaftsförderung Alfter GmbH  53347 Alfter, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1266565,
+          51.7793631
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Kreis Kleve GmbH",
+        "display_name": "Wirtschaftsförderung Kreis Kleve GmbH  Hoffmannallee 55, 47533 Kleve, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.1001306,
+          51.5744709
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Kreis Soest GmbH",
+        "display_name": "Wirtschaftsförderung Kreis Soest GmbH  59494 Soest, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.3442011,
+          51.6601151
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Lippstadt GmbH",
+        "display_name": "Wirtschaftsförderung Lippstadt GmbH  Erwitter Str. 105, 59557 Lippstadt, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6091375,
+          51.9720001
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Münster GmbH",
+        "display_name": "Wirtschaftsförderung Münster GmbH  Steinfurter Str. 60a, 48149 Münster, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6015766,
+          50.9665811
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Rhein-Erft GmbH",
+        "display_name": "Wirtschaftsförderung Rhein-Erft GmbH  50126 Bergheim, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.0770071,
+          51.1627681
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Solingen GmbH & Co. KG",
+        "display_name": "Wirtschaftsförderung Solingen GmbH & Co. KG  Grünewalder Str. 29-31, 42657 Solingen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1596497,
+          51.2366941
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderung Wuppertal AöR",
+        "display_name": "Wirtschaftsförderung Wuppertal AöR  Lise-Meitner-Str. 13, 42119 Wuppertal, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.0044116,
+          50.7575498
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungs- u. Entwicklungsgesellschaft mbH Bornheim",
+        "display_name": "Wirtschaftsförderungs- u. Entwicklungsgesellschaft mbH Bornheim  Rathausstr. 2, 53332 Bornheim, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.7841295,
+          51.4513994
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungs- u.Stadtentwicklungsgesellschaft Menden GmbH",
+        "display_name": "Wirtschaftsförderungs- u.Stadtentwicklungsgesellschaft Menden GmbH  Franz-Kissing-Str.7, 58706 Menden, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.9497343,
+          50.6348689
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungs- und Entwicklungsgesellschaft der Stadt Rheinbach mbH",
+        "display_name": "Wirtschaftsförderungs- und Entwicklungsgesellschaft der Stadt Rheinbach mbH  Marie-Curie-Str. 1, 53359 Rheinbach, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.2416648,
+          51.8333985
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungs- und Stadtmarketing-Gesellschaft Emmerich am Rhein mbH",
+        "display_name": "Wirtschaftsförderungs- und Stadtmarketing-Gesellschaft Emmerich am Rhein mbH  Nonnenplatz 5, 46446 Emmerich am Rhein, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.4591319,
+          51.6029224
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungs-zentrum Lünen GmbH",
+        "display_name": "Wirtschaftsförderungs-zentrum Lünen GmbH  44536 Lünen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0942132,
+          51.0629092
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft für den Kreis Heinsberg mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft für den Kreis Heinsberg mbH  Klostergasse 17, 52525 Heinsberg, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.686162,
+          51.5424216
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft für den Kreis Unna mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft für den Kreis Unna mbH  Friedrich-Ebert-Str. 19, 59245 Unna, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.3825707,
+          51.2550631
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft für den Kreis Viersen mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft für den Kreis Viersen mbH  41747 Viersen, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.2099072,
+          51.5495541
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft Herne mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft Herne mbH  44629 Herne, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2837291,
+          51.3429783
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft Hochsauerland-kreis mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft Hochsauerland-kreis mbH  Steinstr. 27, 59872 Meschede, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8204875,
+          51.7188767
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft Paderborn mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft Paderborn mbH  33100 Paderborn, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1900983,
+          50.7699533
+        ]
+      },
+      "properties": {
+        "name": "Wirtschaftsförderungsgesellschaft Sankt Augustin mbH",
+        "display_name": "Wirtschaftsförderungsgesellschaft Sankt Augustin mbH  53757 Sankt Augustin, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.353329,
+          51.4514628
+        ]
+      },
+      "properties": {
+        "name": "ZBZ Witten GmbH",
+        "display_name": "ZBZ Witten GmbH  Alfred-Herrhausen-Str. 44, 58455 Witten, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6590196,
+          52.0904839
+        ]
+      },
+      "properties": {
+        "name": "Interkommunale Wirtschaftsförderungsgesellschaft mbH",
+        "display_name": "Interkommunale Wirtschaftsförderungsgesellschaft mbH  32052 Herford, Deutschland"
+      }
+    }
+  ]
+}

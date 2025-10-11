@@ -1,0 +1,537 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0886466,
+          50.7717312
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Aachen",
+        "display_name": "Industrie- und Handelskammer Aachen, 6-10, Theaterstraße, Kaiserplatz, Burtscheid, Aachen-Mitte, Aachen, Städteregion Aachen, Nordrhein-Westfalen, 52062, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1232902,
+          49.9763947
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Aschaffenburg",
+        "display_name": "Industrie- und Handelskammer Aschaffenburg, 9, Kerschensteinerstraße, Leider, Aschaffenburg, Bayern, 63741, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.8963517,
+          48.3594542
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Schwaben",
+        "display_name": "Industrie- und Handelskammer Schwaben, 1;3, Stettenstraße, Bismarckviertel, Bahnhofs- und Bismarckviertel, Innenstadt, Augsburg, Bayern, 86150, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3285832,
+          52.5068966
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer zu Berlin",
+        "display_name": "Industrie- und Handelskammer zu Berlin, 85, Fasanenstraße, Charlottenburg, Charlottenburg-Wilmersdorf, Berlin, 10623, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5285899,
+          52.0232443
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Ostwestfalen zu Bielefeld",
+        "display_name": "Industrie und Handelskammer Ostwestfalen, 3, Elsa-Brändström-Straße, Bahnhofsviertel, Mitte, Bielefeld, Nordrhein-Westfalen, 33602, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.2240645,
+          51.4810257
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Mittleres Ruhrgebiet",
+        "display_name": "Industrie- und Handelskammer Mittleres Ruhrgebiet, 30-32, Ostring, Innenstadt, Bochum-Mitte, Bochum, Nordrhein-Westfalen, 44787, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1002058,
+          50.7280005
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Bonn/Rhein-Sieg",
+        "display_name": "Industrie- und Handelskammer Bonn/Rhein-Sieg, 17, Bonner Talweg, Südstadt, Stadtbezirk Bonn, Bonn, Nordrhein-Westfalen, 53113, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.5177586,
+          52.2623234
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Braunschweig",
+        "display_name": "Industrie- und Handelskammer, 11, Brabandtstraße, Mitte, Braunschweig, Niedersachsen, 38100, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.9250529,
+          50.8369746
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Chemnitz",
+        "display_name": "Industrie- und Handelskammer Chemnitz, 25, Straße der Nationen, Zentrum, Chemnitz, Sachsen, 09111, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.3401411,
+          51.7620318
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Cottbus",
+        "display_name": "Industrie- und Handelskammer Cottbus, 1, Goethestraße, Brunschwig - Brunšwik, Mitte, Cottbus - Chóśebuz, Brandenburg, 03046, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.4803608,
+          51.5028411
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer zu Dortmund",
+        "display_name": "Industrie- und Handelskammer zu Dortmund, Märkische Straße, Körne, Innenstadt Ost, Dortmund, Nordrhein-Westfalen, 44141, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.8090114,
+          51.0088755
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Dresden",
+        "display_name": "IHK Industrie- und Handelskammer Dresden, Reick, Prohlis, Dresden, Sachsen, 01239, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.7720818,
+          51.430903
+        ]
+      },
+      "properties": {
+        "name": "Niederrheinische Industrie- und Handelskammer Duisburg-Wesel-Kleve zu Duisburg",
+        "display_name": "Niederrheinische Industrie- und Handelskammer Duisburg-Wesel-Kleve zu Duisburg, 22-24, Mercatorstraße, Dellviertel, Duisburg-Mitte, Duisburg, Nordrhein-Westfalen, 47051, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0329579,
+          50.9633934
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Erfurt",
+        "display_name": "Industrie- und Handelskammer, 34, Arnstädter Straße, Löbervorstadt, Erfurt, Thüringen, 99096, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6781645,
+          50.1153881
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Frankfurt am Main",
+        "display_name": "Industrie- und Handelskammer (IHK), 4, Börsenplatz, Innenstadt, Innenstadt 1, Frankfurt am Main, Hessen, 60313, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.8394749,
+          47.9934675
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Südlicher Oberrhein",
+        "display_name": "Industrie- und Handelskammer, 11-13, Schnewlinstraße, Altstadt-Ring, Altstadt, Freiburg im Breisgau, Baden-Württemberg, 79098, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.676231,
+          50.5820921
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Gießen-Friedberg",
+        "display_name": "IHK - Industrie- und Handelskammer Gießen-Friedberg, 7, Lonystraße, Gießen, Landkreis Gießen, Hessen, 35390, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9912661,
+          53.5498259
+        ]
+      },
+      "properties": {
+        "name": "Handelskammer Hamburg",
+        "display_name": "Handelskammer Hamburg, 1, Adolphsplatz, Altstadt, Hamburg-Mitte, Hamburg, 20457, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.75135,
+          52.3759762
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Hannover",
+        "display_name": "Industrie- und Handelskammer Hannover, Oststadt, Mitte, Hannover, Region Hannover, Niedersachsen, 30175, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1656681,
+          48.7031201
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Ostwürttemberg",
+        "display_name": "Industrie- und Handelskammer Ostwürttemberg, Ludwig-Erhard-Straße, Schnaitheim, Heidenheim an der Brenz, Verwaltungsgemeinschaft Heidenheim an der Brenz, Landkreis Heidenheim, Baden-Württemberg, 89520, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4018195,
+          49.0076959
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Karlsruhe",
+        "display_name": "Industrie- und Handelskammer Karlsruhe, 13-17, Lammstraße, Innenstadt-West Östlicher Teil, Innenstadt-West, Karlsruhe, Baden-Württemberg, 76133, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.4904474,
+          51.3170489
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Kassel-Marburg",
+        "display_name": "Industrie- und Handelskammer Kassel-Marburg, 9, Kurfürstenstraße, Mitte, Kassel, Hessen, 34117, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.5618205,
+          51.3370771
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Mittlerer Niederrhein",
+        "display_name": "Industrie- und Handelskammer Mittlerer Niederrhein, 39, Nordwall, Kronprinzenviertel, Krefeld-Mitte, Krefeld, Nordrhein-Westfalen, 47798, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3691836,
+          51.3433489
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer zu Leipzig",
+        "display_name": "IHK Leipzig, 5, Goerdelerring, Zentrum-West, Mitte, Leipzig, Sachsen, 04109, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.3827568,
+          53.2501257
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Lüneburg-Wolfsburg",
+        "display_name": "Industrie- und Handelskammer Lüneburg-Wolfsburg, 1, Volgershall, Weststadt, Lüneburg, Niedersachsen, 21339, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.6395017,
+          52.131838
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Magdeburg",
+        "display_name": "Industrie- und Handelskammer, 8, Alter Markt, Rathausviertel, Altstadt, Magdeburg, Sachsen-Anhalt, 39104, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2670562,
+          49.9984174
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer für Rheinhessen",
+        "display_name": "Industrie- und Handelskammer für Rheinhessen (IHK), 7, Schillerplatz, Altstadt, Mainz, Bodenheim, Rheinland-Pfalz, 55116, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6158042,
+          51.9444615
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Nord Westfalen",
+        "display_name": "IHK (Industrie- und Handelskammer), 63, Sentmaringer Weg, Geist, Mitte-Süd, Münster-Mitte, Münster, Nordrhein-Westfalen, 48151, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0762909,
+          49.454731
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Nürnberg für Mittelfranken",
+        "display_name": "Industrie- und Handelskammer Nürnberg für Mittelfranken, Schulgäßchen, Altstadt, St. Sebald, Sebald, Nürnberg, Bayern, 90403, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.0543855,
+          52.3950008
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Potsdam",
+        "display_name": "Industrie- und Handelskammer Potsdam, 2A-C, Breite Straße, Nikolaigärten, Historische Innenstadt, Potsdam, Brandenburg, 14467, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.1011975,
+          49.0156875
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Regensburg für Oberpfalz/Kelheim",
+        "display_name": "Industrie- und Handelskammer Regensburg für Oberpfalz / Kelheim, 10;12, D.-Martin-Luther-Straße, Ostermayer-Viertel, Altstadt, Regensburg, Bayern, 93047, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2067066,
+          48.4861265
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Reutlingen",
+        "display_name": "Industrie- und Handelskammer Reutlingen, Hindenburgstraße, Ringelbach, Reutlingen (Kernstadt), Reutlingen, Landkreis Reutlingen, Baden-Württemberg, 72762, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.9953186,
+          49.22909
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer des Saarlandes",
+        "display_name": "Industrie- und Handelskammer des Saarlandes, 9, Franz-Josef-Röder-Straße, Reppersberg, Alt-Saarbrücken, Bezirk Mitte, Saarbrücken, Regionalverband Saarbrücken, Saarland, 66119, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.4113091,
+          53.623761
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer zu Schwerin",
+        "display_name": "Industrie- und Handelskammer zu Schwerin, 12, Graf-Schack-Allee, Altstadt, Schwerin, Mecklenburg-Vorpommern, 19053, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.0125542,
+          50.869451
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Siegen",
+        "display_name": "Industrie- und Handelskammer Siegen, 121, Koblenzer Straße, Siegen, Kreis Siegen-Wittgenstein, Nordrhein-Westfalen, 57072, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.177044,
+          48.7857092
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Region Stuttgart",
+        "display_name": "Industrie- und Handelskammer Region Stuttgart, 30, Jägerstraße, Hauptbahnhof, Stuttgart-Mitte, Stuttgart, Baden-Württemberg, 70174, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9903336,
+          48.4019822
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Ulm",
+        "display_name": "Industrie- und Handelskammer Ulm, 97, Olgastraße, Innenstadt, Mitte, Ulm, Baden-Württemberg, 89073, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2445676,
+          50.0809891
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Wiesbaden",
+        "display_name": "Industrie- und Handelskammer Wiesbaden, 24-26, Wilhelmstraße, Nordost, Wiesbaden, Hessen, 65183, Deutschland"
+      }
+    }
+  ]
+}

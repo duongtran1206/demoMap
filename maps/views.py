@@ -699,11 +699,7 @@ def init_db_api(request):
                 <li>Database type: {'In-memory SQLite' if is_vercel else 'File-based SQLite'}</li>
             </ul>
             
-            <h2>Login Credentials:</h2>
-            <div style="background: #e7f3ff; padding: 15px; border-radius: 5px;">
-                <strong>Username:</strong> admin<br>
-                <strong>Password:</strong> admin123
-            </div>
+            
             
             <h2>Available Actions:</h2>
             <div>
@@ -841,11 +837,7 @@ def welcome_view(request):
                     <a href="/api/health/" class="btn">💚 Health Check</a>
                 </div>
                 
-                <h2>Login Credentials:</h2>
-                <div class="status">
-                    <strong>Username:</strong> admin<br>
-                    <strong>Password:</strong> admin123
-                </div>
+                
                 
                 {'<h2>⚠️ Vercel Limitations:</h2><div class="status warning">Since this is a serverless deployment, the database is in-memory and will reset with each cold start. For production use, consider using PostgreSQL or another persistent database.</div>' if is_vercel else ''}
                 

@@ -1,0 +1,243 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.131417,
+          48.7270537
+        ]
+      },
+      "properties": {
+        "name": "Landeszahnärztekammer Baden-Württemberg",
+        "display_name": "Landeszahnärztekammer Baden-Württemberg Albstadtweg 9 70567 Stuttgart Tel.: 0711 22845-0 Fax: 0711 22845-40 www.lzk-bw.de http://www.lzk-bw.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.5376307,
+          48.1067774
+        ]
+      },
+      "properties": {
+        "name": "Bayerische Landeszahnärztekammer",
+        "display_name": "Bayerische Landeszahnärztekammer Flößergasse 1 81369 München Tel.: 089 230211-0 Fax: 089 230211-128 www.blzk.de http://www.blzk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2968493,
+          52.518595
+        ]
+      },
+      "properties": {
+        "name": "Zahnärztekammer Berlin",
+        "display_name": "Zahnärztekammer Berlin Stallstr. 1 10585 Berlin Tel.: 030 34808-0 Fax: 030 34808-240 www.zaek-berlin.de http://www.zaek-berlin.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.3367606,
+          51.7522366
+        ]
+      },
+      "properties": {
+        "name": "Landeszahnärztekammer Brandenburg",
+        "display_name": "Landeszahnärztekammer Brandenburg Parzellenstraße 94 03046 Cottbus Tel.: 0355 38148-0 Fax: 0355 38148-48 www.lzkb.de http://www.lzkb.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8581657,
+          53.1023754
+        ]
+      },
+      "properties": {
+        "name": "Zahnärztekammer Bremen",
+        "display_name": "Zahnärztekammer Bremen Universitätsallee 25 28359 Bremen Tel.: 0421 33303-0 Fax: 0421 33303-23 www.zaek-hb.de http://www.zaek-hb.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.0280715,
+          53.5826547
+        ]
+      },
+      "properties": {
+        "name": "Zahnärztekammer Hamburg",
+        "display_name": "Zahnärztekammer Hamburg AlsterCity Weidestraße 122 b 22083 Hamburg Tel.: 040 733405-0 Fax: 040 733405-9999 www.zahnaerzte-hh.de http://www.zahnaerzte-hh.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6256509,
+          50.0810767
+        ]
+      },
+      "properties": {
+        "name": "Landeszahnärztekammer Hessen",
+        "display_name": "Landeszahnärztekammer Hessen Rhonestraße 4 60528 Frankfurt Tel.: 069 427275-0 Fax: 069 427275-105 www.lzkh.de http://www.lzkh.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.406291,
+          53.6481698
+        ]
+      },
+      "properties": {
+        "name": "Zahnärztekammer Mecklenburg-Vorpommern",
+        "display_name": "Zahnärztekammer Mecklenburg-Vorpommern Wismarsche Str. 304 19055 Schwerin Tel.: 0385 59108-0 Fax: 0385 59108-20 www.zaekmv.de http://www.zaekmv.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.7671723,
+          52.3441914
+        ]
+      },
+      "properties": {
+        "name": "Zahnärztekammer Niedersachsen",
+        "display_name": "Zahnärztekammer Niedersachsen Zeißstr. 11a 30519 Hannover Tel.: 0511 83391-0 Fax: 0511 83391-116 www.zkn.de http://www.zkn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.7109191,
+          51.1961946
+        ]
+      },
+      "properties": {
+        "name": "Zahnärztekammer Nordrhein",
+        "display_name": "Zahnärztekammer Nordrhein Hammfelddamm 11 41460 Neuss Tel.: 02131 53119-0 www.zahnaerztekammernordrhein.de http://www.zahnaerztekammernordrhein.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2613062,
+          49.9923578
+        ]
+      },
+      "properties": {
+        "name": "Landeszahnärztekammer Rheinland-Pfalz",
+        "display_name": "Landeszahnärztekammer Rheinland-Pfalz Langenbeckstr. 2 55131 Mainz Tel.: 06131 96136-60 Fax: 06131 96136-89 www.lzk.de http://www.lzk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.0044258,
+          49.2231296
+        ]
+      },
+      "properties": {
+        "name": "Ärztekammer des Saarlandes - Abteilung Zahnärzte",
+        "display_name": "Ärztekammer des Saarlandes - Abteilung Zahnärzte Puccinistr. 2 66119 Saarbrücken Tel.: 0681 586080 Fax: 0681 5846153 www.zaek-saar.de http://www.zaek-saar.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.7518543,
+          51.0804334
+        ]
+      },
+      "properties": {
+        "name": "Landeszahnärztekammer Sachsen",
+        "display_name": "Landeszahnärztekammer Sachsen Schützenhöhe 11 01099 Dresden Tel.: 0351 8066-0 Fax: 0351 8066-241 www.zahnaerzte-in-sachsen.de http://www.zahnaerzte-in-sachsen.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.5874674,
+          52.128384
+        ]
+      },
+      "properties": {
+        "name": "Zahnärztekammer Sachsen-Anhalt",
+        "display_name": "Zahnärztekammer Sachsen-Anhalt Große Diesdorfer Straße 162 39110 Magdeburg Tel.: 0391 73939-0 Fax: 0391 73939-20 www.zaek-sa.de http://www.zaek-sa.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1263996,
+          54.3485097
+        ]
+      },
+      "properties": {
+        "name": "Zahnärztekammer Schleswig-Holstein",
+        "display_name": "Zahnärztekammer Schleswig-Holstein Westring 496 24106 Kiel Tel.: 0431 260926-0 Fax: 0431 260926-15 www.zaek-sh.de http://www.zaek-sh.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0126382,
+          50.97284
+        ]
+      },
+      "properties": {
+        "name": "Landeszahnärztekammer Thüringen",
+        "display_name": "Landeszahnärztekammer Thüringen Barbarossahof 16 99092 Erfurt Tel.: 0361 7432-0 Fax: 0361 7432-150 www.lzkth.de http://www.lzkth.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6398745,
+          51.9660189
+        ]
+      },
+      "properties": {
+        "name": "Zahnärztekammer Westfalen-Lippe",
+        "display_name": "Zahnärztekammer Westfalen-Lippe Auf der Horst 29 48147 Münster Tel.: 0251 507-0 Fax: 0251 507-570 www.zahnaerzte-wl.de http://www.zahnaerzte-wl.de"
+      }
+    }
+  ]
+}
