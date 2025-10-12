@@ -1,0 +1,145 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.80412760887474,
+          21.046085660008256
+        ]
+      },
+      "properties": {
+        "name": "AHK Vietnam Hà Nội",
+        "display_name": "AHK Vietnam Hà Nội  45 Hoàng Quốc Việt, Nghĩa Đô, Cầu Giấy, Hà Nội, Việt Nam"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7004464827399,
+          10.782316117247701
+        ]
+      },
+      "properties": {
+        "name": "DAAD Vietnam",
+        "display_name": "DAAD Vietnam  Deutsches Haus, Office, 33 Lê Duẩn, Bến Nghé, Quận 1, Hồ Chí Minh, Việt Nam"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.84577068897873,
+          21.02603631391497
+        ]
+      },
+      "properties": {
+        "name": "GIZ Vietnam Hà Nội",
+        "display_name": "GIZ Vietnam Hà Nội  Tầng 4-5, Tòa nhà 63 Lý Thái Tổ, Hoàn Kiếm, Hà Nội, Vietnam"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.70087251739449,
+          10.782698870247646
+        ]
+      },
+      "properties": {
+        "name": "Phòng Công nghiệp và Thương mại Đức tại Việt Nam (AHK Vietnam)",
+        "display_name": "Phòng Công nghiệp và Thương mại Đức tại Việt Nam (AHK Vietnam)  Tòa nhà Friendship, 31 Lê Duẩn, Bến Nghé, Quận 1, Hồ Chí Minh, Việt Nam"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.70004622493875,
+          10.787183530554023
+        ]
+      },
+      "properties": {
+        "name": "Tổng lãnh sự quán Đức tại TP.HCM",
+        "display_name": "Tổng lãnh sự quán Đức tại TP.HCM  126 Nguyễn Thị Minh Khai, Phường 6, Quận 3, TP.HCM, Vietnam"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.84028455767083,
+          21.007225833866784
+        ]
+      },
+      "properties": {
+        "name": "VFS Global Hà Nội",
+        "display_name": "VFS Global Hà Nội  Tầng 7, Tòa nhà Detech II, 107 Nguyễn Phong Sắc, Cầu Giấy, Hà Nội, Vietnam"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.69841927301245,
+          10.777765223920486
+        ]
+      },
+      "properties": {
+        "name": "VFS Global TP.HCM",
+        "display_name": "VFS Global TP.HCM  Tầng 3, Tòa nhà Bitexco Financial Tower, 2 Hải Triều, Quận 1, TP.HCM, Vietnam"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8376444,
+          21.030191
+        ]
+      },
+      "properties": {
+        "name": "Viện Goethe Hà Nội",
+        "display_name": "Viện Goethe Hà Nội  56-58-60 Nguyễn Thái Học, Ba Đình, Hà Nội, Vietnam"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.68086369623369,
+          10.773840842659297
+        ]
+      },
+      "properties": {
+        "name": "Viện Goethe TP.HCM",
+        "display_name": "Viện Goethe TP.HCM  C/X Đô Thành, Cao Thắng/Số 1/18 Bàn Cờ, Phường 4, Quận 3, Hồ Chí Minh 70000, Việt Nam"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8401914,
+          21.0306016
+        ]
+      },
+      "properties": {
+        "name": "Đại sứ quán CHLB Đức tại Hà Nội",
+        "display_name": "Đại sứ quán CHLB Đức tại Hà Nội  29 Trần Phú, Ba Đình, Hà Nội, Vietnam"
+      }
+    }
+  ]
+}

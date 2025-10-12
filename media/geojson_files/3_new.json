@@ -1,0 +1,1167 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6781645,
+          50.1153881
+        ]
+      },
+      "properties": {
+        "name": "Arbeitsgemeinschaft hessischer Industrie- und Handelskammern",
+        "display_name": "Arbeitsgemeinschaft hessischer Industrie- und Handelskammern Börsenplatz 4, 60313 Frankfurt am Main, Deutschland Tel.: 0 69/21 97-13 84 Fax: 0 69/21 97-14 48 info@ihk-hessen.de http://www.ihk-hessen.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1757111,
+          48.7851134
+        ]
+      },
+      "properties": {
+        "name": "Baden-Württembergischer Industrie- und Handelskammertag",
+        "display_name": "Baden-Württembergischer Industrie- und Handelskammertag Jägerstraße 40, 70174 Stuttgart, Deutschland Tel.: 07 11/22 55 00-60 Fax: 07 11/22 55 00-77 info@bw.ihk.de http://www.bw.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.6003265,
+          48.1191708
+        ]
+      },
+      "properties": {
+        "name": "Bayerischer Industrie- und Handelskammertag BIHK e. V.",
+        "display_name": "Bayerischer Industrie- und Handelskammertag BIHK e. V. Balanstraße 55-59, 81541 München, Deutschland Tel.: 0 89/51 16-0 Fax: 0 89/51 16-1240 info@bihk.de http://www.bihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4054999,
+          52.5149552
+        ]
+      },
+      "properties": {
+        "name": "Deutscher Industrie- und Handelskammertag",
+        "display_name": "Deutscher Industrie- und Handelskammertag Breite Straße 29, 10178 Berlin, Deutschland Tel.: 0 30 / 20 308-0 Fax: 0 30 / 20 308-1000 infocenter@dihk.de http://www.dihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.9513966,
+          50.9428405
+        ]
+      },
+      "properties": {
+        "name": "Ernst-Schneider-Preis der deutschen Industrie- und Handelskammern e.V.",
+        "display_name": "Ernst-Schneider-Preis der deutschen Industrie- und Handelskammern e.V. Unter Sachsenhausen 10-26, 50667 Köln, Deutschland Tel.: 02 21/1 64 01 57/58 Fax: 02 21/16 40-499 http://www.ernst-schneider-preis.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9912661,
+          53.5498259
+        ]
+      },
+      "properties": {
+        "name": "Handelskammer Hamburg",
+        "display_name": "Handelskammer Hamburg, 1, Adolphsplatz, Altstadt, Hamburg-Mitte, Hamburg, 20457, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.784099,
+          51.2244879
+        ]
+      },
+      "properties": {
+        "name": "IHK NRW – Die Industrie- und Handelskammern in Nordrhein-Westfalen e. V.",
+        "display_name": "IHK NRW – Die Industrie- und Handelskammern in Nordrhein-Westfalen e. V. Marienstraße 8, 40212 Düsseldorf, Deutschland Tel.: 02 11/3 67 02-0 Fax: 02 11/3 67 02-21 info@ihk-nrw.de http://www.ihk-nrw.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0886466,
+          50.7717312
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Aachen",
+        "display_name": "Industrie- und Handelskammer Aachen Theaterstraße 6-10, 52062 Aachen, Deutschland Tel.: 02 41/44 60-0 Fax: 02 41/44 60-259 info@aachen.ihk.de http://www.aachen.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.0627404,
+          51.3954109
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Arnsberg, Hellweg-Sauerland",
+        "display_name": "Industrie- und Handelskammer Arnsberg, Hellweg-Sauerland Königstraße 18-20, 59821 Arnsberg, Deutschland Tel.: 0 29 31/8 78-0 Fax: 0 29 31/8 78-100 ihk@arnsberg.ihk.de http://www.ihk-arnsberg.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1232902,
+          49.9763947
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Aschaffenburg",
+        "display_name": "Industrie- und Handelskammer Aschaffenburg Kerschensteinerstraße 9, 63741 Aschaffenburg, Deutschland Tel.: 0 60 21/8 80-0 Fax: 0 60 21/8 80-22 00 0 info@aschaffenburg.ihk.de http://www.aschaffenburg.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3285832,
+          52.5068966
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Berlin",
+        "display_name": "Industrie- und Handelskammer Berlin Fasanenstraße 85, 10623 Berlin, Deutschland Tel.: 0 30/3 15 10-0 Fax: 0 30/3 15 10-166 service@berlin.ihk.de http://www.ihk-berlin.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.6218058,
+          47.7996009
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Bodensee-Oberschwaben",
+        "display_name": "Industrie- und Handelskammer Bodensee-Oberschwaben Lindenstraße 2, 88250 Weingarten, Deutschland Tel.: 07 51/4 09-0 Fax: 07 51/4 09-159 info@weingarten.ihk.de http://www.weingarten.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1002058,
+          50.7280005
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Bonn/Rhein-Sieg",
+        "display_name": "Industrie- und Handelskammer Bonn/Rhein-Sieg Bonner Talweg 17, 53113 Bonn, Deutschland Tel.: 02 28/22 84-0 Fax: 02 28/22 84-170 info@bonn.ihk.de http://www.ihk-bonn.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.5181237,
+          52.2624
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Braunschweig",
+        "display_name": "Industrie- und Handelskammer Braunschweig Brabandtstraße 11, 38100 Braunschweig, Deutschland Tel.: 05 31/47 15-0 Fax: 05 31/47 15-299 info@braunschweig.ihk.de http://www.braunschweig.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.5177586,
+          52.2623234
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Braunschweig",
+        "display_name": "Industrie- und Handelskammer, 11, Brabandtstraße, Mitte, Braunschweig, Niedersachsen, 38100, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5912322,
+          53.5394929
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Bremerhaven",
+        "display_name": "Industrie- und Handelskammer Bremerhaven Friedrich-Ebert-Straße 6, 27570 Bremerhaven, Deutschland Tel.: 04 71/9 24 60-0 Fax: 04 71/9 24 60-90 info@bremerhaven.ihk.de http://www.bremerhaven.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.3401411,
+          51.7620318
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Cottbus",
+        "display_name": "Industrie- und Handelskammer Cottbus, 1, Goethestraße, Brunschwig - Brunšwik, Mitte, Cottbus - Chóśebuz, Brandenburg, 03046, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6369194,
+          49.8713924
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Darmstadt Rhein Main Neckar",
+        "display_name": "Industrie- und Handelskammer Darmstadt Rhein Main Neckar Rheinstraße 89, 64295 Darmstadt, Deutschland Tel.: 0 61 51/8 71-0 Fax: 0 61 51/8 71-101 info@darmstadt.ihk.de http://www.darmstadt.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.8093885,
+          51.0085316
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Dresden",
+        "display_name": "Industrie- und Handelskammer Dresden Langer Weg 4, 01239 Dresden, Deutschland Tel.: 03 51/28 02-0 Fax: 03 51/28 02-280 service@dresden.ihk.de http://www.dresden.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.8090114,
+          51.0088755
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Dresden",
+        "display_name": "IHK Industrie- und Handelskammer Dresden, Reick, Prohlis, Dresden, Sachsen, 01239, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0329579,
+          50.9633934
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Erfurt",
+        "display_name": "Industrie- und Handelskammer Erfurt Arnstädter Straße 34, 99096 Erfurt, Deutschland Tel.: 03 61/34 84-0 Fax: 03 61/34 85 950 info@erfurt.ihk.de http://www.erfurt.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.6814468,
+          50.5536824
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Fulda",
+        "display_name": "Industrie- und Handelskammer Fulda Heinrichstraße 8, 36037 Fulda, Deutschland Tel.: 06 61/2 84-0 Fax: 06 61/2 84-44 und 2 84-77 info@fulda.ihk.de http://www.ihk-fulda.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6769768,
+          50.5822525
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Gießen – Friedberg",
+        "display_name": "Industrie- und Handelskammer Gießen – Friedberg Lonystraße 7, 35390 Gießen, Deutschland Tel.: 06 41/79 54-0 Fax: 06 41/7 59 14 zentrale@giessen-friedberg.ihk.de http://www.giessen-friedberg.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.676231,
+          50.5820921
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Gießen-Friedberg",
+        "display_name": "IHK - Industrie- und Handelskammer Gießen-Friedberg, 7, Lonystraße, Gießen, Landkreis Gießen, Hessen, 35390, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.9796252,
+          51.4783159
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Halle-Dessau",
+        "display_name": "Industrie- und Handelskammer Halle-Dessau Franckestraße 5, 06110 Halle (Saale), Deutschland Tel.: 03 45/21 26-0 Fax: 03 45/2 02 96 49 info@halle.ihk.de http://www.halle.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.9138282,
+          50.1271134
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Hanau-Gelnhausen-Schlüchtern",
+        "display_name": "Industrie- und Handelskammer Hanau-Gelnhausen-Schlüchtern Am Pedro-Jung-Park 14, 63450 Hanau, Deutschland Tel.: 0 61 81/92 90-0 Fax: 0 61 81/92 90-82 90 info@hanau.ihk.de http://www.hanau.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.7512154,
+          52.3758432
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Hannover",
+        "display_name": "Industrie- und Handelskammer Hannover Schiffgraben 49, 30175 Hannover, Deutschland Tel.: 05 11/31 07-0 Fax: 05 11/31 07-333 info@hannover.ihk.de http://www.hannover.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.75135,
+          52.3759762
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Hannover",
+        "display_name": "Industrie- und Handelskammer Hannover, Oststadt, Mitte, Hannover, Region Hannover, Niedersachsen, 30175, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2211178,
+          49.1192604
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Heilbronn-Franken",
+        "display_name": "Industrie- und Handelskammer Heilbronn-Franken Ferdinand-Braun-Straße 20, 74074 Heilbronn, Deutschland Tel.: 0 71 31/96 77-0 Fax: 0 71 31/96 77-199 info@heilbronn.ihk.de http://www.heilbronn.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4018195,
+          49.0076959
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Karlsruhe",
+        "display_name": "Industrie- und Handelskammer Karlsruhe, 13-17, Lammstraße, Innenstadt-West Östlicher Teil, Innenstadt-West, Karlsruhe, Baden-Württemberg, 76133, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.4904474,
+          51.3170489
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Kassel-Marburg",
+        "display_name": "Industrie- und Handelskammer Kassel-Marburg, 9, Kurfürstenstraße, Mitte, Kassel, Hessen, 34117, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.5979189,
+          50.3564849
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Koblenz",
+        "display_name": "Industrie- und Handelskammer Koblenz Schlossstraße 2, 56068 Koblenz, Deutschland Tel.: 02 61/1 06-0 Fax: 02 61/1 06-234 service@koblenz.ihk.de http://www.ihk-koblenz.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.0564699,
+          50.3874197
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Limburg",
+        "display_name": "Industrie- und Handelskammer Limburg Walderdorffstraße 7, 65549 Limburg, Deutschland Tel.: 0 64 31/2 10-0 Fax: 0 64 31/2 10-205 info@limburg.ihk.de http://www.ihk-limburg.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.916974,
+          51.9322181
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Lippe zu Detmold",
+        "display_name": "Industrie- und Handelskammer Lippe zu Detmold Leonardo-da-Vinci-Weg 2, 32760 Detmold, Deutschland Tel.: 0 52 31/76 01-0 Fax: 0 52 31/76 01-57 ihk@detmold.ihk.de http://www.detmold.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.408118,
+          53.2471941
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Lüneburg-Wolfsburg",
+        "display_name": "Industrie- und Handelskammer Lüneburg-Wolfsburg Am Sande 1, 21335 Lüneburg, Deutschland Tel.: 0 41 31/7 42-0 Fax: 0 41 31/7 42-180 service@lueneburg.ihk.de http://www.ihk-lueneburg.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.3827568,
+          53.2501257
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Lüneburg-Wolfsburg",
+        "display_name": "Industrie- und Handelskammer Lüneburg-Wolfsburg, 1, Volgershall, Weststadt, Lüneburg, Niedersachsen, 21339, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.6395017,
+          52.131838
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Magdeburg",
+        "display_name": "Industrie- und Handelskammer Magdeburg Alter Markt 8, 39104 Magdeburg, Deutschland Tel.: 03 91/56 93-0 Fax: 03 91/56 93-193 kammer@magdeburg.ihk.de http://www.magdeburg.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.5618205,
+          51.3370771
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Mittlerer Niederrhein",
+        "display_name": "Industrie- und Handelskammer Mittlerer Niederrhein, 39, Nordwall, Kronprinzenviertel, Krefeld-Mitte, Krefeld, Nordrhein-Westfalen, 47798, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.2240645,
+          51.4810257
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Mittleres Ruhrgebiet",
+        "display_name": "Industrie- und Handelskammer Mittleres Ruhrgebiet Ostring 30-32, 44787 Bochum, Deutschland Tel.: 02 34/91 13-0 Fax: 02 34/91 13-110 ihk@bochum.ihk.de http://www.bochum.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6154512,
+          51.9442968
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Nord Westfalen",
+        "display_name": "Industrie- und Handelskammer Nord Westfalen Sentmaringer Weg 61, 48151 Münster, Deutschland Tel.: 02 51/7 07-0 Fax: 02 51/7 07-325 muenster@ihk-nordwestfalen.de http://www.ihk-nordwestfalen.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6158042,
+          51.9444615
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Nord Westfalen",
+        "display_name": "IHK (Industrie- und Handelskammer), 63, Sentmaringer Weg, Geist, Mitte-Süd, Münster-Mitte, Münster, Nordrhein-Westfalen, 48151, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0772703,
+          49.4536843
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Nürnberg für Mittelfranken",
+        "display_name": "Industrie- und Handelskammer Nürnberg für Mittelfranken Hauptmarkt 25-27, 90403 Nürnberg, Deutschland Tel.: 09 11/13 35-335 Fax: 09 11/13 35-150335 kundenservice@nuernberg.ihk.de http://www.ihk-nuernberg.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0762909,
+          49.454731
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Nürnberg für Mittelfranken",
+        "display_name": "Industrie- und Handelskammer Nürnberg für Mittelfranken, Schulgäßchen, Altstadt, St. Sebald, Sebald, Nürnberg, Bayern, 90403, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7543229,
+          50.1031827
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Offenbach am Main",
+        "display_name": "Industrie- und Handelskammer Offenbach am Main Frankfurter Straße 90, 63067 Offenbach am Main, Deutschland Tel.: 0 69/82 07-0 Fax: 0 69/82 07-149 service@offenbach.ihk.de http://www.offenbach.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.0433731,
+          52.2723807
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Osnabrück – Emsland – Grafschaft Bentheim",
+        "display_name": "Industrie- und Handelskammer Osnabrück – Emsland – Grafschaft Bentheim Neuer Graben 38, 49074 Osnabrück, Deutschland Tel.: 05 41/3 53-0 Fax: 05 41/3 53-122 ihk@osnabrueck.ihk.de http://www.osnabrueck.ihk24.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.5339443,
+          52.336643
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Ostbrandenburg",
+        "display_name": "Industrie- und Handelskammer Ostbrandenburg Puschkinstraße 12 b, 15236 Frankfurt (Oder), Deutschland Tel.: 03 35/56 21-0 Fax: 03 35/56 21-11 96 info@ihk-ostbrandenburg.de http://www.ihk-ostbrandenburg.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.0751982,
+          50.8951313
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Ostthüringen zu Gera",
+        "display_name": "Industrie- und Handelskammer Ostthüringen zu Gera Gaswerkstraße 23, 07546 Gera, Deutschland Tel.: 03 65/85 53-0 Fax: 03 65/85 53-77 100 info@gera.ihk.de http://www.gera.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.528839,
+          52.0241777
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Ostwestfalen zu Bielefeld",
+        "display_name": "Industrie- und Handelskammer Ostwestfalen zu Bielefeld Elsa-Brändström-Straße 1-3, 33602 Bielefeld, Deutschland Tel.: 05 21/5 54-0 Fax: 05 21/5 54-444 info@ostwestfalen.ihk.de http://www.ostwestfalen.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5285899,
+          52.0232443
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Ostwestfalen zu Bielefeld",
+        "display_name": "Industrie und Handelskammer Ostwestfalen, 3, Elsa-Brändström-Straße, Bahnhofsviertel, Mitte, Bielefeld, Nordrhein-Westfalen, 33602, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1657988,
+          48.7030497
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Ostwürttemberg",
+        "display_name": "Industrie- und Handelskammer Ostwürttemberg Ludwig-Erhard-Straße 1, 89520 Heidenheim, Deutschland Tel.: 0 73 21/3 24-0 Fax: 0 73 21/3 24-169 zentrale@ostwuerttemberg.ihk.de http://www.ostwuerttemberg.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1656681,
+          48.7031201
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Ostwürttemberg",
+        "display_name": "Industrie- und Handelskammer Ostwürttemberg, Ludwig-Erhard-Straße, Schnaitheim, Heidenheim an der Brenz, Verwaltungsgemeinschaft Heidenheim an der Brenz, Landkreis Heidenheim, Baden-Württemberg, 89520, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.0543855,
+          52.3950008
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Potsdam",
+        "display_name": "Industrie- und Handelskammer Potsdam, 2A-C, Breite Straße, Nikolaigärten, Historische Innenstadt, Potsdam, Brandenburg, 14467, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.1011975,
+          49.0156875
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Regensburg für Oberpfalz / Kelheim",
+        "display_name": "Industrie- und Handelskammer Regensburg für Oberpfalz / Kelheim D.-Martin-Luther-Straße 12, 93047 Regensburg, Deutschland Tel.: 09 41/56 94-0 Fax: 09 41/56 94-279 info@regensburg.ihk.de http://www.ihk-regensburg.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.177044,
+          48.7857092
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Region Stuttgart",
+        "display_name": "Industrie- und Handelskammer Region Stuttgart, 30, Jägerstraße, Hauptbahnhof, Stuttgart-Mitte, Stuttgart, Baden-Württemberg, 70174, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2069024,
+          48.4861123
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Reutlingen",
+        "display_name": "Industrie- und Handelskammer Reutlingen Hindenburgstraße 54, 72762 Reutlingen, Deutschland Tel.: 0 71 21/2 01-0 Fax: 0 71 21/2 01-41 20 ihk@reutlingen.ihk.de http://www.reutlingen.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2067066,
+          48.4861265
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Reutlingen",
+        "display_name": "Industrie- und Handelskammer Reutlingen, Hindenburgstraße, Ringelbach, Reutlingen (Kernstadt), Reutlingen, Landkreis Reutlingen, Baden-Württemberg, 72762, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.8963517,
+          48.3594542
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Schwaben",
+        "display_name": "Industrie- und Handelskammer Schwaben, 1;3, Stettenstraße, Bismarckviertel, Bahnhofs- und Bismarckviertel, Innenstadt, Augsburg, Bayern, 86150, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.0129517,
+          50.8694141
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Siegen",
+        "display_name": "Industrie- und Handelskammer Siegen Koblenzer Straße 121, 57072 Siegen, Deutschland Tel.: 02 71/33 02-0 Fax: 02 71/33 02-400 si@siegen.ihk.de http://www.ihk-siegen.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.0125542,
+          50.869451
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Siegen",
+        "display_name": "Industrie- und Handelskammer Siegen, 121, Koblenzer Straße, Siegen, Kreis Siegen-Wittgenstein, Nordrhein-Westfalen, 57072, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.4766077,
+          53.5938542
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Stade für den Elbe-Weser-Raum",
+        "display_name": "Industrie- und Handelskammer Stade für den Elbe-Weser-Raum Am Schäferstieg 2, 21680 Stade, Deutschland Tel.: 0 41 41/5 24-0 Fax: 0 41 41/5 24-111 info@stade.ihk.de http://www.stade.ihk24.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.8394749,
+          47.9934675
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Südlicher Oberrhein",
+        "display_name": "Industrie- und Handelskammer, 11-13, Schnewlinstraße, Altstadt-Ring, Altstadt, Freiburg im Breisgau, Baden-Württemberg, 79098, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6584926,
+          49.7686784
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Trier",
+        "display_name": "Industrie- und Handelskammer Trier Herzogenbuscher Straße 12, 54292 Trier, Deutschland Tel.: 06 51/97 77-0 Fax: 06 51/97 77-150 infocenter@trier.ihk.de http://www.ihk-trier.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9843745,
+          48.4001607
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Ulm",
+        "display_name": "Industrie- und Handelskammer Ulm Olgastraße 95 – 101, 89073 Ulm, Deutschland Tel.: 07 31/173-0 Fax: 07 31/173-173 info@ulm.ihk.de http://www.ulm.ihk24.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9903336,
+          48.4019822
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Ulm",
+        "display_name": "Industrie- und Handelskammer Ulm, 97, Olgastraße, Innenstadt, Mitte, Ulm, Baden-Württemberg, 89073, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2445514,
+          50.0809811
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Wiesbaden",
+        "display_name": "Industrie- und Handelskammer Wiesbaden Wilhelmstraße 24-26, 65183 Wiesbaden, Deutschland Tel.: 06 11/15 00-0 Fax: 06 11/15 00-222 info@wiesbaden.ihk.de http://www.ihk-wiesbaden.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2445676,
+          50.0809891
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Wiesbaden",
+        "display_name": "Industrie- und Handelskammer Wiesbaden, 24-26, Wilhelmstraße, Nordost, Wiesbaden, Hessen, 65183, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9093584,
+          49.8010886
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer Würzburg-Schweinfurt",
+        "display_name": "Industrie- und Handelskammer Würzburg-Schweinfurt Mainaustraße 33-35, 97082 Würzburg, Deutschland Tel.: 09 31/41 94-0 Fax: 09 31/41 94-100 info@wuerzburg.ihk.de http://www.wuerzburg.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.9953186,
+          49.22909
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer des Saarlandes",
+        "display_name": "Industrie- und Handelskammer des Saarlandes Franz-Josef-Röder-Straße 9, 66119 Saarbrücken, Deutschland Tel.: 06 81/95 20-0 Fax: 06 81/95 20-888 info@saarland.ihk.de http://www.saarland.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4476046,
+          48.5717203
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer für Niederbayern in Passau",
+        "display_name": "Industrie- und Handelskammer für Niederbayern in Passau Nibelungenstraße 15, 94032 Passau, Deutschland Tel.: 08 51/5 07-0 Fax: 08 51/5 07-280 ihk@passau.ihk.de http://www.ihk-niederbayern.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.5787693,
+          49.9497439
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer für Oberfranken Bayreuth",
+        "display_name": "Industrie- und Handelskammer für Oberfranken Bayreuth Bahnhofstraße 25, 95444 Bayreuth, Deutschland Tel.: 09 21/8 86-0 Fax: 09 21/8 86-92 99 info@bayreuth.ihk.de http://www.bayreuth.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.2020534,
+          53.3638697
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer für Ostfriesland und Papenburg",
+        "display_name": "Industrie- und Handelskammer für Ostfriesland und Papenburg Ringstraße 4, 26721 Emden, Deutschland Tel.: 0 49 21/89 01-0 Fax: 0 49 21/89 01-33 info@emden.ihk.de http://www.ihk-emden.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2670562,
+          49.9984174
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer für Rheinhessen",
+        "display_name": "Industrie- und Handelskammer für Rheinhessen (IHK), 7, Schillerplatz, Altstadt, Mainz, Bodenheim, Rheinland-Pfalz, 55116, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.4802382,
+          51.5025526
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer zu Dortmund",
+        "display_name": "Industrie- und Handelskammer zu Dortmund Märkische Straße 120, 44141 Dortmund, Deutschland Tel.: 02 31/54 17-0 Fax: 02 31/54 17-109 info@dortmund.ihk.de http://www.dortmund.ihk24.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.4803608,
+          51.5028411
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer zu Dortmund",
+        "display_name": "Industrie- und Handelskammer zu Dortmund, Märkische Straße, Körne, Innenstadt Ost, Dortmund, Nordrhein-Westfalen, 44141, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.7843998,
+          51.2250088
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer zu Düsseldorf",
+        "display_name": "Industrie- und Handelskammer zu Düsseldorf Ernst-Schneider-Platz 1, 40212 Düsseldorf, Deutschland Tel.: 02 11/35 57-0 Fax: 02 11/35 57-400 ihkdus@duesseldorf.ihk.de http://www.duesseldorf.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.4415301,
+          54.7820353
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer zu Flensburg",
+        "display_name": "Industrie- und Handelskammer zu Flensburg Heinrichstraße 28-34, 24937 Flensburg, Deutschland Tel.: 04 61/806-806 Fax: 04 61/806-9806 service@flensburg.ihk.de http://www.ihk-schleswig-holstein.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3691836,
+          51.3433489
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer zu Leipzig",
+        "display_name": "Industrie- und Handelskammer zu Leipzig Goerdelerring 5, 04109 Leipzig, Deutschland Tel.: 03 41/12 67-0 Fax: 03 41/12 67-14 21 info@leipzig.ihk.de http://www.leipzig.ihk.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.6734166,
+          53.8682104
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer zu Lübeck",
+        "display_name": "Industrie- und Handelskammer zu Lübeck Fackenburger Allee 2, 23554 Lübeck, Deutschland Tel.: 04 51/60 06-0 Fax: 04 51/60 06-999 service@ihk-luebeck.de http://www.ihk-schleswig-holstein.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.4113091,
+          53.623761
+        ]
+      },
+      "properties": {
+        "name": "Industrie- und Handelskammer zu Schwerin",
+        "display_name": "Industrie- und Handelskammer zu Schwerin Ludwig-Bölkow-Haus, Graf-Schack-Allee 12, 19053 Schwerin, Deutschland Tel.: 03 85/51 03-0 Fax: 03 85/51 03-999 info@schwerin.ihk.de http://www.ihkzuschwerin.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.9250529,
+          50.8369746
+        ]
+      },
+      "properties": {
+        "name": "Industrie-und Handelskammer Chemnitz",
+        "display_name": "Industrie-und Handelskammer Chemnitz Straße der Nationen 25, 09111 Chemnitz, Deutschland Tel.: 03 71/69 00-0 Fax: 03 71/69 00-19 15 65 chemnitz@chemnitz.ihk.de http://www.chemnitz.ihk24.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.7720818,
+          51.430903
+        ]
+      },
+      "properties": {
+        "name": "Niederrheinische Industrie- und Handelskammer Duisburg-Wesel-Kleve zu Duisburg",
+        "display_name": "Niederrheinische Industrie- und Handelskammer Duisburg-Wesel-Kleve zu Duisburg, 22-24, Mercatorstraße, Dellviertel, Duisburg-Mitte, Duisburg, Nordrhein-Westfalen, 47051, Deutschland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2160567,
+          53.1437329
+        ]
+      },
+      "properties": {
+        "name": "Oldenburgische Industrie- und Handelskammer",
+        "display_name": "Oldenburgische Industrie- und Handelskammer Moslestraße 6, 26122 Oldenburg, Deutschland Tel.: 04 41/22 20-0 Fax: 04 41/22 20-111 info@oldenburg.ihk.de http://www.ihk-oldenburg.de"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.4689685,
+          51.3602906
+        ]
+      },
+      "properties": {
+        "name": "Südwestfälische Industrie- und Handelskammer zu Hagen",
+        "display_name": "Südwestfälische Industrie- und Handelskammer zu Hagen Bahnhofstraße 18, 58095 Hagen, Deutschland Tel.: 0 23 31/3 90-0 Fax: 0 23 31/1 35 86 sihk@hagen.ihk.de http://www.sihk.de"
+      }
+    }
+  ]
+}
