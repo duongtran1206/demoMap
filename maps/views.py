@@ -187,7 +187,16 @@ def convert_custom_json_to_geojson(custom_data):
 class GeoJSONFileViewSet(viewsets.ModelViewSet):
     queryset = GeoJSONFile.objects.filter(is_active=True)
     serializer_class = GeoJSONFileSerializer
-    permission_classes = [permissions.IsAdminUser]
+    permission_classes = [permissions.IsAuthenticated]  # Allow authenticated users to list files for JSON editor
+    
+    def get_permissions(self):
+        """
+        Override permissions to allow public access for listing files,
+        but require authentication for create/update/delete operations
+        """
+        if self.action == 'list':
+            return [permissions.AllowAny()]
+        return [permissions.IsAuthenticated()]
     
     def create(self, request, *args, **kwargs):
         """Custom create method to handle file upload"""
@@ -895,3 +904,105 @@ def custom_symbols_api(request):
             'status': 'error',
             'message': str(e)
         }, status=500)
+
+
+def editlayer(request):
+    """View for editing GeoJSON files - requires authentication"""
+    if not request.user.is_authenticated:
+        return redirect('/admin/login/?next=/editlayer/')
+    return render(request, 'maps/editlayer.html')
+
+
+# JSON Editor API Views
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.response import Response
+from rest_framework import status
+import json
+from .models import GeoJSONFile
+from .serializers import JSONEditorSerializer
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])  # Allow public access for viewing
+def get_json_content(request, file_id):
+    """Get JSON content of a GeoJSON file"""
+    try:
+        file_obj = GeoJSONFile.objects.get(id=file_id)
+        content = file_obj.geojson_data  # Uses updated property that prioritizes edited_content
+        return Response(content)
+    except GeoJSONFile.DoesNotExist:
+        return Response({'error': 'File not found'}, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])  # Require authentication for editing
+def add_json_feature(request, file_id):
+    """Add a new feature to GeoJSON file"""
+    try:
+        file_obj = GeoJSONFile.objects.get(id=file_id)
+        content = file_obj.geojson_data  # Get current content
+        new_feature = request.data  # Expect JSON object for new feature
+        
+        if not content:
+            content = {'type': 'FeatureCollection', 'features': []}
+        
+        content['features'].append(new_feature)
+        file_obj.edited_content = json.dumps(content)
+        file_obj.save()
+        
+        return Response({
+            'message': 'Feature added successfully',
+            'features': content['features']
+        })
+    except GeoJSONFile.DoesNotExist:
+        return Response({'error': 'File not found'}, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['DELETE'])
+@permission_classes([IsAuthenticated])  # Require authentication for editing
+def delete_json_feature(request, file_id, feature_index):
+    """Delete a feature from GeoJSON file by index"""
+    try:
+        file_obj = GeoJSONFile.objects.get(id=file_id)
+        content = file_obj.geojson_data  # Get current content
+        
+        if not content or 'features' not in content:
+            return Response({'error': 'Invalid GeoJSON structure'}, status=status.HTTP_400_BAD_REQUEST)
+        
+        features = content['features']
+        if 0 <= int(feature_index) < len(features):
+            del features[int(feature_index)]
+            file_obj.edited_content = json.dumps(content)
+            file_obj.save()
+            return Response({
+                'message': 'Feature deleted successfully',
+                'features': features
+            })
+        else:
+            return Response({'error': 'Invalid feature index'}, status=status.HTTP_400_BAD_REQUEST)
+    except GeoJSONFile.DoesNotExist:
+        return Response({'error': 'File not found'}, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])  # Allow public access for download
+def download_json_file(request, file_id):
+    """Download the edited GeoJSON file"""
+    try:
+        file_obj = GeoJSONFile.objects.get(id=file_id)
+        content = file_obj.geojson_data  # Get current content (prioritizes edited_content)
+        
+        response = Response(content, content_type='application/json')
+        response['Content-Disposition'] = f'attachment; filename="{file_obj.name}_edited.json"'
+        return response
+    except GeoJSONFile.DoesNotExist:
+        return Response({'error': 'File not found'}, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

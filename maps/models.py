@@ -49,6 +49,7 @@ class GeoJSONFile(models.Model):
         blank=True,
         verbose_name="Custom Symbol"
     )
+    edited_content = models.TextField(blank=True, null=True, verbose_name="Edited JSON Content")  # Field tạm để lưu JSON đã edit
     is_active = models.BooleanField(default=True, verbose_name="Active")
     map_type = models.CharField(
         max_length=20,
@@ -73,26 +74,37 @@ class GeoJSONFile(models.Model):
     
     @property
     def feature_count(self):
-        """Count number of features in GeoJSON file"""
+        """Count number of features in GeoJSON file - prioritize edited_content if available"""
         try:
-            if self.file and os.path.exists(self.file.path):
+            # If edited_content exists, use it; otherwise, fall back to original file
+            if self.edited_content:
+                data = json.loads(self.edited_content)
+            elif self.file and os.path.exists(self.file.path):
                 with open(self.file.path, 'r', encoding='utf-8') as f:
                     data = json.load(f)
-                    if 'features' in data:
-                        return len(data['features'])
+            else:
+                return 0
+            
+            if 'features' in data:
+                return len(data['features'])
             return 0
-        except:
+        except Exception as e:
+            print(f"Error counting features for {self.name}: {e}")
             return 0
     
     @property
     def geojson_data(self):
-        """Return GeoJSON data"""
+        """Return GeoJSON data - prioritize edited_content if available"""
         try:
-            if self.file and os.path.exists(self.file.path):
+            # If edited_content exists, use it; otherwise, fall back to original file
+            if self.edited_content:
+                return json.loads(self.edited_content)
+            elif self.file and os.path.exists(self.file.path):
                 with open(self.file.path, 'r', encoding='utf-8') as f:
                     return json.load(f)
             return None
-        except:
+        except Exception as e:
+            print(f"Error loading GeoJSON data for {self.name}: {e}")
             return None
 
 

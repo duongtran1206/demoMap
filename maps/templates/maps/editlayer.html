@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Layer JSON</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding: 20px; }
+        .feature-item { margin-bottom: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        .feature-item:nth-child(even) { background-color: #f9f9f9; }
+        .feature-name { font-weight: bold; color: #007bff; }
+        .feature-coords { font-size: 0.9em; color: #666; }
+        .feature-props { margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">Edit Layer JSON</h1>
+        
+        {% if user.is_authenticated %}
+            <div class="alert alert-info">
+                <strong>Logged in as:</strong> {{ user.username }} | 
+                <a href="/admin/logout/" class="btn btn-sm btn-outline-secondary">Logout</a>
+            </div>
+        {% else %}
+            <div class="alert alert-warning">
+                <strong>Authentication Required:</strong> You need to be logged in to edit features.
+                <a href="/admin/login/?next=/editlayer/" class="btn btn-sm btn-primary">Login</a>
+            </div>
+        {% endif %}
+        
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <label for="fileSelect" class="form-label">Select GeoJSON File:</label>
+                <select id="fileSelect" class="form-select" onchange="loadFeatures()">
+                    <option value="">Choose a file...</option>
+                </select>
+            </div>
+            <div class="col-md-6 d-flex align-items-end">
+                <button class="btn btn-primary me-2" onclick="loadFeatures()">Load Features</button>
+                <button class="btn btn-success" onclick="downloadFile()">Download Edited JSON</button>
+            </div>
+        </div>
+        
+        <div id="featuresContainer" style="display: none;">
+            <h3>Features List (<span id="featureCount">0</span> items)</h3>
+            <div id="featuresList" class="mb-4"></div>
+            
+            <h3>Add New Feature</h3>
+            <form id="addFeatureForm" class="border p-3 rounded">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Name:</label>
+                        <input type="text" id="nameInput" class="form-control" required>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label">Latitude:</label>
+                        <input type="number" step="any" id="latInput" class="form-control" required>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label">Longitude:</label>
+                        <input type="number" step="any" id="lonInput" class="form-control" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Display Name (Address):</label>
+                    <textarea id="displayInput" class="form-control" rows="2"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Feature</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        const API_BASE = '/api/json-editor/';
+        let selectedFileId = null;
+
+        async function loadFiles() {
+            try {
+                const response = await fetch('/api/geojson-files/');
+                const files = await response.json();
+                const select = document.getElementById('fileSelect');
+                select.innerHTML = '<option value="">Choose a file...</option>';
+                files.forEach(file => {
+                    const option = document.createElement('option');
+                    option.value = file.id;
+                    option.textContent = `${file.name} (${file.map_type})`;
+                    select.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error loading files:', error);
+                alert('Error loading files. Please check console.');
+            }
+        }
+
+        async function loadFeatures() {
+            selectedFileId = document.getElementById('fileSelect').value;
+            if (!selectedFileId) {
+                document.getElementById('featuresContainer').style.display = 'none';
+                return;
+            }
+            
+            try {
+                const response = await fetch(`${API_BASE}${selectedFileId}/`);
+                const data = await response.json();
+                
+                if (data && data.features) {
+                    const list = document.getElementById('featuresList');
+                    list.innerHTML = data.features.map((feature, index) => `
+                        <div class="feature-item">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <div class="feature-name">${index}: ${feature.properties?.name || 'Unnamed'}</div>
+                                    <div class="feature-coords">📍 ${feature.geometry?.coordinates?.[1] || 0}, ${feature.geometry?.coordinates?.[0] || 0}</div>
+                                    ${feature.properties?.display_name ? `<div class="feature-props">🏠 ${feature.properties.display_name}</div>` : ''}
+                                </div>
+                                <button class="btn btn-danger btn-sm" onclick="deleteFeature(${index})">Delete</button>
+                            </div>
+                        </div>
+                    `).join('');
+                    
+                    document.getElementById('featureCount').textContent = data.features.length;
+                    document.getElementById('featuresContainer').style.display = 'block';
+                } else {
+                    alert('Invalid GeoJSON structure');
+                }
+            } catch (error) {
+                console.error('Error loading features:', error);
+                alert('Error loading features. Please check console.');
+            }
+        }
+
+        document.getElementById('addFeatureForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Get CSRF token
+            const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+            
+            const newFeature = {
+                type: "Feature",
+                geometry: {
+                    type: "Point",
+                    coordinates: [parseFloat(document.getElementById('lonInput').value), parseFloat(document.getElementById('latInput').value)]
+                },
+                properties: {
+                    name: document.getElementById('nameInput').value,
+                    display_name: document.getElementById('displayInput').value
+                }
+            };
+            
+            try {
+                const response = await fetch(`${API_BASE}${selectedFileId}/add/`, {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrfToken
+                    },
+                    body: JSON.stringify(newFeature)
+                });
+                
+                if (response.ok) {
+                    alert('Feature added successfully!');
+                    loadFeatures();
+                    document.getElementById('addFeatureForm').reset();
+                } else {
+                    const error = await response.json();
+                    alert('Error: ' + (error.error || 'Unknown error'));
+                }
+            } catch (error) {
+                console.error('Error adding feature:', error);
+                alert('Error adding feature. Please check console.');
+            }
+        });
+
+        async function deleteFeature(index) {
+            if (!confirm(`Delete feature #${index}?`)) return;
+            
+            // Get CSRF token
+            const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+            
+            try {
+                const response = await fetch(`${API_BASE}${selectedFileId}/delete/${index}/`, { 
+                    method: 'DELETE',
+                    headers: {
+                        'X-CSRFToken': csrfToken
+                    }
+                });
+                
+                if (response.ok) {
+                    alert('Feature deleted successfully!');
+                    loadFeatures();
+                } else {
+                    const error = await response.json();
+                    alert('Error: ' + (error.error || 'Unknown error'));
+                }
+            } catch (error) {
+                console.error('Error deleting feature:', error);
+                alert('Error deleting feature. Please check console.');
+            }
+        }
+
+        async function downloadFile() {
+            if (!selectedFileId) {
+                alert('Please select a file first');
+                return;
+            }
+            
+            try {
+                const response = await fetch(`${API_BASE}${selectedFileId}/download/`);
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'edited.json';
+                a.click();
+                window.URL.revokeObjectURL(url);
+            } catch (error) {
+                console.error('Error downloading file:', error);
+                alert('Error downloading file. Please check console.');
+            }
+        }
+
+        // Check if user is authenticated
+        const isAuthenticated = JSON.parse('{% if user.is_authenticated %}true{% else %}false{% endif %}');
+        
+        if (!isAuthenticated) {
+            // Disable form if not authenticated
+            document.getElementById('addFeatureForm').style.display = 'none';
+            document.querySelectorAll('.btn-danger').forEach(btn => btn.disabled = true);
+            
+            // Show login message
+            const alertDiv = document.createElement('div');
+            alertDiv.className = 'alert alert-warning mt-3';
+            alertDiv.innerHTML = '<strong>Authentication Required:</strong> You must be logged in to add or delete features. <a href="{% url "admin:login" %}">Login here</a>';
+            document.querySelector('.container').insertBefore(alertDiv, document.querySelector('.row'));
+        }
+
+        // Load files on page load
+        loadFiles();
+    </script>
+</body>
+</html>

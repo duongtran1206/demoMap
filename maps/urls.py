@@ -26,4 +26,15 @@ urlpatterns = [
     path('api/init-db/', csrf_exempt(views.init_db_api), name='init_db'),
     path('api/health/', views.health_check, name='health_check'),
     path('dashboard/', views.admin_dashboard_view, name='dashboard'),
+    path('editlayer/', views.editlayer, name='editlayer'),
+]
+
+# JSON Editor URLs
+from .views import get_json_content, add_json_feature, delete_json_feature, download_json_file
+
+urlpatterns += [
+    path('api/json-editor/<int:file_id>/', get_json_content, name='get_json_content'),
+    path('api/json-editor/<int:file_id>/add/', add_json_feature, name='add_json_feature'),
+    path('api/json-editor/<int:file_id>/delete/<int:feature_index>/', delete_json_feature, name='delete_json_feature'),
+    path('api/json-editor/<int:file_id>/download/', download_json_file, name='download_json_file'),
 ]

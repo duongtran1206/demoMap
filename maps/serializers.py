@@ -41,3 +41,8 @@ class MapLayerSerializer(serializers.ModelSerializer):
     class Meta:
         model = MapLayer
         fields = ['id', 'geojson_file', 'is_visible', 'order', 'feature_visibilities']
+
+
+class JSONEditorSerializer(serializers.Serializer):
+    """Serializer for JSON editor operations"""
+    features = serializers.ListField()  # To validate features array
