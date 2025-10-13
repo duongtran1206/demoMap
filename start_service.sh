@@ -195,7 +195,7 @@ else
     sudo ln -s /snap/bin/certbot /usr/bin/certbot
 
     echo "Obtaining SSL certificate for $DOMAIN..."
-    sudo certbot --nginx -d $DOMAIN -d www.$DOMAIN --email $EMAIL --agree-tos --non-interactive
+    sudo certbot certonly --standalone -d $DOMAIN --email $EMAIL --agree-tos --non-interactive
 
     # Set up automatic certificate renewal
     echo "Setting up automatic certificate renewal..."
