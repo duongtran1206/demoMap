@@ -628,3 +628,54 @@ class GeoJSONFileAdmin(admin.ModelAdmin):
 - Tooltip khi hover
 - Zoom tự động đến vùng dữ liệu
 - 5 điểm trụ sở cố định không thể xóa được
+
+## 🔒 HTTPS Deployment
+
+### Environment Variables
+
+Trước khi chạy `start_service.sh`, thiết lập các biến môi trường:
+
+```bash
+export DOMAIN="yourdomain.com"
+export EMAIL="your-email@example.com"
+```
+
+### SSL Certificate với Let's Encrypt
+
+Script `start_service.sh` sẽ tự động:
+- Cài đặt Certbot
+- Lấy SSL certificate miễn phí từ Let's Encrypt
+- Cấu hình nginx cho HTTPS
+- Thiết lập auto-renewal hàng tháng
+
+### HTTPS URLs
+
+Sau khi deployment, ứng dụng sẽ có HTTPS:
+
+- **Main Application**: `https://yourdomain.com/`
+- **Admin Dashboard**: `https://yourdomain.com/admin-dashboard/`
+- **Map Embed**: `https://yourdomain.com/embed/`
+- **Django Admin**: `https://yourdomain.com/admin/`
+
+### SSL Certificate Management
+
+```bash
+# Kiểm tra certificate status
+sudo certbot certificates
+
+# Renew certificate manually
+sudo certbot renew
+
+# Test auto-renewal
+sudo certbot renew --dry-run
+```
+
+### URL Access Control
+
+Chỉ cho phép truy cập vào 4 URL chính:
+- `/admin-dashboard/` - Admin dashboard
+- `/embed/` - Map embed (English)
+- `/embed_vn/` - Map embed (Vietnamese)
+- `/editlayer/` - Layer editor
+
+Tất cả URL khác sẽ hiển thị trang trống (blank page) để bảo mật.

@@ -21,6 +21,12 @@ echo "Removing nginx configuration..."
 sudo rm -f /etc/nginx/sites-available/demomap
 sudo rm -f /etc/nginx/sites-enabled/demomap
 
+# Remove SSL certificates (for HTTPS reset)
+echo "Removing SSL certificates..."
+sudo rm -rf /etc/letsencrypt/live/yourdomain.com 2>/dev/null || true
+sudo rm -rf /etc/letsencrypt/archive/yourdomain.com 2>/dev/null || true
+sudo rm -rf /etc/letsencrypt/renewal/yourdomain.com.conf 2>/dev/null || true
+
 # Remove project directory (optional - uncomment if needed)
 # echo "Removing project directory..."
 # sudo rm -rf /home/ubuntu/demoMap
