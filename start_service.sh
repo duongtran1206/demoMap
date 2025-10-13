@@ -16,8 +16,20 @@ PROJECT_DIR="/home/ubuntu/demoMap"
 VENV_DIR="$PROJECT_DIR/venv"
 USER="ubuntu"
 GROUP="www-data"
-DOMAIN="vdp-personal.com"  # Thay bằng domain thật của bạn
-EMAIL="info@VDP-Personal.de"
+
+# Load domain configuration if exists
+if [ -f "$PROJECT_DIR/.domain_config" ]; then
+    echo "Loading domain configuration from .domain_config..."
+    source $PROJECT_DIR/.domain_config
+    echo "Using domain: $DOMAIN"
+    echo "Using email: $EMAIL"
+else
+    echo "No domain configuration found. Using IP address with self-signed SSL."
+    # Try to get public IP
+    DOMAIN=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4 2>/dev/null || echo "localhost")
+    EMAIL="admin@localhost"
+    echo "Using IP/domain: $DOMAIN"
+fi
 
 # Create virtual environment if it doesn't exist
 echo "Setting up Python virtual environment..."
@@ -75,14 +87,6 @@ if ! command -v nginx &> /dev/null; then
     sudo apt update
     sudo apt install -y nginx
 fi
-
-# Install Certbot for HTTPS
-echo "Installing Certbot for HTTPS..."
-sudo apt install -y snapd
-sudo snap install core
-sudo snap refresh core
-sudo snap install --classic certbot
-sudo ln -s /snap/bin/certbot /usr/bin/certbot
 
 # Create nginx directories if they don't exist
 echo "Creating nginx directories..."
@@ -176,21 +180,29 @@ sudo nginx -t
 echo "Reloading nginx..."
 sudo systemctl reload nginx
 
-# Install Certbot and get SSL certificate
-echo "Installing Certbot..."
-sudo apt install snapd -y
-sudo snap install core; sudo snap refresh core
-sudo snap install --classic certbot
-sudo ln -s /snap/bin/certbot /usr/bin/certbot
+# Install Certbot and get SSL certificate (only for real domains, not IP addresses)
+if [[ $DOMAIN =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]] || [[ $DOMAIN == "localhost" ]]; then
+    echo "Using IP address/localhost. Generating self-signed SSL certificate..."
+    sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/selfsigned.key -out /etc/ssl/certs/selfsigned.crt -subj "/C=US/ST=State/L=City/O=Organization/CN=$DOMAIN"
+    echo "Self-signed SSL certificate generated successfully!"
+else
+    echo "Using domain: $DOMAIN. Obtaining Let's Encrypt SSL certificate..."
+    # Install Certbot and get SSL certificate
+    echo "Installing Certbot..."
+    sudo apt install snapd -y
+    sudo snap install core; sudo snap refresh core
+    sudo snap install --classic certbot
+    sudo ln -s /snap/bin/certbot /usr/bin/certbot
 
-echo "Obtaining SSL certificate for $DOMAIN..."
-sudo certbot --nginx -d $DOMAIN -d www.$DOMAIN --email $EMAIL --agree-tos --non-interactive
+    echo "Obtaining SSL certificate for $DOMAIN..."
+    sudo certbot --nginx -d $DOMAIN -d www.$DOMAIN --email $EMAIL --agree-tos --non-interactive
 
-# Set up automatic certificate renewal
-echo "Setting up automatic certificate renewal..."
-sudo crontab -l | { cat; echo "0 12 * * * /usr/bin/certbot renew --quiet"; } | sudo crontab -
+    # Set up automatic certificate renewal
+    echo "Setting up automatic certificate renewal..."
+    sudo crontab -l | { cat; echo "0 12 * * * /usr/bin/certbot renew --quiet"; } | sudo crontab -
 
-echo "HTTPS setup completed successfully!"
+    echo "HTTPS setup completed successfully!"
+fi
 
 # Set proper permissions
 echo "Setting permissions..."
@@ -227,9 +239,25 @@ echo "Vietnamese embed: https://$DOMAIN/embed_vn/"
 echo "Layer editor: https://$DOMAIN/editlayer/"
 echo "Django admin: https://$DOMAIN/admin/ (admin/admin123)"
 echo ""
-echo "⚠️  NOTE: Using self-signed SSL certificate for IP address access"
-echo "   Browser will show security warning - this is normal for IP-based HTTPS"
-echo "   For production, use a domain name with Let's Encrypt certificates"
+
+if [[ $DOMAIN =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]] || [[ $DOMAIN == "localhost" ]]; then
+    echo "⚠️  NOTE: Using self-signed SSL certificate for IP address access"
+    echo "   Browser will show security warning - this is normal for IP-based HTTPS"
+    echo "   For production, configure domain SSL with: sudo ./reset_ec2.sh yourdomain.com"
+    echo ""
+    echo "SSL Certificate Information:"
+    echo "  Certificate type: Self-signed"
+    echo "  Certificate location: /etc/ssl/certs/selfsigned.crt"
+    echo "  Private key location: /etc/ssl/private/selfsigned.key"
+else
+    echo "✅ NOTE: Using Let's Encrypt SSL certificate for domain access"
+    echo "   Full HTTPS encryption with trusted certificate"
+    echo ""
+    echo "SSL Certificate Information:"
+    echo "  Certificate location: /etc/letsencrypt/live/$DOMAIN/"
+    echo "  Auto-renewal: Daily at 12:00 via cron"
+    echo "  To manually renew: sudo certbot renew"
+fi
 
 echo ""
 echo "To check logs:"
@@ -240,9 +268,3 @@ echo ""
 echo "To restart services:"
 echo "  sudo systemctl restart demomap"
 echo "  sudo systemctl restart nginx"
-
-echo ""
-echo "SSL Certificate Information:"
-echo "  Certificate location: /etc/letsencrypt/live/$DOMAIN/"
-echo "  Auto-renewal: Daily at 12:00 via cron"
-echo "  To manually renew: sudo certbot renew"
