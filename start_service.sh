@@ -159,6 +159,15 @@ server {
         client_max_body_size 100M;
     }
 
+    location /api/ {
+        include proxy_params;
+        proxy_pass http://unix:/home/ubuntu/demoMap/demomap.sock;
+        proxy_read_timeout 300;
+        proxy_connect_timeout 300;
+        proxy_send_timeout 300;
+        client_max_body_size 100M;
+    }
+
     # Return blank page for all other URLs
     location / {
         return 200 "<!DOCTYPE html><html><head><title></title></head><body></body></html>";
