@@ -16,7 +16,7 @@ PROJECT_DIR="/home/ubuntu/demoMap"
 VENV_DIR="$PROJECT_DIR/venv"
 USER="ubuntu"
 GROUP="www-data"
-DOMAIN="15.152.37.134"  # Thay bằng domain thật của bạn
+DOMAIN="vdp-personal.com"  # Thay bằng domain thật của bạn
 EMAIL="info@VDP-Personal.de"
 
 # Create virtual environment if it doesn't exist
@@ -217,13 +217,19 @@ sudo systemctl status nginx --no-pager -l
 # Test the application
 echo "Testing application..."
 sleep 3
-curl -s -o /dev/null -w "%{http_code}" https://$DOMAIN/ | grep -q "200" && echo "✓ Application is running successfully over HTTPS!" || echo "✗ Application test failed"
+curl -k -s -o /dev/null -w "%{http_code}" https://$DOMAIN/ | grep -q "200" && echo "✓ Application is running successfully over HTTPS!" || echo "✗ Application test failed"
 
 echo "=== Service Start Complete ==="
 echo "Application should now be accessible at: https://$DOMAIN/"
 echo "Admin dashboard: https://$DOMAIN/admin-dashboard/"
 echo "Map embed: https://$DOMAIN/embed/"
+echo "Vietnamese embed: https://$DOMAIN/embed_vn/"
+echo "Layer editor: https://$DOMAIN/editlayer/"
 echo "Django admin: https://$DOMAIN/admin/ (admin/admin123)"
+echo ""
+echo "⚠️  NOTE: Using self-signed SSL certificate for IP address access"
+echo "   Browser will show security warning - this is normal for IP-based HTTPS"
+echo "   For production, use a domain name with Let's Encrypt certificates"
 
 echo ""
 echo "To check logs:"

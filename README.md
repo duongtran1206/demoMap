@@ -659,6 +659,21 @@ Sau khi deployment, ứng dụng sẽ có HTTPS:
 
 ### SSL Certificate Management
 
+**For IP Address Access (Development/Testing):**
+- Uses self-signed SSL certificates
+- Browser will show security warning (safe to ignore for testing)
+- Add security exception or use `curl -k` to bypass warnings
+
+**For Production with Domain:**
+```bash
+# Set domain environment variables
+export DOMAIN="yourdomain.com"
+export EMAIL="your-email@example.com"
+
+# Re-run deployment script
+sudo ./start_service.sh
+```
+
 ```bash
 # Kiểm tra certificate status
 sudo certbot certificates
