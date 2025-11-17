@@ -29,7 +29,7 @@ fi
 
 # Test 3: Check if gunicorn socket exists
 echo "Test 3: Gunicorn socket..."
-if [ -S "/demoMap/demomap.sock" ]; then
+if [ -S "/home/ubuntu/demoMap/demomap.sock" ]; then
     echo "✓ Gunicorn socket exists"
 else
     echo "✗ Gunicorn socket NOT found"
@@ -64,7 +64,7 @@ fi
 
 # Test 7: Check static files
 echo "Test 7: Static files..."
-if [ -d "/demoMap/staticfiles" ] && [ "$(ls -A /demoMap/staticfiles)" ]; then
+if [ -d "/home/ubuntu/demoMap/staticfiles" ] && [ "$(ls -A /home/ubuntu/demoMap/staticfiles)" ]; then
     echo "✓ Static files collected"
 else
     echo "✗ Static files NOT found"
@@ -72,7 +72,7 @@ fi
 
 # Test 8: Check database
 echo "Test 8: Database..."
-if [ -f "/demoMap/db.sqlite3" ]; then
+if [ -f "/home/ubuntu/demoMap/db.sqlite3" ]; then
     echo "✓ Database exists"
 else
     echo "✗ Database NOT found"

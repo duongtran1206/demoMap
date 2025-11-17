@@ -2,17 +2,17 @@
 
 ## Chuẩn bị
 1. EC2 Ubuntu instance (20.04 hoặc 22.04)
-2. Clone code vào `/demoMap` (không phải `/home/ubuntu/demoMap`)
+2. Clone code vào `/home/ubuntu/demoMap`
 
 ```bash
-sudo git clone https://github.com/duongtran1206/demoMap.git /demoMap
-sudo chown -R ubuntu:ubuntu /demoMap
+sudo git clone https://github.com/duongtran1206/demoMap.git /home/ubuntu/demoMap
+sudo chown -R ubuntu:ubuntu /home/ubuntu/demoMap
 ```
 
 ## Deploy
 
 ```bash
-cd /demoMap
+cd /home/ubuntu/demoMap
 chmod +x reset_ec2.sh start_service.sh
 sudo ./start_service.sh
 ```
@@ -26,7 +26,7 @@ sudo ./start_service.sh
 ## Reset và deploy lại
 
 ```bash
-cd /demoMap
+cd /home/ubuntu/demoMap
 sudo ./reset_ec2.sh
 sudo ./start_service.sh
 ```

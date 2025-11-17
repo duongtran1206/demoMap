@@ -10,23 +10,23 @@
 ssh -i your-key.pem ubuntu@YOUR_EC2_IP
 ```
 
-## Bước 2: Clone/Move project vào /demoMap
+## Bước 2: Clone/Move project vào /home/ubuntu/demoMap
 ```bash
-# Clone từ git
-sudo git clone https://github.com/duongtran1206/demoMap.git /demoMap
+# Clone từ git trực tiếp vào /home/ubuntu/demoMap
+sudo git clone https://github.com/duongtran1206/demoMap.git /home/ubuntu/demoMap
 
-# Hoặc nếu đã clone vào /home/ubuntu/demoMap, di chuyển sang /demoMap
-sudo mv /home/ubuntu/demoMap /demoMap
+# Hoặc nếu đã clone vào /demoMap, di chuyển sang /home/ubuntu/demoMap
+sudo mv /demoMap /home/ubuntu/demoMap
 
 # Set quyền cho user ubuntu
-sudo chown -R ubuntu:ubuntu /demoMap
+sudo chown -R ubuntu:ubuntu /home/ubuntu/demoMap
 ```
 
 ## Bước 3: Deploy lần đầu
 
 ### 3.1. Vào thư mục project
 ```bash
-cd /demoMap
+cd /home/ubuntu/demoMap
 ```
 
 ### 3.2. Set quyền execute cho script
@@ -65,7 +65,7 @@ Sau khi deploy xong, truy cập các URL:
 Khi có thay đổi mới:
 
 ```bash
-cd /demoMap
+cd /home/ubuntu/demoMap
 git pull origin main
 sudo ./start_service.sh
 ```
@@ -75,7 +75,7 @@ sudo ./start_service.sh
 Nếu muốn reset toàn bộ và deploy lại:
 
 ```bash
-cd /demoMap
+cd /home/ubuntu/demoMap
 sudo ./reset_ec2.sh
 sudo ./start_service.sh
 ```
@@ -113,10 +113,10 @@ sudo nginx -t
 
 ### Nếu gặp lỗi permission
 ```bash
-sudo chown -R ubuntu:www-data /demoMap/
-sudo chmod -R 755 /demoMap/
-sudo chmod -R 755 /demoMap/staticfiles/
-sudo chmod -R 755 /demoMap/media/
+sudo chown -R ubuntu:www-data /home/ubuntu/demoMap/
+sudo chmod -R 755 /home/ubuntu/demoMap/
+sudo chmod -R 755 /home/ubuntu/demoMap/staticfiles/
+sudo chmod -R 755 /home/ubuntu/demoMap/media/
 ```
 
 ### Nếu port 80 bị chiếm dụng
@@ -134,7 +134,7 @@ sudo kill -9 PID
 ## Lưu ý quan trọng
 
 1. **HTTP Only**: Deploy này chỉ dùng HTTP (không SSL) - phù hợp cho demo
-2. **Project Path**: Project phải ở `/demoMap` (không phải `/home/ubuntu/demoMap`)
+2. **Project Path**: Project phải ở `/home/ubuntu/demoMap`
 3. **Security Group**: Đảm bảo Security Group của EC2 cho phép:
    - Inbound port 22 (SSH)
    - Inbound port 80 (HTTP)
@@ -144,7 +144,7 @@ sudo kill -9 PID
 ## Cấu trúc thư mục
 
 ```
-/demoMap/                    # Project root
+/home/ubuntu/demoMap/                    # Project root
 ├── manage.py
 ├── requirements.txt
 ├── reset_ec2.sh            # Script reset

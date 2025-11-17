@@ -33,20 +33,21 @@ echo "Cleaning up running processes..."
 sudo pkill -f gunicorn 2>/dev/null || true
 sudo pkill -f "manage.py runserver" 2>/dev/null || true
 
+
 # Clean up log files
 echo "Cleaning up log files..."
-sudo rm -f /demoMap/django.log 2>/dev/null || true
+sudo rm -f /home/ubuntu/demoMap/django.log 2>/dev/null || true
 sudo rm -f /var/log/nginx/demomap_error.log 2>/dev/null || true
 sudo rm -f /var/log/nginx/demomap_access.log 2>/dev/null || true
 
 # Clean up database and collected static files
 echo "Cleaning up database and static files..."
-sudo rm -f /demoMap/db.sqlite3 2>/dev/null || true
-sudo rm -rf /demoMap/staticfiles/* 2>/dev/null || true
+sudo rm -f /home/ubuntu/demoMap/db.sqlite3 2>/dev/null || true
+sudo rm -rf /home/ubuntu/demoMap/staticfiles/* 2>/dev/null || true
 
 # Reset permissions (will be set properly in deploy script)
 echo "Resetting basic permissions..."
-sudo chown -R ubuntu:ubuntu /demoMap/ 2>/dev/null || true
+sudo chown -R ubuntu:ubuntu /home/ubuntu/demoMap/ 2>/dev/null || true
 
 # Restart nginx
 echo "Restarting nginx..."
@@ -55,5 +56,5 @@ sudo systemctl restart nginx 2>/dev/null || true
 echo "=== Reset Complete ==="
 echo ""
 echo "To deploy the application:"
-echo "  cd /demoMap"
+echo "  cd /home/ubuntu/demoMap"
 echo "  sudo ./start_service.sh"

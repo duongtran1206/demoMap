@@ -12,10 +12,10 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # Set variables dynamically
-DEFAULT_PROJECT_DIR="/demoMap"
+DEFAULT_PROJECT_DIR="/home/ubuntu/demoMap"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Determine project directory: prefer /demoMap, then script dir, then current working dir
+# Determine project directory: prefer /home/ubuntu/demoMap, then script dir, then current working dir
 if [ -f "$DEFAULT_PROJECT_DIR/manage.py" ]; then
     PROJECT_DIR="$DEFAULT_PROJECT_DIR"
 elif [ -f "$SCRIPT_DIR/manage.py" ]; then
@@ -24,7 +24,7 @@ elif [ -f "$(pwd)/manage.py" ]; then
     PROJECT_DIR="$(pwd)"
 else
     echo "Error: Project not found at $DEFAULT_PROJECT_DIR or in script/current directory."
-    echo "Please place the project at /demoMap or run this script from the project root."
+    echo "Please place the project at /home/ubuntu/demoMap or run this script from the project root."
     exit 1
 fi
 
@@ -154,6 +154,18 @@ echo "Enabling nginx site..."
 ln -sf /etc/nginx/sites-available/demomap /etc/nginx/sites-enabled/
 rm -f /etc/nginx/sites-enabled/default
 
+# Ensure nginx proxy_params exists (some minimal Ubuntu images miss it)
+if [ ! -f /etc/nginx/proxy_params ]; then
+    echo "Creating /etc/nginx/proxy_params (fallback)..."
+    cat > /etc/nginx/proxy_params <<'PP'
+proxy_set_header Host $host;
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header X-Forwarded-Proto $scheme;
+PP
+    chmod 644 /etc/nginx/proxy_params
+fi
+
 # Test nginx configuration
 echo "Testing nginx configuration..."
 nginx -t
@@ -230,7 +242,7 @@ echo "   Check Django logs:  sudo journalctl -u demomap -f"
 echo "   Check Nginx logs:   sudo tail -f /var/log/nginx/error.log"
 echo "   Restart Django:     sudo systemctl restart demomap"
 echo "   Restart Nginx:      sudo systemctl restart nginx"
-echo "   Update code:        cd /demoMap && git pull && sudo ./start_service.sh"
+echo "   Update code:        cd /home/ubuntu/demoMap && git pull && sudo ./start_service.sh"
 echo ""
 echo "⚠️  NOTE: This is HTTP only (no SSL) - suitable for demos"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
