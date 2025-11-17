@@ -11,20 +11,35 @@ if [ "$EUID" -ne 0 ]; then
     exit 1
 fi
 
-# Set variables
-PROJECT_DIR="/demoMap"
-VENV_DIR="$PROJECT_DIR/venv"
-USER="ubuntu"
-GROUP="www-data"
+# Set variables dynamically
+DEFAULT_PROJECT_DIR="/demoMap"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Check if we're in the project directory
-if [ ! -f "$PROJECT_DIR/manage.py" ]; then
-    echo "Error: Project not found at $PROJECT_DIR"
-    echo "Please ensure the project is cloned/moved to /demoMap/"
+# Determine project directory: prefer /demoMap, then script dir, then current working dir
+if [ -f "$DEFAULT_PROJECT_DIR/manage.py" ]; then
+    PROJECT_DIR="$DEFAULT_PROJECT_DIR"
+elif [ -f "$SCRIPT_DIR/manage.py" ]; then
+    PROJECT_DIR="$SCRIPT_DIR"
+elif [ -f "$(pwd)/manage.py" ]; then
+    PROJECT_DIR="$(pwd)"
+else
+    echo "Error: Project not found at $DEFAULT_PROJECT_DIR or in script/current directory."
+    echo "Please place the project at /demoMap or run this script from the project root."
     exit 1
 fi
 
-cd $PROJECT_DIR
+VENV_DIR="$PROJECT_DIR/venv"
+
+# Choose a non-root user to run the app (prefer ubuntu), otherwise use project owner or root
+if id "ubuntu" >/dev/null 2>&1; then
+    USER="ubuntu"
+else
+    USER="$(stat -c '%U' "$PROJECT_DIR" 2>/dev/null || echo root)"
+fi
+GROUP="www-data"
+
+echo "Using project directory: $PROJECT_DIR"
+cd "$PROJECT_DIR"
 
 # Get public IP address
 echo "Getting public IP address..."
