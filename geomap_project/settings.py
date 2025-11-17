@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-abl5z78j(td@79(+k+dlaq7dzrt&59=@4sw9!3on!2iap1*_&6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'True').lower() == 'true'
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '15.152.37.134', 'dtranrdp.store', '.vercel.app', '.now.sh', 'testserver']
+ALLOWED_HOSTS = ['*']  # Allow all hosts for demo purposes
 
 
 # Application definition
@@ -168,13 +168,9 @@ REST_FRAMEWORK = {
 
 # CSRF settings for API
 CSRF_TRUSTED_ORIGINS = [
-    'http://127.0.0.1:8000', 
-    'http://localhost:8000',
-    'http://15.152.37.134',
-    'https://15.152.37.134',
-    'https://dtranrdp.store',
-    'https://*.vercel.app',
-    'https://*.now.sh'
+    'http://localhost',
+    'http://127.0.0.1',
+    'http://*',  # Allow all HTTP origins for demo
 ]
 
 # Default primary key field type

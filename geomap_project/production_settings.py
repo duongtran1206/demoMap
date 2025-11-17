@@ -3,7 +3,7 @@ import os
 
 # Production settings
 DEBUG = False
-ALLOWED_HOSTS = ['15.152.37.134', 'ec2-15-152-37-134.ap-northeast-3.compute.amazonaws.com', 'localhost', '127.0.0.1', '*']
+ALLOWED_HOSTS = ['*']  # Allow all hosts for flexibility
 
 # Security settings
 SECURE_BROWSER_XSS_FILTER = True
@@ -13,16 +13,6 @@ X_FRAME_OPTIONS = 'ALLOWALL'
 # CORS settings for production
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOWED_ORIGINS = [
-    "http://15.152.37.134",
-    "https://15.152.37.134",
-]
-
-# Additional CSRF settings
-CSRF_TRUSTED_ORIGINS = [
-    'http://15.152.37.134',
-    'https://15.152.37.134',
-]
 
 # Static files for production
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -37,7 +27,7 @@ STATICFILES_DIRS = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'production_db.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -49,7 +39,7 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filename': '/home/ubuntu/demoMap/django.log',
+            'filename': '/demoMap/django.log',
         },
     },
     'root': {
